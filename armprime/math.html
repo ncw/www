@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<!-- $Id: math.html,v 1.1 2004-09-23 20:09:55 ncw Exp $ -->
+<!-- $Id: math.html,v 1.2 2004-09-24 07:10:43 ncw Exp $ -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>Integer DWTs mod 2^64-2^32+1</title>
@@ -11,12 +11,6 @@
 
 <body>
 <div id="Header">
-<table width="100%" cellpadding="0">
-  <tr>
-    <td width="80%">Integer DWTs mod 2^64-2^32+1</td>
-    <td width="20%" align="right"><script language="JavaScript" src="lastmodified.js" type='text/javascript'></script></td>
-  </tr>
-</table>
 </div>
 
 <div id="Content">ARM prime works using arithmetic modulo a 64 bit prime 2^64-2^32+1 (henceforth known as p). This prime was chosen because it has some very useful properties, the most important of which is that it is possible to calculate x mod p without doing any divisions. This is essential for the ARM which has no divide instruction.
@@ -67,12 +61,7 @@
   <p>Many thanks to Peter-Lawrence Montgomery for working out the maths behind how to do the 128 bit to 64 bit reduction mod p and the shifts mod p so efficiently. Peter also suggested the idea of using shifts in the transform which really makes a lot of difference in execution speed on ARM</p>
 </div>
 
-<div id="Menu"><a href="../index.html">Home</a><br />
-<hr />
-<a href="index.html">Armprime Home</a><br />
-<a href="math.html">Math</a><br />
-<a href="todo.html">To Do</a><br /><hr />
-<p class="copyright">(C) Nick Craig-Wood 2004</p>
+<div id="Menu">
 </div>
 </body>
 </html>
