@@ -1,11 +1,11 @@
 /* Nick's groovy style sheet! */
-/* $Id: default.css,v 1.1 2004-09-23 20:09:55 ncw Exp $ */
+/* $Id: default.css,v 1.2 2004-09-24 17:21:37 ncw Exp $ */
 
 /* CSS from http://bluerobot.com/web/layouts/layout2.html - thanks! */
 
 body {
 	font-family: "Times New Roman", Times, serif;
-	background: url(small/texture.gif) }
+	background: url(small/texture.gif)
 }
 h1 {
 	margin:0px 0px 15px 0px;
