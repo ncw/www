@@ -1,5 +1,5 @@
 /* Nick's groovy style sheet! */
-/* $Id: default.css,v 1.3 2004-10-07 09:38:25 ncw Exp $ */
+/* $Id: default.css,v 1.4 2004-10-07 09:40:39 ncw Exp $ */
 
 /* CSS originally from http://bluerobot.com/web/layouts/layout2.html - thanks! */
 
@@ -45,7 +45,7 @@ a:hover {
 	border-color:black;
 	border-width:1px 0;
 	background-color: transparent;
-	background: url(tint.png);
+	background: url(small/tint.png);
 }
 
 #Content {
@@ -60,7 +60,7 @@ a:hover {
 	width:150px;
 	padding:10px;
 	background-color: transparent;
-	background: url(tint.png);
+	background: url(small/tint.png);
 	border:1px dashed #999;
 	line-height:17px;
 }
