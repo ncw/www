@@ -1,16 +1,16 @@
 /* Nick's groovy style sheet! */
-/* $Id: default.css,v 1.2 2004-09-24 17:21:37 ncw Exp $ */
+/* $Id: default.css,v 1.3 2004-10-07 09:38:25 ncw Exp $ */
 
-/* CSS from http://bluerobot.com/web/layouts/layout2.html - thanks! */
+/* CSS originally from http://bluerobot.com/web/layouts/layout2.html - thanks! */
 
 body {
 	font-family: "Times New Roman", Times, serif;
 	background: url(small/texture.gif)
 }
+
 h1 {
 	margin:0px 0px 15px 0px;
 	padding:0px;
-	color:#ccc;
 	font-size: x-large;
 	margin-bottom: 0.25ex;
 }
@@ -21,55 +21,46 @@ p.copyright {
 }
 
 a {
-	color:#09c;
+	color:#07a;
 }
-a:link {color:#09c;}
-a:visited {color:#07a;}
-a:hover {background-color:#eee;}
 
-#Header {
-	font-weight:600;
-	font-size: x-large;	/* should be same as an h1 header */
-	margin:20px 0 10px 0;
-	padding:0.3ex 0 1.3ex 20px;
-	border-style:solid;
+a:link {
+	color:#07a;
+}
+
+a:visited {
+	color:#07a;
+}
+
+a:hover {
+	border-style:dashed;
 	border-color:black;
 	border-width:1px 0;
+/*	border:1px dashed #999; */
 	background-color:#eee;
+}
 
-/* Here is the ugly brilliant hack that protects IE5/Win from its own stupidity. 
-Thanks to Tantek Celik for the hack and to Eric Costello for publicizing it. 
-IE5/Win incorrectly parses the "\"}"" value, prematurely closing the style 
-declaration. The incorrect IE5/Win value is above, while the correct value is 
-below. See http://glish.com/css/hacks.asp for details. */
-	voice-family: "\"}\"";
-	voice-family:inherit;
-	height:14px; /* the correct height */
-	}
-/* I've heard this called the "be nice to Opera 5" rule. Basically, it feeds correct 
-length values to user agents that exhibit the parsing error exploited above yet get 
-the CSS box model right and understand the CSS2 parent-child selector. ALWAYS include
-a "be nice to Opera 5" rule every time you use the Tantek Celik hack (above). */
-body>#Header {height:14px;}
+#Header {
+	border-style:dashed;
+	border-color:black;
+	border-width:1px 0;
+	background-color: transparent;
+	background: url(tint.png);
+}
 
 #Content {
 	margin:0px 210px 50px 10px;
 	padding:10px;
-	}
+}
 
 #Menu {
 	position:absolute;
 	top:100px;
 	right:20px;
-	width:172px;
+	width:150px;
 	padding:10px;
-	background-color:#eee;
+	background-color: transparent;
+	background: url(tint.png);
 	border:1px dashed #999;
 	line-height:17px;
-/* Again, the ugly brilliant hack. */
-	voice-family: "\"}\"";
-	voice-family:inherit;
-	width:150px;
-	}
-/* Again, "be nice to Opera 5". */
-body>#Menu {width:150px;}
+}

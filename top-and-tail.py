@@ -5,8 +5,8 @@ Top and tail the web page passed in
 
 """
 __author__ = "Nick Craig-Wood (nick@craig-wood.com)"
-__version__ = "$Revision: 1.5 $"
-__date__ = "$Date: 2004-09-24 17:17:04 $"
+__version__ = "$Revision: 1.6 $"
+__date__ = "$Date: 2004-10-07 09:38:25 $"
 __copyright__ = "Copyright (C) Nick Craig-Wood 2004"
 
 import sys, re, os, optparse
@@ -43,7 +43,7 @@ def transform(f, top_path):
     text = re.sub(r"\s*<[Hh]1>"+title_quoted+"</[Hh]1>\s*", r"", text)
 
     # Look for CVS Id
-    # <!-- $Id: top-and-tail.py,v 1.5 2004-09-24 17:17:04 ncw Exp $ -->
+    # <!-- $Id: top-and-tail.py,v 1.6 2004-10-07 09:38:25 ncw Exp $ -->
     # NB regexp is split to stop CVS substituting it!
     match = re.search(r"\$" + r"Id: (.*?),v ([0-9.]+) (\d\d\d\d)/(\d\d)/(\d\d) \d\d:\d\d:\d\d (\S+).*?\$", text)
     assert match, "Couldn't find CVS date in %s" % f
@@ -52,7 +52,7 @@ def transform(f, top_path):
     header = """
 <table width="100%%" cellpadding="0">
   <tr>
-    <td width="80%%">%s</td>
+    <td width="80%%"><h1>%s</h1></td>
     <td width="20%%" align="right">%s-%s-%s</td>
   </tr>
 </table>
@@ -66,7 +66,7 @@ def transform(f, top_path):
   <a href="http://validator.w3.org/check?uri=referer"><img src="%(top_path)sicon/valid-xhtml10.png" alt="[Valid XHTML 1.0]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
   <a href="http://www.anybrowser.org/campaign/"><img src="%(top_path)sicon/anybrowser.gif" alt="[Best viewed with any browser]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
   <a href="http://www.mersenne.org/prime.htm"><img src="%(top_path)sicon/gimps.gif" alt="[Great Internet Prime Search]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
-  <a href="holly.html"><img src="%(top_path)sicon/csn.gif" alt="[Cocker Spaniel Now!]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
+  <a href="%(top_path)sholly.html"><img src="%(top_path)sicon/csn.gif" alt="[Cocker Spaniel Now!]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
 </p>
 """ % vars()
 
