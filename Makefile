@@ -11,8 +11,12 @@ markup:
 unmarkup:
 	find . -name \*.html | xargs ./top-and-tail.py -r
 
-upload:	markup validate
+uploadonly:
 	rsync -avz --cvs-exclude -e ssh . ncw@box.craig-wood.com:public_html/
+
+upload:	markup validate uploadonly
+
+quickupload:	markup uploadonly
 
 clean:
 	rm -f *.pyc
