@@ -4,7 +4,10 @@
 Top and tail the web page passed in
 
 """
-__version__ = '$Id: top-and-tail.py,v 1.3 2004-09-24 12:01:43 ncw Exp $'
+__author__ = "Nick Craig-Wood (nick@craig-wood.com)"
+__version__ = "$Revision: 1.4 $"
+__date__ = "$Date: 2004-09-24 17:01:32 $"
+__copyright__ = "Copyright (C) Nick Craig-Wood 2004"
 
 import sys, re, os, optparse
 
@@ -24,7 +27,7 @@ def menu_nav(f):
             menu.append('<a href="%s">%s</a><br />' % (path, name))
     return "\n".join(menu)
     
-def transform(f):
+def transform(f, top_path):
     text = file(f).read()
     original_text = text[:]
     # read title
@@ -37,7 +40,7 @@ def transform(f):
     text = re.sub(r"\s*<[Hh]1>"+title_quoted+"</[Hh]1>\s*", r"", text)
 
     # Look for CVS Id
-    # <!-- $Id: top-and-tail.py,v 1.3 2004-09-24 12:01:43 ncw Exp $ -->
+    # <!-- $Id: top-and-tail.py,v 1.4 2004-09-24 17:01:32 ncw Exp $ -->
     # NB regexp is split to stop CVS substituting it!
     match = re.search(r"\$" + r"Id: (.*?),v ([0-9.]+) (\d\d\d\d)/(\d\d)/(\d\d) \d\d:\d\d:\d\d (\S+).*?\$", text)
     assert match, "Couldn't find CVS date in %s" % f
@@ -54,8 +57,15 @@ def transform(f):
 
     menu = menu_nav(f)
     menu += """<hr />
-<p class="copyright">(C) Nick Craig-Wood %s</p>
-""" % cvs_year
+<p class="copyright">(C) <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> %(cvs_year)s</p>
+<hr />
+<p>
+  <a href="http://validator.w3.org/check?uri=referer"><img src="%(top_path)sicon/valid-xhtml10.png" alt="[Valid XHTML 1.0]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
+  <a href="http://www.anybrowser.org/campaign/"><img src="%(top_path)sicon/anybrowser.gif" alt="[Best viewed with any browser]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
+  <a href="http://www.mersenne.org/prime.htm"><img src="%(top_path)sicon/gimps.gif" alt="[Great Internet Prime Search]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
+  <a href="holly.html"><img src="%(top_path)sicon/csn.gif" alt="[Cocker Spaniel Now!]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
+</p>
+""" % vars()
 
     match = re.search(r'<div id="Content">', text)
     if not match:
@@ -100,11 +110,23 @@ def main():
     parser.add_option("-r", "--remove",
                       action="store_true", dest="remove",
                       help="remove all the markup in the file (pre check-in)")
+    parser.add_option("-b", "--base",
+                      action="store", dest="base", default=".",
+                      help='Path to base of HTML tree for relative links ["."]')
     (opt, files) = parser.parse_args()
+    base = os.path.realpath(opt.base)
+    base_len = len(base)
     if len(files) == 0:
         parser.error("Must supply at least one file!")
     for f in files:
-        print >>sys.stderr, f
-        transform(f)
+        f_abs = os.path.realpath(f)
+        assert f_abs[:base_len] == base, "File %s is not under %s!" % (f, base)
+        relative_path = f_abs[base_len:]
+        if relative_path[0] == os.path.sep:
+            relative_path = relative_path[1:]
+        depth = relative_path.count(os.path.sep)
+        top_path = "../" * depth
+        print >>sys.stderr, f, top_path
+        transform(f, top_path)
 
 if __name__ == "__main__": main()
