@@ -1,12 +1,15 @@
 # Makefile for Nick's Web site!
 
-all:	top_and_tail
+all:	markup
 
 validate:
 	find . -name \*.html | xargs validate --emacs
 
-top_and_tail:
-	find . -name \*.html | ./top-and-tail.py
+markup:
+	find . -name \*.html | xargs ./top-and-tail.py
+
+unmarkup:
+	find . -name \*.html | xargs ./top-and-tail.py -r
 
 upload:
 	@echo "Not implemented yet!"
