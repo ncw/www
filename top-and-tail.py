@@ -4,11 +4,10 @@
 Top and tail the web page passed in
 
 """
-__version__ = '$Id: top-and-tail.py,v 1.1 2004-09-23 20:09:55 ncw Exp $'
+__version__ = '$Id: top-and-tail.py,v 1.2 2004-09-24 07:09:41 ncw Exp $'
 
 import sys, re, os, optparse
 
-year = 2004                             # FIXME
 opt = None                              # options filled in by main()
 
 def menu_nav(f):
@@ -37,19 +36,25 @@ def transform(f):
     title_quoted = re.sub(r"(\W)", r"\\\1", title) # Quote all the regex metacharacters
     text = re.sub(r"\s*<[Hh]1>"+title_quoted+"</[Hh]1>\s*", r"", text)
 
+    # Look for CVS Id
+    # <!-- $Id: top-and-tail.py,v 1.2 2004-09-24 07:09:41 ncw Exp $ -->    
+    match = re.search(r"\$Id: top-and-tail.py,v 1.2 2004-09-24 07:09:41 ncw Exp $", text)
+    assert match, "Couldn't find CVS date"
+    cvs_file, cvs_rev, cvs_year, cvs_month, cvs_day, cvs_who = match.groups()
+
     header = """
 <table width="100%%" cellpadding="0">
   <tr>
     <td width="80%%">%s</td>
-    <td width="20%%" align="right"><script language="JavaScript" src="lastmodified.js" type='text/javascript'></script></td>
+    <td width="20%%" align="right">%s-%s-%s</td>
   </tr>
 </table>
-""" % title
+""" % (title, cvs_year, cvs_month, cvs_day)
 
     menu = menu_nav(f)
     menu += """<hr />
 <p class="copyright">(C) Nick Craig-Wood %s</p>
-""" % year
+""" % cvs_year
 
     match = re.search(r'<div id="Content">', text)
     if not match:
@@ -67,6 +72,10 @@ def transform(f):
 </body>"""
         text = re.sub(r'</body>', bot, text)
 
+    # If remove replace with empty lines
+    if opt.remove:
+        header = "\n"
+        menu = "\n"
     # Replace Header
     text = re.sub(r'(?s)(<div id="Header">).*?(</div>)', r'\1' + header + r'\2', text) 
     # Replace Menu
@@ -87,6 +96,9 @@ def main():
     parser.add_option("-d", "--debug",
                       action="store_true", dest="debug",
                       help="don't re-write the file, just output it to stdout")
+    parser.add_option("-r", "--remove",
+                      action="store_true", dest="remove",
+                      help="remove all the markup in the file (pre check-in)")
     (opt, files) = parser.parse_args()
     if len(files) == 0:
         parser.error("Must supply at least one file!")
