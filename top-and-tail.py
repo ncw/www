@@ -4,7 +4,7 @@
 Top and tail the web page passed in
 
 """
-__version__ = '$Id: top-and-tail.py,v 1.2 2004-09-24 07:09:41 ncw Exp $'
+__version__ = '$Id: top-and-tail.py,v 1.3 2004-09-24 12:01:43 ncw Exp $'
 
 import sys, re, os, optparse
 
@@ -29,7 +29,7 @@ def transform(f):
     original_text = text[:]
     # read title
     match = re.search(r"<title>(.*)</title>", text)
-    assert match, "No title found"
+    assert match, "No title found in %s" % f
     title, = match.groups()
 
     # Get rid of a title H1 if it exists
@@ -37,9 +37,10 @@ def transform(f):
     text = re.sub(r"\s*<[Hh]1>"+title_quoted+"</[Hh]1>\s*", r"", text)
 
     # Look for CVS Id
-    # <!-- $Id: top-and-tail.py,v 1.2 2004-09-24 07:09:41 ncw Exp $ -->    
-    match = re.search(r"\$Id: top-and-tail.py,v 1.2 2004-09-24 07:09:41 ncw Exp $", text)
-    assert match, "Couldn't find CVS date"
+    # <!-- $Id: top-and-tail.py,v 1.3 2004-09-24 12:01:43 ncw Exp $ -->
+    # NB regexp is split to stop CVS substituting it!
+    match = re.search(r"\$" + r"Id: (.*?),v ([0-9.]+) (\d\d\d\d)/(\d\d)/(\d\d) \d\d:\d\d:\d\d (\S+).*?\$", text)
+    assert match, "Couldn't find CVS date in %s" % f
     cvs_file, cvs_rev, cvs_year, cvs_month, cvs_day, cvs_who = match.groups()
 
     header = """
