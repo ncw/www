@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- $Id: restoring.html,v 1.1 2004-09-23 20:09:55 ncw Exp $ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>FCFS: Restoring images</title>
+  <link rel="stylesheet" title="Nick Craig-Wood's Style" href="../default.css" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="Header">
+<table width="100%" cellpadding="0">
+  <tr>
+    <td width="80%">FCFS: Restoring images</td>
+    <td width="20%" align="right"><script language="JavaScript" src="lastmodified.js" type='text/javascript'></script></td>
+  </tr>
+</table>
+</div>
+
+<div id="Content"><img src="restore.gif" alt="[Restore image window]" align="right" vspace="8" hspace="8" width="404" height="219" /><br />
+  Once you have created an image, you can read the files from it just using the filer (ie drag the files from the image to the disc).
+
+  <p>This is a rather slow process (especially on floppies), so if you want to restore all the files you can use the 'Restore&nbsp;Image' window (opened by clicking Adjust on the iconbar FCFS icon).</p>
+
+  <p>To use this, just drag an FCFS image to this window (its details will be shown), choose the destination disc using the pop-up menu and click on Restore.</p>
+
+  <p>You may adjust how FCFS multitasks with the Options box - see the <a href="multi.html">Multitasking operations</a> section.</p>
+
+  <p>FCFS will copy the image content (only the used 'sectors') decompressing if necessary to the destination disc and when the copying is finished the disc will be an exact copy of the disc that the image was generated from.</p>
+
+  <p>Be *careful* when you use this feature, since it will completely remove the content of the destination disc and will replace it with the content of the FCFS image. If the destination disc is not empty, FCFS will prompt you for confirmation before performing this operation.</p>
+
+  <p>FCFS can restore an image only to a disc whose 'shape' is the same as disc which the image was generated from. In other words, you can't restore an image of a 40Mb hard disc to a 100Mb hard disc, nor you can restore a 800Kb floppy image to a 1.6Mb floppy or vice versa.</p>
+
+  <p>However, you can restore a 800Kb floppy image to a 800Kb RAM disc since their shape is similar (FCFS will tell you that the shape is different, but you can click on 'Continue' and restore it anyway), but you can't restore a 1.6Mb floppy image to a 1.6Mb RAM disc because of RAM disc limitations (it doesn't support the bootblock).</p>
+</div>
+
+<div id="Menu"><a href="../index.html">Home</a><br />
+<hr />
+<a href="index.html">FCFS Home</a><br />
+<a href="making.html">Make</a><br />
+<a href="restoring.html">Restore</a><br />
+<a href="multi.html">Multitask</a><br />
+<a href="images.html">Images</a><br />
+<a href="using.html">Using</a><br />
+<a href="history.html">History</a><br />
+<a href="legal.html">Legal</a><br /><hr />
+<p class="copyright">(C) Nick Craig-Wood 2004</p>
+</div>
+</body>
+</html>

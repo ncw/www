@@ -1,0 +1,10 @@
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: 2.6.2i
+
+mQCNAir+llYAAAEEAOma/TtngrpJ+Qabj9JNL/+SMqIGcXPRwHMs9UrvvvoPpWQf
+24utY1OaGiCaWvzOpGukmk3lHfzNGbn46QMFBIKlSsycuwT71adY6upwexixjZQZ
+Vh0dkp0PDi0w4xIY21amsI3MZ2lcGoAO9pycc3NJEe50q7/TfhG4/9vYVhqvAAUR
+tCZOaWNrIENyYWlnLVdvb2QgPG5jd0BheGlzLmRlbW9uLmNvLnVrPrQlTmljayBD
+cmFpZy1Xb29kIDxuaWNrQGNyYWlnLXdvb2QuY29tPg==
+=QnjI
+-----END PGP PUBLIC KEY BLOCK-----
