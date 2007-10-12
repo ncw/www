@@ -1,5 +1,5 @@
 /* Nick's groovy style sheet! */
-/* $Id: default.css,v 1.5 2006-05-03 09:55:45 ncw Exp $ */
+/* $Id: default.css,v 1.6 2007-10-12 09:31:01 ncw Exp $ */
 
 /* CSS originally from http://bluerobot.com/web/layouts/layout2.html - thanks! */
 
@@ -63,4 +63,21 @@ a:hover {
 	background: url(small/tint.png);
 	border:1px dashed #999;
 	line-height:17px;
+}
+
+.LTwrapper {
+	border:1px dashed #999;
+}
+
+.LTheader {
+	font-size: small;
+}
+
+.LTitem {
+	font-size: xx-small;
+}
+
+.LTprovided {
+	font-variant: small-caps;
+	font-size: xx-small;
 }
