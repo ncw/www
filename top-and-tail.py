@@ -5,8 +5,8 @@ Top and tail the web page passed in
 
 """
 __author__ = "Nick Craig-Wood (nick@craig-wood.com)"
-__version__ = "$Revision: 1.8 $"
-__date__ = "$Date: 2007-10-12 09:31:01 $"
+__version__ = "$Revision: 1.9 $"
+__date__ = "$Date: 2008-02-12 08:57:29 $"
 __copyright__ = "Copyright (C) Nick Craig-Wood 2004"
 
 import sys, re, os, optparse
@@ -43,7 +43,7 @@ def transform(f, top_path):
     text = re.sub(r"\s*<[Hh]1>"+title_quoted+"</[Hh]1>\s*", r"", text)
 
     # Look for CVS Id
-    # <!-- $Id: top-and-tail.py,v 1.8 2007-10-12 09:31:01 ncw Exp $ -->
+    # <!-- $Id: top-and-tail.py,v 1.9 2008-02-12 08:57:29 ncw Exp $ -->
     # NB regexp is split to stop CVS substituting it!
     match = re.search(r"\$" + r"Id: (.*?),v ([0-9.]+) (\d\d\d\d)[-/](\d\d)[-/](\d\d) \d\d:\d\d:\d\d (\S+).*?\$", text)
     assert match, "Couldn't find CVS date in %s" % f
@@ -69,7 +69,7 @@ def transform(f, top_path):
   <a href="%(top_path)sholly.html"><img src="%(top_path)sicon/csn.gif" alt="[Cocker Spaniel Now!]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
 </p>
 <p>
-  <script language="javascript" type="text/javascript" src="http://www.librarything.com/jswidget.php?reporton=ncw&show=random&header=1&num=5&covers=small&text=all&tag=alltags&amazonassoc=niccrawoosweb-21&css=1&style=1&version=1"></script>
+  <script language="javascript" type="text/javascript" src="http://www.librarything.com/jswidget.php?reporton=ncw&amp;show=random&amp;header=1&amp;num=5&amp;covers=small&amp;text=all&amp;tag=alltags&amp;amazonassoc=niccrawoosweb-21&amp;css=1&amp;style=1&amp;version=1"></script>
 </p>
 """ % vars()
 
