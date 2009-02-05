@@ -42,12 +42,12 @@ def transform(f, top_path):
     title_quoted = re.sub(r"(\W)", r"\\\1", title) # Quote all the regex metacharacters
     text = re.sub(r"\s*<[Hh]1>"+title_quoted+"</[Hh]1>\s*", r"", text)
 
-    # Look for CVS Id
+    # Look for SVN Id
     # <!-- $Id$ -->
-    # NB regexp is split to stop CVS substituting it!
-    match = re.search(r"\$" + r"Id: (.*?),v ([0-9.]+) (\d\d\d\d)[-/](\d\d)[-/](\d\d) \d\d:\d\d:\d\d (\S+).*?\$", text)
-    assert match, "Couldn't find CVS date in %s" % f
-    cvs_file, cvs_rev, cvs_year, cvs_month, cvs_day, cvs_who = match.groups()
+    # NB regexp is split to stop SVN substituting it!
+    match = re.search(r"\$" + r"Id: (.*?) ([0-9.]+) (\d\d\d\d)-(\d\d)-(\d\d) \d\d:\d\d:\d\dZ? (\S+).*?\$", text)
+    assert match, "Couldn't find SVN date in %s" % f
+    svn_file, svn_rev, svn_year, svn_month, svn_day, svn_who = match.groups()
 
     header = """
 <table width="100%%" cellpadding="0">
@@ -56,11 +56,11 @@ def transform(f, top_path):
     <td width="20%%" align="right">%s-%s-%s</td>
   </tr>
 </table>
-""" % (title, cvs_year, cvs_month, cvs_day)
+""" % (title, svn_year, svn_month, svn_day)
 
     menu = menu_nav(f)
     menu += """<hr />
-<p class="copyright">(C) <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> %(cvs_year)s</p>
+<p class="copyright">(C) <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> %(svn_year)s</p>
 <hr />
 <p>
   <a href="http://validator.w3.org/check?uri=referer"><img src="%(top_path)sicon/valid-xhtml10.png" alt="[Valid XHTML 1.0]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
