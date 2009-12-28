@@ -33,11 +33,12 @@ a:visited {
 }
 
 a:hover {
-	border-style:dashed;
-	border-color:black;
-	border-width:1px 0;
-/*	border:1px dashed #999; */
+	text-decoration: underline overline;
 	background-color:#eee;
+}
+
+a img {
+	border:0;
 }
 
 #Header {
