@@ -11,6 +11,9 @@ markup:
 unmarkup:
 	find . -name \*.html | xargs ./top-and-tail.py -r
 
+keywords:
+	find . -name \*.html | xargs svn propset svn:keywords "Date Revision Id"
+
 uploadonly:
 	rsync -avz --cvs-exclude -e ssh . ncw@box.craig-wood.com:public_html/
 
