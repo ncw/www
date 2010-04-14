@@ -82,3 +82,23 @@ a img {
 	font-variant: small-caps;
 	font-size: xx-small;
 }
+
+img.screenshot {
+    margin: 2em;
+}
+
+.icon {
+    float: left;
+    margin-right: 10px;
+}
+
+.buttons {
+    text-align: center;
+}
+.buttons img {
+    margin: 4px;
+}
+
+pre {
+    font-size: 12pt;
+}

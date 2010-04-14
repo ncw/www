@@ -62,11 +62,11 @@ def transform(f, top_path):
     menu += """<hr />
 <p class="copyright">&copy; <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> %(svn_year)s</p>
 <hr />
-<p>
-  <a href="http://validator.w3.org/check?uri=referer"><img src="%(top_path)sicon/valid-xhtml10.png" alt="[Valid XHTML 1.0]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
-  <a href="http://www.anybrowser.org/campaign/"><img src="%(top_path)sicon/anybrowser.gif" alt="[Best viewed with any browser]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
-  <a href="http://www.mersenne.org/prime.htm"><img src="%(top_path)sicon/gimps.gif" alt="[Great Internet Prime Search]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
-  <a href="%(top_path)sholly.html"><img src="%(top_path)sicon/csn.gif" alt="[Cocker Spaniel Now!]" border="0" align="middle" hspace="8" vspace="4" width="88" height="31" /></a>
+<p class="buttons">
+  <a href="http://validator.w3.org/check?uri=referer"><img src="%(top_path)sicon/valid-xhtml10.png" alt="[Valid XHTML 1.0]" width="88" height="31" /></a>
+  <a href="http://www.anybrowser.org/campaign/"><img src="%(top_path)sicon/anybrowser.gif" alt="[Best viewed with any browser]" width="88" height="31" /></a>
+  <a href="http://www.mersenne.org/prime.htm"><img src="%(top_path)sicon/gimps.gif" alt="[Great Internet Prime Search]"width="88" height="31" /></a>
+  <a href="%(top_path)sholly.html"><img src="%(top_path)sicon/csn.gif" alt="[Cocker Spaniel Now!]" width="88" height="31" /></a>
 </p>
 <p>
   <script language="javascript" type="text/javascript" src="http://www.librarything.com/jswidget.php?reporton=ncw&amp;show=random&amp;header=1&amp;num=5&amp;covers=small&amp;text=all&amp;tag=alltags&amp;amazonassoc=niccrawoosweb-21&amp;css=1&amp;style=1&amp;version=1"></script>
