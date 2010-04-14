@@ -15,7 +15,7 @@ keywords:
 	find . -name \*.html | xargs svn propset svn:keywords "Date Revision Id"
 
 uploadonly:
-	rsync -avz --cvs-exclude -e ssh . ncw@box.craig-wood.com:public_html/
+	rsync -avz --checksum --cvs-exclude -e ssh . ncw@box.craig-wood.com:public_html/
 
 upload:	markup validate uploadonly
 
