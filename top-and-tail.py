@@ -1,8 +1,8 @@
 #!/usr/bin/python
-
 """
 Top and tail the web page passed in
 
+Replaces divs with id: Header, Content, Menu
 """
 __author__ = "Nick Craig-Wood (nick@craig-wood.com)"
 __version__ = "$Revision$"
