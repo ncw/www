@@ -92,6 +92,10 @@ img.screenshot {
     margin-right: 10px;
 }
 
+br.clear {
+    clear: left;
+}
+
 .buttons {
     text-align: center;
 }
