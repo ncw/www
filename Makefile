@@ -2,8 +2,9 @@
 
 all:	markup
 
-validate:
-	find . -name \*.html | xargs validate --emacs
+validate: markup
+	echo "Validate broken"
+	-#find _site -name \*.html | xargs validate --emacs
 
 markup:
 	blogofile build
@@ -15,7 +16,7 @@ keywords:
 	find . -name \*.mako | xargs svn propset svn:keywords "Date Revision Id"
 
 uploadonly:
-	rsync -avz --checksum --cvs-exclude -e ssh . ncw@box.craig-wood.com:public_html/
+	rsync --dry-run -avz --checksum --cvs-exclude -e ssh _site/ ncw@box.craig-wood.com:public_html/
 
 upload:	markup validate uploadonly
 
