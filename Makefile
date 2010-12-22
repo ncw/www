@@ -1,6 +1,6 @@
 # Makefile for Nick's Web site!
 
-all:	markup
+all:	serve
 
 validate: markup
 	echo "Validate broken"
