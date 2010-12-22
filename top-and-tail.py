@@ -2,7 +2,7 @@
 """
 Top and tail the web page passed in
 
-Replaces divs with id: Header, Content, Menu
+Replaces divs with id: Header, Content, Menu, Comments
 """
 __author__ = "Nick Craig-Wood (nick@craig-wood.com)"
 __version__ = "$Revision$"
@@ -29,6 +29,23 @@ def menu_nav(f):
         else:
             menu.append('<a href="%s">%s</a><br />' % (path, name))
     return "\n".join(menu)
+
+# Disqus comments
+
+comments = '''
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /**
+    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+    */
+  (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = 'http://nickcw.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>If you want to see the <a href="http://disqus.com/?ref_noscript=nickcw">comments</a> you will need to enable JavaScript.</noscript>
+'''
     
 def transform(f, top_path):
     text = file(f).read()
@@ -49,7 +66,7 @@ def transform(f, top_path):
     assert match, "Couldn't find SVN date in %s" % f
     svn_file, svn_rev, svn_year, svn_month, svn_day, svn_who = match.groups()
 
-    header = """
+    header = """\
 <table width="100%%" cellpadding="0">
   <tr>
     <td width="80%%"><h1>%s</h1></td>
@@ -97,6 +114,8 @@ def transform(f, top_path):
     text = re.sub(r'(?s)(<div id="Header">).*?(</div>)', r'\1' + header + r'\2', text) 
     # Replace Menu
     text = re.sub(r'(?s)(<div id="Menu">).*?(</div>)', r'\1' + menu + r'\2', text) 
+    # Replace Comments
+    text = re.sub(r'(?s)(<div id="Comments">).*?(</div>)', r'\1' + comments + r'\2', text) 
 
     if text == original_text:
         print >>sys.stderr, "%s unchanged" % f

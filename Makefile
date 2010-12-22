@@ -6,13 +6,13 @@ validate:
 	find . -name \*.html | xargs validate --emacs
 
 markup:
-	find . -name \*.html | xargs ./top-and-tail.py
+	blogofile build
 
-unmarkup:
-	find . -name \*.html | xargs ./top-and-tail.py -r
+serve:	markup
+	blogofile serve
 
 keywords:
-	find . -name \*.html | xargs svn propset svn:keywords "Date Revision Id"
+	find . -name \*.mako | xargs svn propset svn:keywords "Date Revision Id"
 
 uploadonly:
 	rsync -avz --checksum --cvs-exclude -e ssh . ncw@box.craig-wood.com:public_html/
