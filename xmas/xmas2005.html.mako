@@ -1,6 +1,5 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">Xmas 2005</%def>
-<div id="content">
 
 <a href="xmas2005-large.jpg"><img src="xmas2005-small.jpg" alt="[Xmas 2005]"/></a>
 
@@ -56,4 +55,3 @@ get out of bed quite so early!</p>
 <p>We are looking forward to our new kitchen in 2006 and inviting you all
 to come and see it!</p>
 
-</div>

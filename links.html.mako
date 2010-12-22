@@ -1,6 +1,6 @@
 <%inherit file="/nav.inc" />
 <%def name="title()">A few of my favourite links</%def>
-<div id="content"><p>...hastily culled from 1000s in my bookmarks file!</p>
+<p>...hastily culled from 1000s in my bookmarks file!</p>
 
   <h2>Personal</h2>
   <ul>
@@ -74,4 +74,3 @@
     <li><a href="http://www.g-gardiner.com/">My brother-in-law Grant</a></li>
   </ul>
 
-</div>

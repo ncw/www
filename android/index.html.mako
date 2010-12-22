@@ -1,6 +1,5 @@
 <%inherit file="/android/nav.inc" />
 <%def name="title()">Nick Craig-Wood's Android Stuff</%def>
-<div id="content">
 
 <p>In 2009 I gave up my beloved Nokia Communicator and moved on the
 the exciting world of Android.  Being a software developer Android
@@ -14,4 +13,3 @@ Symbian had never managed to do.  Below you'll find the results!</p>
 <br />
 <p>Nick Craig-Wood</p>
 
-</div>

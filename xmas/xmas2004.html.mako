@@ -1,6 +1,5 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">Xmas 2004</%def>
-<div id="content">
 
 <a href="xmas2004-large.jpg"><img src="xmas2004-small.jpg" alt="[Xmas 2004]"/></a>
 
@@ -56,4 +55,3 @@ Isabel actually makes it to pre-school!</p>
 in last year's letter has actually happened yet so we'll just keep
 quiet about them for the moment!</p>
 
-</div>

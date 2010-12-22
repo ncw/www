@@ -1,6 +1,6 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">Xmas 2008</%def>
-<div id="content"><a href="xmas2008-large.jpg"><img src="xmas2008-small.jpg" alt="[Xmas 2008]"/></a>
+<a href="xmas2008-large.jpg"><img src="xmas2008-small.jpg" alt="[Xmas 2008]"/></a>
 
 <p>2008 has been very busy.  School holidays all at different times
 didn't help.  Easter weekend was our only time off together in the
@@ -57,4 +57,3 @@ enjoyed time out learning to dingy sail in the summer.</p>
 <p>We're looking forward to a Merry Christmas at Treharrock with
 Loveday's family and we hope you have one too!</p>
 
-</div>

@@ -1,6 +1,6 @@
 <%inherit file="/animations/nav.inc" />
 <%def name="title()">NCWs Animations</%def>
-<div id="content">Here are some animations that I knocked up one rainy afternoon. The computer generated animations I made using my ancient and venerable juggling program. I captured the frames to a file and then used ChangeFSI to make them smaller with anti-aliasing. I then used InterGIF to produce the animation.
+Here are some animations that I knocked up one rainy afternoon. The computer generated animations I made using my ancient and venerable juggling program. I captured the frames to a file and then used ChangeFSI to make them smaller with anti-aliasing. I then used InterGIF to produce the animation.
 
   <p>When making the men juggling men etc animations I made a small mistake which made the smaller men juggle at twice the rate of the larger men. This halves the quality of the smaller men's animation, but I left it because I rather liked the smaller men juggling faster the smaller they got.</p>
 
@@ -21,4 +21,3 @@
   <h3>Dave Lawrence juggling 3 balls</h3><img src="dl-small.gif" alt="*" width="37" height="32" /> <a href="dl-norm.gif">Medium</a> <a href="dl-big.gif">Large</a>
 
   <h3>This page has not been accessed <img src="digits2.gif" alt="*" width="16" height="32" /> <img src="digits1.gif" alt="*" width="16" height="32" /> <img src="digits0.gif" alt="*" width="16" height="32" /> times</h3>
-</div>

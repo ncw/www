@@ -1,6 +1,6 @@
 <%inherit file="/istec/nav.inc" />
 <%def name="title()">ISTEC 1008 Shortform description</%def>
-<div id="content"><h3>General</h3>
+<h3>General</h3>
 
   <p>The ISTEC 1008 is a 'low priced' and 'easy to use' ISDN PABX developed for use by small companies, teleworkers, cooperative work groups, etc.</p>
 
@@ -75,4 +75,3 @@
   <p>The ISTEC 1008 has extensive call barring features. It is possible on an extension basis to limit calls to internal only, local, national or international. The PABX also offers the possibility of restricting a user programmed number (0898 for example).</p>
 
   <p>The ISTEC 1008 offers 'music on hold' for outside waiting calls. It is possible to switch off the music on hold facility in the programming mode.</p>
-</div>

@@ -1,6 +1,6 @@
 <%inherit file="/istec/nav.inc" />
 <%def name="title()">ISTEC 1008 Configuration software</%def>
-<div id="content">The ISTEC 1008 is configured using 1) a switch inside the ISTEC case, 2) a telephone attached to extension 21, and 3) via a serial port using a PC and the ISTEC program
+The ISTEC 1008 is configured using 1) a switch inside the ISTEC case, 2) a telephone attached to extension 21, and 3) via a serial port using a PC and the ISTEC program
 
   <dl>
     <dt>1). Configuration switch setting</dt>
@@ -131,4 +131,3 @@
 
     <dd>....7 (While intercom is active)</dd>
   </dl>When using the point to point connection it is possible to program an 'operator extension'. Incoming calls will be transferred to extension 21-28 according to the DDI number.
-</div>

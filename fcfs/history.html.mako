@@ -1,6 +1,6 @@
 <%inherit file="/fcfs/nav.inc" />
 <%def name="title()">FCFS: History and Credits</%def>
-<div id="content"><h3>History</h3>
+<h3>History</h3>
 
   <dl>
     <dt>0.00 -- 24Mar94</dt>
@@ -40,4 +40,3 @@
 
     <li>Dave Lawrence, Mike Brown and George Foot for being diligent beta testers.</li>
   </ul>
-</div>

@@ -1,6 +1,5 @@
 <%inherit file="/nav.inc" />
 <%def name="title()">Dougal Alexander</%def>
-<div id="content">
 
   <center>
 
@@ -41,4 +40,3 @@
   </a>
   </center>
 
-</div>

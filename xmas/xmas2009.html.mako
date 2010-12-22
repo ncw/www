@@ -1,6 +1,6 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">Xmas 2009</%def>
-<div id="content"><a href="xmas2009-large.jpg"><img src="xmas2009-small.jpg" alt="[Xmas 2009]"/></a>
+<a href="xmas2009-large.jpg"><img src="xmas2009-small.jpg" alt="[Xmas 2009]"/></a>
 
 <p>An ongoing theme of 2009 has been house renovations.  We've
 decorated 2 bedrooms, the hall, 2 reception rooms and redone 2
@@ -57,4 +57,3 @@ survived the experience!</p>
 <p>We look forward to Christmas at home this year and hope you have an
 excellent one too.</p>
 
-</div>

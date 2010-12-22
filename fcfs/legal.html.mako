@@ -1,6 +1,6 @@
 <%inherit file="/fcfs/nav.inc" />
 <%def name="title()">FCFS: Conditions of use</%def>
-<div id="content">FCFS (The <var>Software</var>) is Copyright © Nick Craig-Wood and Sergio Monesi 1995-7 (the <var>Authors</var>) and may not be used or copied except as in accord with the terms and conditions below.
+FCFS (The <var>Software</var>) is Copyright © Nick Craig-Wood and Sergio Monesi 1995-7 (the <var>Authors</var>) and may not be used or copied except as in accord with the terms and conditions below.
 
   <p>You may <em>NOT</em> Make the <var>Software</var> available to any third party <em>EXCEPT</em> with these terms and conditions imposed on said party.</p>
 
@@ -41,4 +41,3 @@
   <p>If for any reason (either your mistake or a bug in FCFS) it causes you a loss of data, we are sorry for you but <em>we will not be held responsible</em>.</p>
 
   <p>Use FCFS at your own risk.</p>
-</div>

@@ -1,6 +1,5 @@
 <%inherit file="/android/oxo3d/nav.inc" />
 <%def name="title()">Oxo 3D - a 3D tic-tac-toe / noughts and crosses player for Android</%def>
-<div id="content">
 
     <p><img class="icon" src="icon.png" alt="*" /><em>Oxo 3D</em> is a 3 dimensional (4x4x4) noughts-and-crosses /
     tic-tac-toe game for the Android operating system.  This is a game
@@ -73,4 +72,3 @@
       </dd>
     </dl>
 
-</div>

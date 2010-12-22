@@ -1,6 +1,6 @@
 <%inherit file="/nav.inc" />
 <%def name="title()">Nick Craig-Wood</%def>
-<div id="content"><h4>Who am I?</h4>
+<h4>Who am I?</h4>
 
   <img src="small/nick.gif" alt="[Picture of ncw]" width="84" height="78" />
 
@@ -64,4 +64,3 @@
   if you are looking for someone with that address you've come to the
   right place!</p>
 
-</div>

@@ -1,6 +1,6 @@
 <%inherit file="/fcfs/nav.inc" />
 <%def name="title()">FCFS: Restoring images</%def>
-<div id="content"><img src="restore.gif" alt="[Restore image window]" align="right" vspace="8" hspace="8" width="404" height="219" /><br />
+<img src="restore.gif" alt="[Restore image window]" align="right" vspace="8" hspace="8" width="404" height="219" /><br />
   Once you have created an image, you can read the files from it just using the filer (ie drag the files from the image to the disc).
 
   <p>This is a rather slow process (especially on floppies), so if you want to restore all the files you can use the 'Restore&nbsp;Image' window (opened by clicking Adjust on the iconbar FCFS icon).</p>
@@ -16,4 +16,3 @@
   <p>FCFS can restore an image only to a disc whose 'shape' is the same as disc which the image was generated from. In other words, you can't restore an image of a 40Mb hard disc to a 100Mb hard disc, nor you can restore a 800Kb floppy image to a 1.6Mb floppy or vice versa.</p>
 
   <p>However, you can restore a 800Kb floppy image to a 800Kb RAM disc since their shape is similar (FCFS will tell you that the shape is different, but you can click on 'Continue' and restore it anyway), but you can't restore a 1.6Mb floppy image to a 1.6Mb RAM disc because of RAM disc limitations (it doesn't support the bootblock).</p>
-</div>

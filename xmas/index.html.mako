@@ -1,6 +1,6 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">The Xmas letter archive</%def>
-<div id="content"><p>Here you will find all the christmas letters we've sent out over
+<p>Here you will find all the christmas letters we've sent out over
 the years and the picture on the front of the card.</p>
 
 <p>If you click on the picture you'll get very much bigger image which
@@ -20,4 +20,3 @@ will print out the size of the wall if you really want!</p>
 
 The Craig-Wood family
 
-</div>

@@ -1,6 +1,6 @@
 <%inherit file="/istec/nav.inc" />
 <%def name="title()">ISDN PABX ISTEC 1008 Technical Features</%def>
-<div id="content"><h3>Equipment Connection</h3>
+<h3>Equipment Connection</h3>
 
   <ul>
     <li>1xS0 Basic rate access (point to point or point to multipoint connection)</li>
@@ -75,4 +75,3 @@
 
     <li>Music On hold</li>
   </ul>
-</div>

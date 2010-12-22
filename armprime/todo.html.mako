@@ -1,6 +1,6 @@
 <%inherit file="/armprime/nav.inc" />
 <%def name="title()">The semi-infinite to do list</%def>
-<div id="content">Things I need to do to the code in order of importance :-
+Things I need to do to the code in order of importance :-
 
   <ol>
     <li>Implement save files (really quite important ;-) Needs 2) to be of any use probably</li>
@@ -21,4 +21,3 @@
   </ol>Rather a lot of work!
 
   <p>Unfortunately I've been very busy with work and home life which has left almost no time for diversions like ARM Prime! Any help would be appreciated.</p>
-</div>

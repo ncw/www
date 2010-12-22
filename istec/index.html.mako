@@ -1,6 +1,6 @@
 <%inherit file="/istec/nav.inc" />
 <%def name="title()">ISTEC 1008</%def>
-<div id="content">A message from your sponsor: I put these pages up for the enjoyment of all I <em>don't</em> sell or deal in ISTECs - you will have to look elsewhere for that.
+A message from your sponsor: I put these pages up for the enjoyment of all I <em>don't</em> sell or deal in ISTECs - you will have to look elsewhere for that.
 
   <p><a href="istec.jpeg"><img src="small.jpeg" alt="[ISTEC]" width="72" height="101" /></a></p>
 
@@ -63,4 +63,3 @@
   <p>A few of the especially user friendly features are the direct dialling of extensions, selectable service ID for each extension, the easy to use configuration software, and also the rerouting of both internal and external calls.</p>
 
   <p>The ISTEC 1008 consists of a central unit in a plastic case with 8 a/b interfaces, a standard network connection cable, and an external power supply. The system is ready for use on the ISDN network without any special setting up, in three easy steps: 1, connect the power supply cable: 2, connect the network cable to the ISDN socket: and 3, connect the analogue terminal equipment........</p>
-</div>

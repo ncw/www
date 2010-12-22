@@ -1,6 +1,5 @@
 <%inherit file="/nav.inc" />
 <%def name="title()">Nick Craig-Wood's Home Page</%def>
-<div id="content">
   <p>Here you will find a somewhat random dump of stuff that I want to make public. Quite a bit of software, some personal stuff, some fun stuff and maybe the odd rant ;-)</p>
 
   <h4>Software by me</h4>
@@ -35,4 +34,3 @@
     <li><a href="istec/index.html">Info about the ISTEC 1008 ISDN PABX</a></li>
     <li><a href="links.html">Links</a></li>
   </ul>
-</div>

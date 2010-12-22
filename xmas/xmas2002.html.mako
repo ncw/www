@@ -1,6 +1,6 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">Xmas 2002</%def>
-<div id="content"><a href="xmas2002-large.jpg"><img src="xmas2002-small.jpg" alt="[Xmas 2002]"/></a>
+<a href="xmas2002-large.jpg"><img src="xmas2002-small.jpg" alt="[Xmas 2002]"/></a>
 
 <p>2002 has been an eventful year for us.  We started it by moving house
 in February which is never an easy task especially not with a 2 month
@@ -50,4 +50,3 @@ surviving. Work has been demanding for Nick and the children for both
 - spare time has become a distant memory!  We can see things will be
 better next year on both fronts and are looking forward to it!</p>
 
-</div>

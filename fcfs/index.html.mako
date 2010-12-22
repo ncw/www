@@ -1,6 +1,6 @@
 <%inherit file="/fcfs/nav.inc" />
 <%def name="title()">FCFS - FileCore Image Filing System</%def>
-<div id="content"><img src="../icon/fcfs.gif" alt="[FCFS]" align="left" vspace="4" hspace="4" width="33" height="33" /> <strong>FCFS (1.10) - FileCore Image Filing System<br />
+<img src="../icon/fcfs.gif" alt="[FCFS]" align="left" vspace="4" hspace="4" width="33" height="33" /> <strong>FCFS (1.10) - FileCore Image Filing System<br />
   © <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> &amp; <a href="mailto:msergio@tin.it">Sergio Monesi</a> 1995-7<br clear="left" /></strong>
 
   <p>FCFS allows you to create, read and restore images of FileCore discs.</p>
@@ -64,4 +64,3 @@
   The latest version can be always be found here <a href="../software/"><img src="../icon/dl0.gif" alt="[0]" align="top" border="0" width="18" height="14" /></a>.
 
   <p>See also <a href="http://www.monesi.com/sergio/fcfs.html">Sergio's FCFS page</a>.</p>
-</div>

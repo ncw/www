@@ -1,6 +1,6 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">Xmas 2007</%def>
-<div id="content"><a href="xmas2007-large.jpg"><img src="xmas2007-small.jpg" alt="[Xmas 2007]"/></a>
+<a href="xmas2007-large.jpg"><img src="xmas2007-small.jpg" alt="[Xmas 2007]"/></a>
 
 <p>2007 has been mostly trying not to do too much - and failing!</p>
 
@@ -53,4 +53,3 @@ the medics in the first part of the year.  Thankfully all is well now.
 She is hoping for a TARDIS for Christmas to get everything done in
 time for Christmas!</p>
 
-</div>

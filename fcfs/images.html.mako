@@ -1,6 +1,6 @@
 <%inherit file="/fcfs/nav.inc" />
 <%def name="title()">FCFS: Image files</%def>
-<div id="content">FCFS images are files of type FCD or FileCore. This file type hasn't been allocated for us by Acorn, but it was allocated for FileCore and so our use is probably OK. If you know otherwise then let us know!
+FCFS images are files of type FCD or FileCore. This file type hasn't been allocated for us by Acorn, but it was allocated for FileCore and so our use is probably OK. If you know otherwise then let us know!
 
   <p>FCFS images come in three types, standard, compacted and compressed.</p>
 
@@ -33,4 +33,3 @@
   </table>
 
   <p>An un-compressed image would be 406 Mb in size, a compacted image would be 280 Mb in size and a compressed image would be smaller still, typically about 170 Mb but this varies with exactly what you have on the disc.</p>
-</div>

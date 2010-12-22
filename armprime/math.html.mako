@@ -1,6 +1,6 @@
 <%inherit file="/armprime/nav.inc" />
 <%def name="title()">Integer DWTs mod 2^64-2^32+1</%def>
-<div id="content">ARM prime works using arithmetic modulo a 64 bit prime 2^64-2^32+1 (henceforth known as p). This prime was chosen because it has some very useful properties, the most important of which is that it is possible to calculate x mod p without doing any divisions. This is essential for the ARM which has no divide instruction.
+ARM prime works using arithmetic modulo a 64 bit prime 2^64-2^32+1 (henceforth known as p). This prime was chosen because it has some very useful properties, the most important of which is that it is possible to calculate x mod p without doing any divisions. This is essential for the ARM which has no divide instruction.
 
   <p>The special form of p means that we can make a mod p routine which only involves a few shifts and arithmetic operations. We use these facts :-</p>
 
@@ -46,4 +46,3 @@
   <p>Note that a 64-th root of unity is 8 mod p. This means that a radix-6 FFT can be done with no multiplies, only with shifts which are much quicker than multipliers on the ARM.</p>
 
   <p>Many thanks to Peter-Lawrence Montgomery for working out the maths behind how to do the 128 bit to 64 bit reduction mod p and the shifts mod p so efficiently. Peter also suggested the idea of using shifts in the transform which really makes a lot of difference in execution speed on ARM</p>
-</div>
