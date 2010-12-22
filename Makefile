@@ -23,5 +23,4 @@ upload:	markup validate uploadonly
 quickupload:	markup uploadonly
 
 clean:
-	rm -f *.pyc
-	find . -name \*~ | xargs rm -f
+	find . -name \*~ -or -name \*.bak -or -name \*.pyc | xargs -d '\n' rm -f
