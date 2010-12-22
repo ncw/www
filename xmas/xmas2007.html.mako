@@ -52,4 +52,3 @@ section infection after caused Loveday to spend a lot of time visiting
 the medics in the first part of the year.  Thankfully all is well now.
 She is hoping for a TARDIS for Christmas to get everything done in
 time for Christmas!</p>
-

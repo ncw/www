@@ -1,10 +1,8 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">The Xmas letter archive</%def>
-<p>Here you will find all the christmas letters we've sent out over
-the years and the picture on the front of the card.</p>
+<p>Here you will find all the christmas letters we've sent out over the years and the picture on the front of the card.</p>
 
-<p>If you click on the picture you'll get very much bigger image which
-will print out the size of the wall if you really want!</p>
+<p>If you click on the picture you'll get very much bigger image which will print out the size of the wall if you really want!</p>
 
 <ul>
 <li><a href="xmas2009.html">2009</a> <font color="red">[New!]</font></li>
@@ -18,5 +16,4 @@ will print out the size of the wall if you really want!</p>
 <li><a href="xmas2001.html">2001</a></li>
 </ul>
 
-The Craig-Wood family
-
+<p>The Craig-Wood family</p>

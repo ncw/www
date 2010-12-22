@@ -54,4 +54,3 @@ get out of bed quite so early!</p>
 
 <p>We are looking forward to our new kitchen in 2006 and inviting you all
 to come and see it!</p>
-

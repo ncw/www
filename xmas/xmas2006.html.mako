@@ -54,4 +54,3 @@ that reading thing.</p>
 
 <p>There is more to tell, but... we've run out of space!  You'll have to
 come and visit in 2007 to hear more...</p>
-

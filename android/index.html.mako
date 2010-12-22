@@ -7,7 +7,7 @@ immediately enticed me in to start creating applications - something
 Symbian had never managed to do.  Below you'll find the results!</p>
 
 <p>
-<a href="oxo3d/index.html"><img class="icon" src="oxo3d/icon.png" alt="*" />Oxo 3D</a> - a 3D noughts-and-crosses/tic-tac-toe application <font color="red">[New!]</font>
+  <a href="oxo3d/index.html"><img class="icon" src="oxo3d/icon.png" alt="*" />Oxo 3D</a> - a 3D noughts-and-crosses/tic-tac-toe application <font color="red">[New!]</font>
 </p>
 
 <br />

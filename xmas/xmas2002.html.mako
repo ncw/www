@@ -49,4 +49,3 @@ her thumb - she is doing very well so far!</p>
 surviving. Work has been demanding for Nick and the children for both
 - spare time has become a distant memory!  We can see things will be
 better next year on both fronts and are looking forward to it!</p>
-

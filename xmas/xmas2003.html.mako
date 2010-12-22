@@ -51,4 +51,3 @@ picture last year!</p>
 <p>Next year we are hoping to make some more headway into our plans for
 the house.  Hopefully time and funds permitting it will be the year of
 the kitchen - let you know next year!</p>
-

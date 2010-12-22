@@ -56,4 +56,3 @@ survived the experience!</p>
 
 <p>We look forward to Christmas at home this year and hope you have an
 excellent one too.</p>
-

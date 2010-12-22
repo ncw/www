@@ -1,8 +1,6 @@
 <%inherit file="/nav.inc" />
 <%def name="title()">Dougal Alexander</%def>
-
-  <center>
-
+<center>
   <p>Pictures of the new baby Dougal Alexander.  Click on them for a bigger one.</p>
 
   <a href="large/2007-04-27-110102-edit-operating-theatre.jpg">
@@ -19,7 +17,7 @@
     <img src="small/2007-04-27-154544-edit-dougal.jpg" alt="Dougal" title="Dougal" border="0" />
   </a>
   <br />
-
+  
   <a href="large/2007-04-27-152127-edit-nick-dougal.jpg">
     <img src="small/2007-04-27-152127-edit-nick-dougal.jpg" alt="Nick and Dougal" title="Nick and Dougal" border="0" />
   </a>
@@ -38,5 +36,4 @@
   <a href="large/2007-04-29-112840-edit-loveday-dougal.jpg">
     <img src="small/2007-04-29-112840-edit-loveday-dougal.jpg" alt="Loveday and Dougal" title="Loveday and Dougal" border="0" />
   </a>
-  </center>
-
+</center>

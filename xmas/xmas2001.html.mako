@@ -52,4 +52,3 @@ garden. Its taken a long time and much heartache but now we have
 managed to sell our house and buy Fairholme.  In a surprise twist the
 current owners of Fairholme are buying our house!  We'll be swapping
 houses on the 7th February.</p>
-

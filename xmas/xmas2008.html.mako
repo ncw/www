@@ -56,4 +56,3 @@ enjoyed time out learning to dingy sail in the summer.</p>
 
 <p>We're looking forward to a Merry Christmas at Treharrock with
 Loveday's family and we hope you have one too!</p>
-
