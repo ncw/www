@@ -4,6 +4,7 @@ return """
 ../index.html		Home
 .			.
 index.html		Xmas Archive
+xmas2010.html		Xmas 2010
 xmas2009.html		Xmas 2009
 xmas2008.html		Xmas 2008
 xmas2007.html		Xmas 2007
