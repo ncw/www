@@ -1,7 +1,6 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">Xmas 2004</%def>
-
-<a href="xmas2004-large.jpg"><img src="xmas2004-small.jpg" alt="[Xmas 2004]"/></a>
+<a href="xmas2004-large.jpg"><img src="xmas2004-small.jpg" alt="[Xmas 2004]" class="center" /></a>
 
 <p>This year seems to have been rather like last year only more so!
 Trips to Cornwall are up (10 we think) partly due to Nick's Mother's

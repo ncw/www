@@ -1,6 +1,6 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">Xmas 2003</%def>
-<a href="xmas2003-large.jpg"><img src="xmas2003-small.jpg" alt="[Xmas 2003]"/></a>
+<a href="xmas2003-large.jpg"><img src="xmas2003-small.jpg" alt="[Xmas 2003]" class="center" /></a>
 
 <p>We thought that we were going to take it easy in 2003 but things
 didn't quite work out like that...  Mostly this year we've been going

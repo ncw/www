@@ -1,6 +1,6 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">Xmas 2008</%def>
-<a href="xmas2008-large.jpg"><img src="xmas2008-small.jpg" alt="[Xmas 2008]"/></a>
+<a href="xmas2008-large.jpg"><img src="xmas2008-small.jpg" alt="[Xmas 2008]" class="center" /></a>
 
 <p>2008 has been very busy.  School holidays all at different times
 didn't help.  Easter weekend was our only time off together in the

@@ -1,7 +1,6 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">Xmas 2005</%def>
-
-<a href="xmas2005-large.jpg"><img src="xmas2005-small.jpg" alt="[Xmas 2005]"/></a>
+<a href="xmas2005-large.jpg"><img src="xmas2005-small.jpg" alt="[Xmas 2005]" class="center" /></a>
 
 <p>We started 2005 with New Year in Cornwall (at Treharrock) with friends
 - a very enjoyable time.  Conrnish trips have been plentiful again but

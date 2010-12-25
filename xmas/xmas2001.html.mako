@@ -1,6 +1,6 @@
 <%inherit file="/xmas/nav.inc" />
 <%def name="title()">Xmas 2001</%def>
-<a href="xmas2001-large.jpg"><img src="xmas2001-small.jpg" alt="[Xmas 2001]"/></a>
+<a href="xmas2001-large.jpg"><img src="xmas2001-small.jpg" alt="[Xmas 2001]" class="center" /></a>
 
 <p>Due to unanticipated circumstances (leaves on the line or new baby or
 something like that) we've failed to send you all a Christmas
