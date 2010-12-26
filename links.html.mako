@@ -9,8 +9,11 @@
   <li><a href="http://slashdot.org/~ncw">My home page at Slashdot</a></li>
   <li><a href="http://stackoverflow.com/users/164234/nick-craig-wood">My home page at Stack Overflow</a></li>
   <li><a href="http://www.google.com/reader/shared/nickcw">Articles I've read and want to share</a></li>
-  <li><a href="http://twitter.com/njcw">My home page at Twitter (not a lot to see!)</a></li>
+  <li><a href="http://twitter.com/njcw">My home page at Twitter</a></li>
+  <li><a href="http://www.google.com/profiles/nickcw">My Google profile</a></li>
+  <li><a href="http://github.com/ncw">My page at GitHub</a></li>
   <li><a href="http://perlmonks.org/?node_id=19340">My homepage at perlmonks</a></li>
+  <li><a href="http://www.amazon.co.uk/gp/pdp/profile/A37JWH9HBFO862">My Amazon profile, my reviews, wish lists, etc</a></li>
 </ul>
 
 <h2>News</h2>
@@ -72,4 +75,5 @@
 <ul>
   <li><a href="http://www.craig-wood.com/">The rest of the Craig-Wood family</a></li>
   <li><a href="http://www.g-gardiner.com/">My brother-in-law Grant</a></li>
+  <li><a href="http://www.emmahambly.net/">My sister-in-law Emma Hambly, artist-scientist extraordinaire!</a></li>
 </ul>
