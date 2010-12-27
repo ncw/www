@@ -76,4 +76,5 @@
   <li><a href="http://www.craig-wood.com/">The rest of the Craig-Wood family</a></li>
   <li><a href="http://www.g-gardiner.com/">My brother-in-law Grant</a></li>
   <li><a href="http://www.emmahambly.net/">My sister-in-law Emma Hambly, artist-scientist extraordinaire!</a></li>
+  <li><a href="http://emmahambly.blogspot.com/">...and Emma's blog where she does some of that art/science</a></li>
 </ul>
