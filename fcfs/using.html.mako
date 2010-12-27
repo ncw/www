@@ -1,4 +1,4 @@
-<%inherit file="/fcfs/nav.inc" />
+<%inherit file="/fcfs/_nav.mako" />
 <%def name="title()">FCFS: Using images</%def>
 Once you have created an image then you can use this image exactly as if it were the original disc, the only limitation being that it will be read only.
 

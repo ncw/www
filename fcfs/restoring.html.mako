@@ -1,4 +1,4 @@
-<%inherit file="/fcfs/nav.inc" />
+<%inherit file="/fcfs/_nav.mako" />
 <%def name="title()">FCFS: Restoring images</%def>
 <img src="restore.gif" alt="[Restore image window]" align="right" vspace="8" hspace="8" width="404" height="219" /><br />
 Once you have created an image, you can read the files from it just using the filer (ie drag the files from the image to the disc).

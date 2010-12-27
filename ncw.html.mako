@@ -1,4 +1,4 @@
-<%inherit file="/nav.inc" />
+<%inherit file="/_nav.mako" />
 <%def name="title()">Nick Craig-Wood</%def>
 <h4>Who am I?</h4>
 

@@ -1,4 +1,4 @@
-<%inherit file="/xmas/nav.inc" />
+<%inherit file="/xmas/_nav.mako" />
 <%def name="title()">The Xmas letter archive</%def>
 <p>Here you will find all the christmas letters we've sent out over the years and the picture on the front of the card.</p>
 

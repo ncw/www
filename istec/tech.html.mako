@@ -1,4 +1,4 @@
-<%inherit file="/istec/nav.inc" />
+<%inherit file="/istec/_nav.mako" />
 <%def name="title()">ISDN PABX ISTEC 1008 Technical Features</%def>
 <h3>Equipment Connection</h3>
 

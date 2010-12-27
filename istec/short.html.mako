@@ -1,4 +1,4 @@
-<%inherit file="/istec/nav.inc" />
+<%inherit file="/istec/_nav.mako" />
 <%def name="title()">ISTEC 1008 Shortform description</%def>
 <h3>General</h3>
 

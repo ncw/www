@@ -1,4 +1,4 @@
-<%inherit file="/armprime/nav.inc" />
+<%inherit file="/armprime/_nav.mako" />
 <%def name="title()">The semi-infinite to do list</%def>
 <p>Things I need to do to the code in order of importance :-</p>
 

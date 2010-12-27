@@ -1,4 +1,4 @@
-<%inherit file="/animations/nav.inc" />
+<%inherit file="/animations/_nav.mako" />
 <%def name="title()">NCWs Animations</%def>
 Here are some animations that I knocked up one rainy afternoon. The computer generated animations I made using my ancient and venerable juggling program. I captured the frames to a file and then used ChangeFSI to make them smaller with anti-aliasing. I then used InterGIF to produce the animation.
 

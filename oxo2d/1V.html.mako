@@ -1,4 +1,4 @@
-<%inherit file="/oxo2d/nav.inc" />
+<%inherit file="/oxo2d/_nav.mako" />
 <pre class="oxo2d">
 O <a href="F.html">.</a> <a href="S.html">.</a>
 <a href="14.html">.</a> X <a href="1B.html">.</a>

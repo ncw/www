@@ -1,4 +1,4 @@
-<%inherit file="/armprime/nav.inc" />
+<%inherit file="/armprime/_nav.mako" />
 <%def name="title()">Integer DWTs mod 2^64-2^32+1</%def>
 ARM prime works using arithmetic modulo a 64 bit prime 2^64-2^32+1 (henceforth known as p). This prime was chosen because it has some very useful properties, the most important of which is that it is possible to calculate x mod p without doing any divisions. This is essential for the ARM which has no divide instruction.
 

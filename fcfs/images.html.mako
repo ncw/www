@@ -1,4 +1,4 @@
-<%inherit file="/fcfs/nav.inc" />
+<%inherit file="/fcfs/_nav.mako" />
 <%def name="title()">FCFS: Image files</%def>
 FCFS images are files of type FCD or FileCore. This file type hasn't been allocated for us by Acorn, but it was allocated for FileCore and so our use is probably OK. If you know otherwise then let us know!
 

@@ -1,4 +1,4 @@
-<%inherit file="/nav.inc" />
+<%inherit file="/_nav.mako" />
 <%def name="title()">Publically available software written by me for Acorn RISC OS</%def>
 <dl>
   <dt><img class="icon" src="icon/fcfs.gif" alt="*" width="33" height="33" />FCFS <a href="software/"><img src="icon/dl0.gif" alt="[0]" width="18" height="14" /></a></dt>

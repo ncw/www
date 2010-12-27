@@ -1,4 +1,4 @@
-<%inherit file="/istec/nav.inc" />
+<%inherit file="/istec/_nav.mako" />
 <%def name="title()">ISTEC 1008 Configuration software</%def>
 The ISTEC 1008 is configured using 1) a switch inside the ISTEC case, 2) a telephone attached to extension 21, and 3) via a serial port using a PC and the ISTEC program
 

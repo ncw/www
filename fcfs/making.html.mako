@@ -1,4 +1,4 @@
-<%inherit file="/fcfs/nav.inc" />
+<%inherit file="/fcfs/_nav.mako" />
 <%def name="title()">FCFS: Making images</%def>
 <img src="make.gif" alt="[Create image window]" align="right" vspace="8" hspace="8" width="295" height="260" /><br />
 Clicking with Select on the iconbar icon will open the 'Make Image' window. To create a new FCFS image from a disc you need to select the source disc (using the pop-up menu), choose the Image type, the filename and drag the icon to a filer window.

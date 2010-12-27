@@ -1,4 +1,4 @@
-<%inherit file="/armprime/nav.inc" />
+<%inherit file="/armprime/_nav.mako" />
 <%def name="title()">ARM Prime</%def>
 <img src="armprime.gif" alt="[ARM Prime]" align="left" vspace="4" hspace="4" width="33" height="28" /> <strong>A Mersenne prime tester for <a href="http://www.arm.com">ARM</a> processors<br /> by <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a><br clear="left" /></strong>
 

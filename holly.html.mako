@@ -1,4 +1,4 @@
-<%inherit file="/nav.inc" />
+<%inherit file="/_nav.mako" />
 <%def name="title()">Cocker Spaniel Now: Holly</%def>
 <dl>
   <dt>Holly in a field</dt>

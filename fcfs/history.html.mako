@@ -1,4 +1,4 @@
-<%inherit file="/fcfs/nav.inc" />
+<%inherit file="/fcfs/_nav.mako" />
 <%def name="title()">FCFS: History and Credits</%def>
 <h3>History</h3>
 

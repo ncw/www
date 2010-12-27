@@ -1,4 +1,4 @@
-<%inherit file="/fcfs/nav.inc" />
+<%inherit file="/fcfs/_nav.mako" />
 <%def name="title()">FCFS: Conditions of use</%def>
 FCFS (The <var>Software</var>) is Copyright © Nick Craig-Wood and Sergio Monesi 1995-7 (the <var>Authors</var>) and may not be used or copied except as in accord with the terms and conditions below.
 

@@ -1,4 +1,4 @@
-<%inherit file="/nav.inc" />
+<%inherit file="/_nav.mako" />
 <%def name="title()">A few of my favourite links</%def>
 <p>...hastily culled from 1000s in my bookmarks file!</p>
 

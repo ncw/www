@@ -1,4 +1,4 @@
-<%inherit file="/fcfs/nav.inc" />
+<%inherit file="/fcfs/_nav.mako" />
 <%def name="title()">FCFS - FileCore Image Filing System</%def>
 <img src="../icon/fcfs.gif" alt="[FCFS]" align="left" vspace="4" hspace="4" width="33" height="33" /> <strong>FCFS (1.10) - FileCore Image Filing System<br /> © <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> &amp; <a href="mailto:msergio@tin.it">Sergio Monesi</a> 1995-7<br clear="left" /></strong>
 

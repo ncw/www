@@ -1,4 +1,4 @@
-<%inherit file="/hsc/nav.inc" />
+<%inherit file="/hsc/_nav.mako" />
 <%def name="title()">RISC OS port of hsc</%def>
 This page is for support for the RISC OS port of <a href="http://www.giga.or.at/~agi/hsc/index.html">hsc - html sucks completely</a>.
 

@@ -1,4 +1,4 @@
-<%inherit file="/istec/nav.inc" />
+<%inherit file="/istec/_nav.mako" />
 <%def name="title()">ISTEC 1008</%def>
 A message from your sponsor: I put these pages up for the enjoyment of all I <em>don't</em> sell or deal in ISTECs - you will have to look elsewhere for that.
 

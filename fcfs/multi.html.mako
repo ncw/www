@@ -1,4 +1,4 @@
-<%inherit file="/fcfs/nav.inc" />
+<%inherit file="/fcfs/_nav.mako" />
 <%def name="title()">FCFS: Multitasking operations</%def>
 <img src="progress.gif" alt="[Progress window]" align="right" vspace="8" hspace="8" width="310" height="147" /><br />
 In both the Make and Restore window you can find a Multitask button. If it is selected, the making or restoring of the FCFS image will be performed in a multitasking fashion, so you can get on with something else at the same time.

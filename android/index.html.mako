@@ -1,4 +1,4 @@
-<%inherit file="/android/nav.inc" />
+<%inherit file="/android/_nav.mako" />
 <%def name="title()">Nick Craig-Wood's Android Stuff</%def>
 
 <p>In 2009 I gave up my beloved Nokia Communicator and moved on the

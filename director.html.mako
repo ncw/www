@@ -1,4 +1,4 @@
-<%inherit file="/nav.inc" />
+<%inherit file="/_nav.mako" />
 <%def name="title()">Director</%def>
 <h2><img src="icon/director.gif" alt="*" align="top" width="34" height="34" />Director</h2>
 

@@ -1,4 +1,4 @@
-<%inherit file="/nav.inc" />
+<%inherit file="/_nav.mako" />
 <%def name="title()">Dougal Alexander</%def>
 <center>
   <p>Pictures of the new baby Dougal Alexander.  Click on them for a bigger one.</p>

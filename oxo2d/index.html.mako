@@ -1,4 +1,4 @@
-<%inherit file="/oxo2d/nav.inc" />
+<%inherit file="/oxo2d/_nav.mako" />
   An HTML noughts and crosses (tic-tac-toe) player<br />
   Using <em>No</em> CGI, <em>No</em> Java, <em>No</em> JavaScript, <em>No</em> Tables, <em>No</em> Frames!
 

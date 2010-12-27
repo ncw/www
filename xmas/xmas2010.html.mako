@@ -1,4 +1,4 @@
-<%inherit file="/xmas/nav.inc" />
+<%inherit file="/xmas/_nav.mako" />
 <%def name="title()">Xmas 2010</%def>
 <a href="xmas2010-large.jpg"><img src="xmas2010-small.jpg" alt="[Xmas 2010]" class="center" /></a>
 
