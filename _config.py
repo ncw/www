@@ -41,3 +41,7 @@ blog.description = "Nick Craig-Woods Output"
 
 ## blog_timezone -- the timezone that you normally write your blog posts from
 blog.timezone = "Europe/London"
+
+## How the permalink paths
+#blog.auto_permalink.path = "/blog/:year/:month/:day/:title"
+blog.auto_permalink.path = "/articles/:title"
