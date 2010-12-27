@@ -83,6 +83,15 @@ return "/index.html Home"
 <%def name="title()">${bf.config.blog.name}</%def>
 
 <%def name="date()"><%
-import datetime 
-context.write(str(datetime.date.today()))
+# FIXME this should be a filter?
+# Read the timestamp from the file, but fall back to today
+# FIXME for blog posts this should be the date of the post
+import datetime
+import os
+try:
+    m = os.path.getmtime(bf.template_context.template_name)
+    timestamp = datetime.datetime.fromtimestamp(m).date()
+except StandardError:
+    timestamp = datetime.date.today()
+context.write(str(timestamp))
 %></%def>
