@@ -37,7 +37,7 @@ blog.name = "Nick Craig-Wood's Articles"
 
 ## blog_description -- A short one line description of the blog
 # used in the RSS/Atom feeds.
-blog.description = "Nick Craig-Woods Output"
+blog.description = "Nick Craig-Wood's Articles"
 
 ## blog_timezone -- the timezone that you normally write your blog posts from
 blog.timezone = "Europe/London"
@@ -45,3 +45,7 @@ blog.timezone = "Europe/London"
 ## How the permalink paths
 #blog.auto_permalink.path = "/blog/:year/:month/:day/:title"
 blog.auto_permalink.path = "/articles/:title"
+
+# Disqus
+blog.disqus.enabled = True
+blog.disqus.name = "nickcw"

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<div id="Header"><table width="100%" cellpadding="0">
+<div class="heading"><table width="100%" cellpadding="0">
   <tr>
     <td width="80%"><h1>${self.title()}</h1></td>
     <td width="20%" align="right">${self.date()}</td>
@@ -29,6 +29,11 @@
   </div> <!-- End Footer -->
 </div> <!-- End Content -->
 
+<%
+   import datetime
+   today = datetime.date.today() 
+%>
+
 <div id="Menu">
 <%
     # Write the menu
@@ -45,7 +50,23 @@
             context.write('<a href="%s">%s</a><br />' % (path, name))
 %>
 
-<p class="copyright">&copy; <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> 2009</p>
+<hr />
+
+<div id="blog_post_list">
+  <p>Latest Articles</p>
+% for post in bf.config.blog.posts[:5]:
+  <a href="${post.path}">${post.title}</a><br />
+% endfor
+</div>
+
+<div id="categories">
+  <p>Categories</p>
+% for category, num_posts in sorted(bf.config.blog.all_categories, key=lambda x:x[0].name):
+  <a href="${category.path}">${category.name.title()}</a> (<a href="${category.path}/feed">rss</a>) (${num_posts})<br />
+% endfor
+</div> 
+
+<p class="copyright">&copy; <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> ${today.year}</p>
 <hr />
 <p class="buttons">
   <a href="http://validator.w3.org/check?uri=referer"><img src="${bf.util.site_path_helper(bf.config.site.path,'/icon/valid-xhtml10.png')}" alt="[Valid XHTML 1.0]" width="88" height="31" /></a>
@@ -53,17 +74,16 @@
   <a href="http://www.mersenne.org/prime.htm"><img src="${bf.util.site_path_helper(bf.config.site.path,'/icon/gimps.gif')}" alt="[Great Internet Prime Search]"width="88" height="31" /></a>
   <a href="${bf.util.site_path_helper(bf.config.site.path,'/holly.html')}"><img src="${bf.util.site_path_helper(bf.config.site.path,'/icon/csn.gif')}" alt="[Cocker Spaniel Now!]" width="88" height="31" /></a>
 </p>
-<p>
-  <script language="javascript" type="text/javascript" src="http://www.librarything.com/jswidget.php?reporton=ncw&amp;show=random&amp;header=1&amp;num=5&amp;covers=small&amp;text=all&amp;tag=alltags&amp;amazonassoc=niccrawoosweb-21&amp;css=1&amp;style=1&amp;version=1"></script>
-</p>
+<hr />
+<div id="w761bb85b0e2abbf9329a9476b547e309"></div><script type="text/javascript" charset="UTF-8" src="http://www.librarything.com/widget_get.php?userid=ncw&amp;theID=w761bb85b0e2abbf9329a9476b547e309"></script><noscript><a href="http://www.librarything.com/profile/ncw">My Library</a> at <a href="http://www.librarything.com">LibraryThing</a></noscript>
 </div>
 </body>
 </html>
 
 <%def name="head()">
   <title>${self.title()}</title>
-## FIXME  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="${bf.util.site_path_helper(bf.config.blog.path,'/feed')}" />
-## FIXME  <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="${bf.util.site_path_helper(bf.config.blog.path,'/feed/atom')}" />
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="${bf.util.site_path_helper(bf.config.blog.path,'/feed')}" />
+  <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="${bf.util.site_path_helper(bf.config.blog.path,'/feed/atom')}" />
   <link rel='stylesheet' href='${bf.util.site_path_helper(bf.config.site.path,'/css')}/pygments_${bf.config.filters.syntax_highlight.style}.css' type='text/css' />
   <link rel="stylesheet" title="Nick Craig-Wood's Style" href="${bf.util.site_path_helper(bf.config.site.path,'/default.css')}" type="text/css" media="screen" />
 </%def>
@@ -77,17 +97,17 @@
 </%def>
 
 <%def name="nav()"><%
-return "/index.html Home"
+return ". Home"
 %></%def>
 
 <%def name="title()">${bf.config.blog.name}</%def>
 
 <%def name="date()"><%
+import os
+import datetime
 # FIXME this should be a filter?
 # Read the timestamp from the file, but fall back to today
 # FIXME for blog posts this should be the date of the post
-import datetime
-import os
 try:
     m = os.path.getmtime(bf.template_context.template_name)
     timestamp = datetime.datetime.fromtimestamp(m).date()

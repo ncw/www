@@ -34,37 +34,13 @@
   <li>Implement simplified 3D only view</li>
 </ul>
 
-<h3>Changes</h3>
-
+<h3>News</h3>
+<%
+posts = [ posts for category, posts in bf.config.blog.categorized_posts.items() if category.name == "oxo3d" ][0]
+%>
 <dl>
-  <dt>0.94</dt>
-  <dd>
-    <ul>
-      <li>Fix missing textures on milestone/droid</li>
-    </ul>
-      </dd>
-  <dt>0.93</dt>
-  <dd>
-    <ul>
-      <li>Fix keys / trackball not working sometimes</li>
-      <li>Fix back button</li>
-      <li>Update for new Market and new SDK</li>
-      <li>Make work properly on High/Low res devices</li>
-    </ul>
-  </dd>
-  <dt>0.92</dt>
-  <dd>
-    <ul>
-      <li>Make the D-Pad rotate the view and the D-Pad center / search button flip view</li>
-      <li>Make the trackball work again</li>
-      <li>Fix 3D view bug</li>
-      <li>Fix 3D view disappearing after showing the help</li>
-    </ul>
-  </dd>
-  <dt>0.91</dt>
-  <dd>
-    <ul>
-      <li>First public release</li>
-    </ul>
-  </dd>
+% for post in posts[:5]:
+<dt><a href="${post.permapath()}" rel="bookmark" title="Permanent Link to ${post.title}">${post.title}</a> ${post.date.strftime("%Y-%m-%d %H:%M")}</dt>
+<dd>${post.content}</dd>
+% endfor
 </dl>
