@@ -11,7 +11,7 @@
 
     <p>FCFS is SHAREWARE. If you use it for more than 30 days you must register; see 'Conditions of use' in the !Help file.</p>
 
-    <p>For more information see <a href="fcfs/index.html">my FCFS page</a> or <a href="http://www.monesi.com/sergio/fcfs.html">Sergio's FCFS page</a>.</p>
+    <p>For more information see <a href="fcfs/">my FCFS page</a> or <a href="http://www.monesi.com/sergio/fcfs.html">Sergio's FCFS page</a>.</p>
 
     <p>It was written with <a href="http://www.monesi.com/sergio/">Sergio Monesi</a>.</p>
   </dd>
@@ -52,11 +52,11 @@
     <p>A small ditty for those who prefer the old layout Acorn Keyboards, have a US layout keyboard, or prefer CTRL to be above SHIFT and CAPSLOCK below. (Who invented the AT style keyboard with CTRL in the wrong place, and who invented the UK layout version with \ between SHIFT and Z? A prize for anyone who goes and gives them a lot of hassle anyway ;-)</p>
   </dd>
   
-  <dt><img class="icon" src="icon/util.gif" alt="*" width="32" height="31" />HSC <a href="hsc/index.html"><img src="icon/dl0.gif" alt="[0]" width="18" height="14" /></a></dt>
+  <dt><img class="icon" src="icon/util.gif" alt="*" width="32" height="31" />HSC <a href="hsc/"><img src="icon/dl0.gif" alt="[0]" width="18" height="14" /></a></dt>
   <dd>
     <p>A RISC OS port of the Html Sucks Completely HTML preprocessor</p>
     
-    <p>For more information see <a href="hsc/index.html">my HSC page</a>.</p>
+    <p>For more information see <a href="hsc/">my HSC page</a>.</p>
   </dd>
   
 </dl>

@@ -1,9 +1,9 @@
 <%inherit file="/site.mako" />
 <%def name="nav()"><%
 return """
-../index.html		Home
+../			Home
 .			.
-index.html		Istec Home
+./			Istec Home
 short.html		Description
 tech.html		Technical
 conf.html		Configure

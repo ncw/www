@@ -12,7 +12,7 @@
 
 <h4>What do I do for fun?</h4>
 
-<p>Hack on <a href="android/index.html">android</a> or other cool stuff like <a href="http://www.mythtv.org/">MythTV</a> or <a href="http://www.asterisk.org">Asterisk</a>, play with the children, read books, walk the dog. When I have time (which isn't often) I watch TV.</p>
+<p>Hack on <a href="android/">android</a> or other cool stuff like <a href="http://www.mythtv.org/">MythTV</a> or <a href="http://www.asterisk.org">Asterisk</a>, play with the children, read books, walk the dog. When I have time (which isn't often) I watch TV.</p>
 
 <h4>Current employers</h4>
 
@@ -38,9 +38,11 @@
 <p>See <a href="http://www.flickr.com/photos/ncw/">Flickr</a>
   and <a href="http://www.facebook.com/nick.craigwood">Facebook</a>.</p>
 
-<p>See <a href="xmas/index.html">The Christmas letter archive</a> for some more recent pictures.</p>
+<p>See <a href="xmas/">The Christmas letter archive</a> for some more recent pictures.</p>
 
 <p>See the <a href="dougal.html">Dougal Alexander</a> page for the pictures Dougal when he was a new baby!</p>
+
+<p>Here are some old photos which I haven't the heart to delete</p>
 
 <dl>
   <dt>Loveday, Nick and Amy</dt>

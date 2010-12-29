@@ -2,9 +2,9 @@
 <%def name="title()">Oxo2d</%def>
 <%def name="nav()"><%
 return """
-../index.html		Home
+../			Home
 .			.
-index.html		Oxo2d Home
+./			Oxo2d Home
 """
 %></%def>
 ${next.body()}

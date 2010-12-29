@@ -1,9 +1,9 @@
 <%inherit file="/site.mako" />
 <%def name="nav()"><%
 return """
-../index.html		Home
+../			Home
 .			.
-index.html		FCFS Home
+./			FCFS Home
 making.html		Make
 restoring.html		Restore
 multi.html		Multitask

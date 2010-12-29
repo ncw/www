@@ -1,9 +1,9 @@
 <%inherit file="/site.mako" />
 <%def name="nav()"><%
 return """
-../index.html		Home
+../			Home
 .			.
-index.html		Animations
+./			Animations
 """
 %></%def>
 ${next.body()}

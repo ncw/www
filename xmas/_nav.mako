@@ -1,9 +1,9 @@
 <%inherit file="/site.mako" />
 <%def name="nav()"><%
 return """
-../index.html		Home
+../			Home
 .			.
-index.html		Xmas Archive
+./			Xmas Archive
 xmas2010.html		Xmas 2010
 xmas2009.html		Xmas 2009
 xmas2008.html		Xmas 2008
