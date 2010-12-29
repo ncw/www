@@ -1,5 +1,6 @@
 <%inherit file="/_nav.mako" />
 <%def name="title()">Cocker Spaniel Now: Holly</%def>
+<p>Holly was our Cocker Spaniel.  She was a loving dog but a little bonkers!  There was nothing she enjoyed more than howling along while we were singing, or eating socks.  Unfortunately Holly is no longer with us, having chased a rabbit off a cliff at the fine old age of 14.  Here are some pictures of that much loved dog.</p>
 <dl>
   <dt>Holly in a field</dt>
   <dd><a href="large/holly.jpeg"><img src="small/holly.jpeg" alt="[Picture]" width="140" height="121" /></a></dd>
