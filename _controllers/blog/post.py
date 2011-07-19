@@ -16,6 +16,9 @@ import operator
 import urlparse
 import hashlib
 import codecs
+import base64
+import urllib
+from xml.sax import saxutils
 
 import pytz
 import yaml
@@ -45,6 +48,9 @@ reserved_field_names = {
     "path"       :"The path from the permalink of the post",
     "guid"       :"A unique hash for the post, if not provided it "\
         "is assumed that the permalink is the guid",
+    "slug"       :"The title part of the URL for the post, if not "\
+        "provided it is automatically generated from the title."\
+        "It is not used if permalink does not contain :title",
     "author"     :"The name of the author of the post",
     "filters"    :"The filter chain to apply to the entire post. "\
         "If not specified, a default chain based on the file extension is "\
@@ -55,7 +61,8 @@ reserved_field_names = {
     "source"     :"Reserved internally",
     "yaml"       :"Reserved internally",
     "content"    :"Reserved internally",
-    "filename"   :"Reserved internally"
+    "filename"   :"Reserved internally",
+    "encoding"   :"The file encoding format"
     }
 
 
@@ -87,13 +94,14 @@ class Post(object):
         self.filename = filename
         self.author = ""
         self.guid = None
+        self.slug = None
         self.draft = False
         self.filters = None
         self.__parse()
         self.__post_process()
         
     def __repr__(self): #pragma: no cover
-        return "<Post title='{0}' date='{1}'>".format(
+        return u"<Post title='{0}' date='{1}'>".format(
             self.title, self.date.strftime("%Y/%m/%d %H:%M:%S"))
      
     def __parse(self):
@@ -101,7 +109,7 @@ class Post(object):
         yaml_sep = re.compile("^---$", re.MULTILINE)
         content_parts = yaml_sep.split(self.source, maxsplit=2)
         if len(content_parts) < 2:
-            raise PostParseException("{0}: Post has no YAML section".format(
+            raise PostParseException(u"{0}: Post has no YAML section".format(
                     self.filename))
         else:
             #Extract the yaml at the top
@@ -121,7 +129,7 @@ class Post(object):
         if self.filters is None:
             try:
                 file_extension = os.path.splitext(self.filename)[-1][1:]
-                self.filters = bf.config.controllers.blog.post_default_filters[
+                self.filters = bf.config.controllers.blog.post.default_filters[
                     file_extension]
             except KeyError:
                 self.filters = []
@@ -160,7 +168,11 @@ class Post(object):
         if not self.title:
             self.title = u"Untitled - {0}".format(
                     datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-         
+        
+        if not self.slug:
+            self.slug = saxutils.unescape(self.title)
+            self.slug = re.sub("[^a-zA-Z0-9$\-_\.+!*'(),]", "-", self.slug).lower()
+
         if not self.date:
             self.date = datetime.datetime.now(pytz.timezone(self.__timezone))
         if not self.updated:
@@ -168,6 +180,12 @@ class Post(object):
 
         if not self.categories or len(self.categories) == 0:
             self.categories = set([Category('Uncategorized')])
+        if self.guid:
+            uuid = urllib.quote(self.guid) #used for expandling :uuid in permalink template code below
+        else:
+            toHash = self.date.isoformat() + self.title.encode('utf8')
+            self.guid = base64.urlsafe_b64encode(hashlib.sha1(toHash).digest())
+            uuid = self.guid 
         if not self.permalink and \
                 bf.config.controllers.blog.auto_permalink.enabled:
             self.permalink = bf.config.site.url.rstrip("/") + \
@@ -181,19 +199,17 @@ class Post(object):
             self.permalink = \
                     re.sub(":day", self.date.strftime("%d"), self.permalink)
             self.permalink = \
-                    re.sub(":title", re.sub("[ ?]", "-", self.title).lower(),
-                            self.permalink)
+                    re.sub(":title", self.slug, self.permalink)
 
             # TODO: slugification should be abstracted out somewhere reusable
             self.permalink = re.sub(
                     ":filename", re.sub(
                             "[ ?]", "-", self.filename).lower(), self.permalink)
 
-            # Generate sha hash based on title
-            self.permalink = re.sub(":uuid", hashlib.sha1(
-                    self.title.encode('utf-8')).hexdigest(), self.permalink)
-            
-        logger.debug("Permalink: {0}".format(self.permalink))
+            # See guid logic above
+            self.permalink = re.sub(":uuid", uuid, self.permalink)
+
+        logger.debug(u"Permalink: {0}".format(self.permalink))
      
     def __parse_yaml(self, yaml_src):
         y = yaml.load(yaml_src)
@@ -207,9 +223,9 @@ class Post(object):
                         self.permalink)
             #Ensure that the permalink is for the same site as bf.config.site.url
             if not self.permalink.startswith(bf.config.site.url):
-                raise PostParseException("{0}: permalink for a different site"
+                raise PostParseException(u"{0}: permalink for a different site"
                         " than configured".format(self.filename))
-            logger.debug("path from permalink: {0}".format(self.path))
+            logger.debug(u"path from permalink: {0}".format(self.path))
         except KeyError:
             pass
         try:
@@ -242,7 +258,7 @@ class Post(object):
         try:
             if y['draft']:
                 self.draft = True
-                logger.info("Post {0} is set to draft, "
+                logger.info(u"Post {0} is set to draft, "
                         "ignoring this post".format(self.filename))
             else:
                 self.draft = False
@@ -295,12 +311,8 @@ class Category(object):
     def __repr__(self):
         return self.name
     
-    # FIXME: remove the first __cmp__ since the second one overwrites it?
     def __cmp__(self, other):
         return cmp(self.name, other.name)
-
-    def __cmp__(self, other):
-        return self is other
 
 
 def parse_posts(directory):
@@ -313,28 +325,25 @@ def parse_posts(directory):
     if not os.path.isdir("_posts"):
         logger.warn("This site has no _posts directory.")
         return []
-    post_paths = [f for f in bf.util.recursive_file_list(
+    post_paths = [f.decode("utf-8") for f in bf.util.recursive_file_list(
             directory, post_filename_re) if post_filename_re.match(f)]
-    
+
     for post_path in post_paths:
         post_fn = os.path.split(post_path)[1]
-        logger.debug("Parsing post: {0}".format(post_path))
+        logger.debug(u"Parsing post: {0}".format(post_path))
         #IMO codecs.open is broken on Win32.
         #It refuses to open files without replacing newlines with CR+LF
         #reverting to regular open and decode:
         try:
-            src = open(post_path, "r").read().decode(
-                    bf.config.controllers.blog.post_encoding)
+            src = open(post_path, "r").read().decode("utf-8")
         except:
-            logger.exception("Error reading post: {0}".format(post_path))
+            logger.exception(u"Error reading post: {0}".format(post_path))
             raise
         try:
             p = Post(src, filename=post_fn)
         except PostParseException as e:
-            logger.warning("{0} : Skipping this post.".format(e.value))
+            logger.warning(u"{0} : Skipping this post.".format(e.value))
             continue
-        #Exclude some posts
-        if not (p.permalink is None or p.draft is True):
-            posts.append(p)
+        posts.append(p)
     posts.sort(key=operator.attrgetter('date'), reverse=True)
     return posts
