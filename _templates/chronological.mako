@@ -15,4 +15,4 @@
  <a href="${next_link}">Next Page »</a>
 % endif
 
-<%def name="title()">${bf.config.blog.name}${subtitle}</%def>
+<%def name="title()">${bf.config.blog.name}</%def>
