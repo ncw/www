@@ -172,6 +172,11 @@ class Post(object):
         if not self.slug:
             self.slug = saxutils.unescape(self.title)
             self.slug = re.sub("[^a-zA-Z0-9$\-_\.+!*'(),]", "-", self.slug).lower()
+            # Adjust permalink handling from: http://techspot.zzzeek.org/2010/12/06/my-blogofile-hacks/
+            # Flatten to single -
+            self.slug = re.sub("-+", "-", self.slug)
+            # trim off leading/trailing -
+            self.slug = re.sub(r'^-+|-+$', '', self.slug)
 
         if not self.date:
             self.date = datetime.datetime.now(pytz.timezone(self.__timezone))
