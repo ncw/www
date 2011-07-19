@@ -57,7 +57,7 @@ a img {
 }
 
 #Content {
-	margin:0px 310px 50px 10px;
+	margin:0px 360px 50px 10px;
 	padding:10px;
 }
 
@@ -65,7 +65,7 @@ a img {
 	position:absolute;
 	top:100px;
 	right:20px;
-	width:250px;
+	width:300px;
 	padding:10px;
 	background-color: transparent;
 	background: url(small/tint.png);
@@ -118,4 +118,16 @@ br.clear {
 
 pre.oxo2d {
     font-size: 24pt;
+}
+
+div.literal-block {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+ul.menulist {
+    font-size: small;
+    padding-left: 1em;
+}
+ul.menulist li {
 }
