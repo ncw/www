@@ -30,5 +30,12 @@
 
 <ul>
   <li><a href="articles/">Articles</a></li>
+  <ul>
+% for post in [p for p in bf.config.blog.posts if not p.draft]:
+%   if not post.draft:
+    <li><a href="${post.path}">${post.title}</a></li>
+%   endif
+% endfor
+  </ul>
   <li><a href="links.html">Links</a></li>
 </ul>
