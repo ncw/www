@@ -23,4 +23,5 @@ upload:	markup validate uploadonly
 quickupload:	markup uploadonly
 
 clean:
+	rm -rf _site
 	find . -name \*~ -or -name \*.bak -or -name \*.pyc | xargs -d '\n' rm -f
