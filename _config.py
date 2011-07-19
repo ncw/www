@@ -55,8 +55,8 @@ blog.disqus.name = "nickcw"
 
 #For syntax highlighting
 # See http://techspot.zzzeek.org/2010/12/06/my-blogofile-hacks/
-blog.post_default_filters = {
-    "rst": "rst, syntax_highlight, rst_math"
+blog.post.default_filters = {
+    "rst" : "rst, rst_syntax_highlight, rst_math"
 }
 
 # Path for images
