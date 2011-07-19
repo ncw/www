@@ -54,16 +54,21 @@
 
 <div id="blog_post_list">
   <p>Latest Articles</p>
+  <ul class="menulist">
 % for post in bf.config.blog.posts[:5]:
-  <a href="${post.path}">${post.title}</a><br />
+  <li><a href="${post.path}">${post.title}</a></li>
 % endfor
+  </ul>
+  </small>
 </div>
 
 <div id="categories">
   <p>Categories</p>
+  <ul class="menulist">
 % for category, num_posts in sorted(bf.config.blog.all_categories, key=lambda x:x[0].name):
-  <a href="${category.path}">${category.name.title()}</a> (<a href="${category.path}/feed">rss</a>) (${num_posts})<br />
+  <li><a href="${category.path}">${category.name.title()}</a> (<a href="${category.path}/feed">rss</a>) (${num_posts})</li>
 % endfor
+  </ul>
 </div> 
 
 <p class="copyright">&copy; <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> ${today.year}</p>
@@ -86,6 +91,7 @@
   <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="${bf.util.site_path_helper(bf.config.blog.path,'/feed/atom')}" />
   <link rel='stylesheet' href='${bf.util.site_path_helper(bf.config.site.path,'/css')}/pygments_${bf.config.filters.syntax_highlight.style}.css' type='text/css' />
   <link rel="stylesheet" title="Nick Craig-Wood's Style" href="${bf.util.site_path_helper(bf.config.site.path,'/default.css')}" type="text/css" media="screen" />
+  <link rel="stylesheet" href="${bf.util.site_path_helper(bf.config.site.path,'/docutils.css')}" type="text/css" media="screen" />
 </%def>
 
 <%def name="header()">
