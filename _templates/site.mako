@@ -55,7 +55,7 @@
 <div id="blog_post_list">
   <p>Latest Articles</p>
   <ul class="menulist">
-% for post in bf.config.blog.posts[:5]:
+% for post in [p for p in bf.config.blog.posts if not p.draft][:5]:
 %   if not post.draft:
   <li><a href="${post.path}">${post.title}</a></li>
 %   endif
