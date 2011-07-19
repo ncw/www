@@ -16,6 +16,9 @@
 #  including that subdirectory: "http://www.yoursite.com/path/to/blogofile-dir"
 site.url = "http://www.craig-wood.com/nick"
 
+# Use hard linking
+site.use_hard_links = True
+
 #### Blog Settings ####
 blog = controllers.blog
 
@@ -49,3 +52,12 @@ blog.auto_permalink.path = "/articles/:title"
 # Disqus
 blog.disqus.enabled = True
 blog.disqus.name = "nickcw"
+
+#For syntax highlighting
+# See http://techspot.zzzeek.org/2010/12/06/my-blogofile-hacks/
+blog.post_default_filters = {
+    "rst": "rst, syntax_highlight, rst_math"
+}
+
+# Path for images
+blog.math.images = "/images/math"
