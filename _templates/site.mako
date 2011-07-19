@@ -56,7 +56,9 @@
   <p>Latest Articles</p>
   <ul class="menulist">
 % for post in bf.config.blog.posts[:5]:
+%   if not post.draft:
   <li><a href="${post.path}">${post.title}</a></li>
+%   endif
 % endfor
   </ul>
   </small>
