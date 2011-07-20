@@ -1,5 +1,7 @@
 <%inherit file="/_nav.mako" />
 <%def name="title()">Nick Craig-Wood's Home Page</%def>
+<a href="/nick/large/njcw.jpg"><img src="/nick/small/njcw.jpg" width="100" height="100" style="border: 0; float: right; margin: 4px;" alt="Nick Craig-Wood" title="Nick Craig-Wood"/></a>
+
 <p>Here you will find a somewhat random dump of stuff that I want to make public. Quite a bit of software, some personal stuff, some fun stuff and maybe the odd rant ;-)</p>
 
 <h4>Software by me</h4>
