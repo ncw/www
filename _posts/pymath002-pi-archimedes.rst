@@ -3,6 +3,7 @@ categories: pymath, maths, python
 date: 2011/07/18 00:00:00
 title: Pi - Archimedes
 draft: False
+permalink: /nick/articles/pi-archimedes
 ---
 It is clear from `Part 1`_ that in order to calculate π we are going to need a better method than evaluating `Gregory's Series`_.
 

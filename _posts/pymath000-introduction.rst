@@ -3,6 +3,7 @@ categories: pymath
 date: 2011/07/16 00:00:00
 title: Fun with Maths and Python - Introduction
 draft: False
+permalink: /nick/articles/fun-with-maths-and-python-introduction
 ---
 
 This is going to be a series of articles which are all about having fun with maths and Python_.  I'm going to show you a bit of maths and then how to apply it with a python program, then work out how to improve it.

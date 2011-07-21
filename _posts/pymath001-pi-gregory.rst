@@ -3,6 +3,7 @@ categories: pymath, maths, python
 date: 2011/07/17 00:00:00
 title: Pi - Gregory's Series
 draft: False
+permalink: /nick/articles/pi-gregorys-series
 ---
 
 Lets calculate π (or Pi if you prefer)!  π is an irrational number (amongst other things) which means that it isn't one whole number divided by another whole number.  In fact the digits of π are extremely random - if you didn't know they were the digits of π they would be perfectly random.

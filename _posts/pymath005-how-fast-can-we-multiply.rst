@@ -3,6 +3,7 @@ categories: maths, python
 date: 2011/01/16 21:41:00
 title: How fast can we multiply - part 1
 draft: True
+permalink: /nick/articles/how-fast-can-we-multiply-1
 ---
 
 Schoolboy multiplication

@@ -3,6 +3,7 @@ categories: pymath, maths, python
 date: 2011/01/19 00:00:00
 title: Pi - Chudnovsky
 draft: True
+permalink: /nick/articles/pi-chudnovsky
 ---
 
 In `Part 3`_ we managed to calculate 1,000,000 decimal places of π with Machin_'s ``arctan`` formula.  Our stated aim was 100,000,000 places which we are going to achieve now!

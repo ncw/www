@@ -3,6 +3,7 @@ categories: pymath, maths, python
 date: 2011/07/19 00:00:00
 title: Pi - Machin
 draft: False
+permalink: /nick/articles/pi-machin
 ---
 In `Part 2`_ we managed to calculate 100 decimal places of π with Archimedes' recurrence relation for π which was a fine result, but we can do bigger and faster.
 
