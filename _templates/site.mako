@@ -6,14 +6,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
   ${self.head()}
+  <script src="http://connect.facebook.net/en_US/all.js#appId=232073720158744&amp;xfbml=1"></script>
+  <meta property="og:title" content="${self.title()}" />
+  <meta property="og:type" content="website" />
+<%doc>
+  <meta property="og:url" content="${bf.config.site.url}" />
+</%doc>
+  <meta property="og:image" content="${bf.config.site.url}/small/njcw.jpg" />
+  <meta property="og:site_name" content="${bf.config.blog.name}" />
+  <meta property="fb:admins" content="662368412" />
 </head>
 
 <body>
 <div class="heading"><table width="100%" cellpadding="0">
   <tr>
-    <td width="80%"><h1>${self.title()}</h1></td>
-    <td width="20%" align="right">${self.date()}</td>
+    <td width="100%"><h1>${self.title()}</h1></td>
+    <td><div id="fb-root"></div><fb:like href="" send="false" layout="button_count" width="50" show_faces="false" font=""></fb:like></td>
+    <td><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="njcw">Tweet</a></td>
+    <td><g:plusone size="medium"></g:plusone></td>
+    <td align="right" style="white-space:nowrap;">${self.date()}</td>
   </tr>
 </table>
 </div>
