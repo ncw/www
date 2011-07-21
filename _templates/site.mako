@@ -13,11 +13,20 @@
   <script src="http://connect.facebook.net/en_US/all.js#appId=232073720158744&amp;xfbml=1"></script>
   <meta property="og:title" content="${self.title()}" />
   <meta property="og:type" content="website" />
-  
   <meta property="og:url" content="${urljoin(bf.config.site.url,bf.template_context.render_path)}" />
   <meta property="og:image" content="${bf.config.site.url}/small/njcw.jpg" />
   <meta property="og:site_name" content="${bf.config.blog.name}" />
   <meta property="fb:admins" content="662368412" />
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24691001-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
 </head>
 
 <body>
