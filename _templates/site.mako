@@ -1,4 +1,5 @@
 <%inherit file="base.mako" />
+<% from urllib.parse import urljoin %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -12,9 +13,8 @@
   <script src="http://connect.facebook.net/en_US/all.js#appId=232073720158744&amp;xfbml=1"></script>
   <meta property="og:title" content="${self.title()}" />
   <meta property="og:type" content="website" />
-<%doc>
-  <meta property="og:url" content="${bf.config.site.url}" />
-</%doc>
+  
+  <meta property="og:url" content="${urljoin(bf.config.site.url,bf.template_context.render_path)}" />
   <meta property="og:image" content="${bf.config.site.url}/small/njcw.jpg" />
   <meta property="og:site_name" content="${bf.config.blog.name}" />
   <meta property="fb:admins" content="662368412" />
@@ -133,7 +133,7 @@ import datetime
 try:
     m = os.path.getmtime(bf.template_context.template_name)
     timestamp = datetime.datetime.fromtimestamp(m).date()
-except StandardError:
+except Exception:
     timestamp = datetime.date.today()
 context.write(str(timestamp))
 %></%def>

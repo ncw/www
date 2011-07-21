@@ -72,8 +72,8 @@ default_packages = [
 def __build_preamble(packages):
     preamble = '\documentclass{article}\n'
     for p in packages:
-        preamble += "\usepackage{%s}\n" % p
-    preamble += "\pagestyle{empty}\n\\begin{document}\n"
+        preamble += "\\usepackage{%s}\n" % p
+    preamble += "\\pagestyle{empty}\n\\begin{document}\n"
     return preamble
 
 def __write_output(infile, outfile, workdir='.', prefix = '', size = 1):
@@ -127,7 +127,7 @@ def math2png(equation, outfile, packages = default_packages, prefix = '', size =
 
 def highlight_code(code, images_dir, images_url, cache_dir):
     # formatter
-    file_name = hashlib.md5(code).hexdigest()+".png"
+    file_name = hashlib.md5(code.encode("utf-8")).hexdigest()+".png"
     cache_path = os.path.join(cache_dir, file_name)
     path = os.path.join(images_dir, file_name)
     url = images_url + "/" + file_name

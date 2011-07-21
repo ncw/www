@@ -1,5 +1,5 @@
 #!/usr/bin/env python2.5
-from __future__ import with_statement # Until Python 2.6
+ # Until Python 2.6
 from optparse import OptionParser
 """
 Converts LaTeX math to png images.
@@ -57,10 +57,10 @@ default_packages = [
         ]
 
 def __build_preamble(packages):
-    preamble = '\documentclass{article}\n'
+    preamble = '\\documentclass{article}\n'
     for p in packages:
-        preamble += "\usepackage{%s}\n" % p
-    preamble += "\pagestyle{empty}\n\\begin{document}\n"
+        preamble += "\\usepackage{%s}\n" % p
+    preamble += "\\pagestyle{empty}\n\\begin{document}\n"
     return preamble
 
 def __write_output(infile, outdir, workdir = '.', prefix = '', size = 1):
@@ -114,7 +114,7 @@ def math2png(eqs, outdir, packages = default_packages, prefix = '', size = 1):
             f.write(__build_preamble(packages))
             for eq in eqs:
                 f.write("$%s$\n\\newpage\n" % eq)
-            f.write('\end{document}')
+            f.write('\\end{document}')
 
         __write_output(texfile, outdir, workdir, prefix, size)
     finally:
@@ -122,7 +122,7 @@ def math2png(eqs, outdir, packages = default_packages, prefix = '', size = 1):
             os.remove(texfile)
 
 def usage():
-    print """
+    print("""
 Usage: %s [OPTION] ... [FILE] ...
 Converts LaTeX math input to PNG.
 
@@ -140,7 +140,7 @@ Options are:
 Reads equations from the specified FILEs or standard input if none is given. One
 equation is allowed per line of text and each equation is rendered to a separate
 PNG image numbered sequentially from 1, with an optional prefix.
-    """ % (os.path.split(sys.argv[0])[1])
+    """ % (os.path.split(sys.argv[0])[1]))
 
 def main(argv=None):
     if argv is None:
@@ -174,10 +174,10 @@ def main(argv=None):
                 'prefix=',
                 ]
         opts, args = getopt.getopt(sys.argv[1:], shortopts, longopts)
-    except getopt.GetoptError, err:
+    except getopt.GetoptError as err:
         scriptname = os.path.split(sys.argv[0])[1]
-        print "%s: %s" % (scriptname, err)
-        print "Try `%s --help` for more information." % scriptname
+        print("%s: %s" % (scriptname, err))
+        print("Try `%s --help` for more information." % scriptname)
         sys.exit(2)
 
     packages = []
@@ -200,11 +200,11 @@ def main(argv=None):
         for a in args:
             fd = os.open(a, os.O_RDONLY)
             with os.fdopen(fd, 'r') as f:
-                cur = map(lambda i: i.strip('\n'), f.readlines())
+                cur = [i.strip('\n') for i in f.readlines()]
                 input.extend(cur)
     else:
         # Otherwise read from stdin
-        input = map(lambda i: i.strip('\n'), sys.stdin.readlines())
+        input = [i.strip('\n') for i in sys.stdin.readlines()]
 
     # Engage!
     math2png(input, outdir, packages, prefix)

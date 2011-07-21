@@ -20,7 +20,7 @@ site.url = "http://www.craig-wood.com/nick"
 site.use_hard_links = True
 
 #### Blog Settings ####
-blog = controllers.blog
+blog = plugins.blog
 
 ## blog_enabled -- Should the blog be enabled?
 #  (You don't _have_ to use blogofile to build blogs)
@@ -61,3 +61,6 @@ blog.post.default_filters = {
 
 # Path for images
 blog.math.images = "/images/math"
+
+# Syntax highlight style
+filters.syntax_highlight.style = "murphy"
