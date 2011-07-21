@@ -2,6 +2,7 @@
 categories: oxo3d, android
 date: 2010/04/28 08:31:00
 title: Oxo3d v0.92 released
+permalink: /nick/articles/oxo3d-v0-92-released
 ---
 
 Oxo3d_ v0.92 released.

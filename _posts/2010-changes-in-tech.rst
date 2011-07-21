@@ -2,6 +2,7 @@
 categories: tech
 date: 2010/12/22 14:56:39
 title: Technology changes in 2010
+permalink: /nick/articles/technology-changes-in-2010
 ---
 
 Technology that has come and gone from my life in 2010, and new stuff I've learnt.  More than I expected!
