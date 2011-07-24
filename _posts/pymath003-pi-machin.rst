@@ -220,7 +220,7 @@ There are better algorithms for calculating π though, and there are faster ways
 
 .. _Part 1: /nick/articles/pi-gregorys-series/
 .. _Part 2: /nick/articles/pi-archimedes/
-.. _Part 4: FIXME-TO-BE-ANNOUNCED
+.. _Part 4: /nick/articles/pi-chudnovsky/
 .. _`pi_artcan_integer.py`: /nick/pub/pymath/pi_arctan_integer.py
 .. _John Machin: http://en.wikipedia.org/wiki/John_Machin
 .. _trigonometric formula: http://mathworld.wolfram.com/TrigonometricAdditionFormulas.html
