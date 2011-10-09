@@ -1,6 +1,6 @@
 ---
 categories: pymath, maths, python
-date: 2011/07/24 00:00:00
+date: 2011/10/08 00:00:00
 title: Pi - Chudnovsky
 permalink: /nick/articles/pi-chudnovsky
 ---
