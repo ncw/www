@@ -453,7 +453,7 @@ Digits    Time (seconds)
 100000000 542.2
 ========= =========================
 
-So we have achieved our goal of calculating 100,000,000 million places
+So we have achieved our goal of calculating 100,000,000 places
 of π in just under 10 minutes!  What is limiting the program now is
 memory...  100,000,000 places takes about 600MB of memory to run.
 With 6 GB of free memory it could probably calculate one billion
