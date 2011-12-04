@@ -70,7 +70,7 @@ simplifies the calculations rather a lot.
     \begin{eqnarray*}
     a_k &=& \frac{(-1)^k (6k)!}{(3k)!(k!)^3 640320^{3k}} \\
     b_k &=& k \cdot a_k \\
-    \frac{a_{k}}{a_{k-1}} &=& - \frac{(6k-5)(6k-4)(6k-3)(6k-2)(6k-1)6k}{3k(3k-1)(3k-1)k^3 640320^3} \\
+    \frac{a_{k}}{a_{k-1}} &=& - \frac{(6k-5)(6k-4)(6k-3)(6k-2)(6k-1)6k}{3k(3k-1)(3k-2)k^3 640320^3} \\
                           &=& - \frac{24(6k-5)(2k-1)(6k-1)}{k^3 640320^3} \\
     \end{eqnarray*}
 
