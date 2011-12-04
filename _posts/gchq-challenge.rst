@@ -1,6 +1,6 @@
 ---
 categories: maths, python
-date: 2011/12/12 00:00:00
+date: 2011/12/04 20:00:00
 title: How I Solved the GCHQ challenge
 draft: False
 permalink: /nick/articles/how-i-solved-the-gchq-challenge
@@ -9,10 +9,9 @@ permalink: /nick/articles/how-i-solved-the-gchq-challenge
 This is an unsanitised account of how I solved the GCHQ challenge at
 http://www.canyoucrackit.co.uk/.  `According to the BBC`_ the
 competition began in secret on the 3rd of November 2011 and will
-continue until the 12th of December.  I didn't see it until the 1st
-when a colleague at work (thanks Tom!) mentioned it to me and I didn't
-have time to work on it until Friday the 2nd of December.  I've held
-back the publication of this article until the competition ends.
+continue until the 12th of December.  I was going to hold back this
+publication until the contest ended but `a solution`_ has just made it
+to the front page of slashdot so I think the jig is up!
 
 This writeup includes the wrong turnings I took and the bad
 assumptions I made along the way so any reader can see the kind of
@@ -27,6 +26,7 @@ you'll have to imagine what they looked like.
 .. warning:: This article contains spoilers on how to do the challenge - don't read any further if you want to solve it yourself!
 
 .. _According to the BBC: http://www.bbc.co.uk/news/technology-15968878
+.. _a solution: http://news.slashdot.org/story/11/12/04/1725253/gchq-challenge-solution-explained
 
 Stage 1
 -------
@@ -37,29 +37,30 @@ in and a form to submit your answer.  The image looks like this:
 .. image:: /nick/pub/gchq-challenge/cyber.png
    :alt: GCHQ cyber challenge
 
-The first thing to do is decode the hex data.  Using a python program of course!
+The first thing I did was to decode the hex data.  Using a python
+program of course!  I played around with trying to get it to display
+an image.  It is obviously low entropy but what is it?  Not an image
+anyway.
 
-The next thing I did was play around with trying to get it to display
-an image.  It is obviously low entropy but what is it?
-
-I then saved to binary using `cyber.py`_
-
-And then used the unix "file" utility on it which told me it was x86 code::
+I used `cyber.py`_ to save it to a binary file and ran the unix "file"
+utility on it which told me it was x86 code::
 
     $ file cyber.bin
     cyber.bin: DOS executable (COM)
 
-Interesting. I then disassembled it to `cyber.disassembly.asm`_::
+Interesting. A disassembly was required `cyber.disassembly.asm`_::
 
     x86dis -r 0 160  -s intel < cyber.bin > cyber.disassembly.asm
 
-The code appeared to be linux flavour, exiting politely with int 0x80.
+The code appeared to be linux flavour, exiting politely with the
+correct ``int 0x80`` call.
 
-I then wrote `cyber.c`_ to run that code.  It is bare code which you
+The obvious next step is to run the code.  It is bare code which you
 can't just run on any modern OS.  I could have added headers to it but
-I decided to write `cyber.c`_ to load it into memory.  I used ``mmap``
-to map a padded version of the code so I could get the code and the
-stack under my control and examine it after the code had exited::
+I decided to write `cyber.c`_ to load it into memory instead.  I used
+``mmap`` to map a padded version of the code so I could get the code
+and the stack under my control and examine it after the code had
+exited::
 
     gcc -g -m32 -Wall -static -o cyber cyber.c
 
@@ -117,17 +118,16 @@ fetch a file, so I did::
 Stage 2
 -------
 
-I then examined the downloaded file `15b436de1f9107f3778aad525e5d0b20.js`_ .
+The downloaded file `15b436de1f9107f3778aad525e5d0b20.js`_ is a
+description of a VM with an initial state, but no code to implement
+the VM.  It has a very realistic and amusing initial commment!  It
+also says "stage 2 of 3" which is the first indication how long this
+challenge is going to be.
 
-It is a description of a VM with an initial state, but no code to
-implement the VM.  It has a very realistic and amusing initial
-commment!  It also says "stage 2 of 3" which is the first indication
-how long this challenge is going to be.  Otherwise it seems a
-reasonably straightforward job to implement the VM.
-
-I then got cracking on `vm.py`_ after reading that.  Note that it has
-8 bytes of 'firmware' which don't seem to fit in anywhere which is a
-bit puzzling.
+Otherwise it seems a reasonably straightforward job to implement the
+VM and I got cracking on `vm.py`_ after reading that.  Note that it
+has 8 bytes of 'firmware' which don't seem to fit in anywhere which is
+a bit puzzling.
 
 Wasted a lot of time trying to get the VM to work.  Tried poking the
 firmware in various imaginitive places.  Found a few bugs then finally
@@ -183,8 +183,8 @@ And double checking with python::
 Meanwhile I tried running the exe on windows but it doesn't run
 without that dll.
 
-I then installed cygwin with the "crypt" package which has the correct
-dll in and copied ``cygcrypt-0.dll`` and ``cygwin1.dll`` into my
+After installing cygwin with the "crypt" package which has the correct
+dll in, I copied ``cygcrypt-0.dll`` and ``cygwin1.dll`` into my
 working directory.  The exe now runs and gives::
 
     >da75370fe15c4148bd4ceec861fbdaa5.exe
@@ -209,9 +209,12 @@ I then tried it with "cyberwin" in license.txt::
 
 Hmm, I was expecting that to work.
 
-I then looked through the `keygen.edit.asm`_ (my annotated version)
-and discovered that the password should be prefixed with "gchq".  The
-first hint as to who set this puzzle!
+Looking through the `keygen.edit.asm`_ (my annotated version) I
+discovered that the password should be prefixed with "gchq".  The
+first hint as to who set this puzzle! ::
+
+    cmp    [ebp+var_38], 71686367h ; gchq
+    jnz    short invalid_license
 
 Putting "gchqcyberwin" into the ``license.txt`` and running the
 program goes better this time.  It fetches a page this time, but it is
@@ -302,8 +305,8 @@ unused 4 bytes at the start of the code that is jumped over "af c2 bf
 a3".  Stage2 is the second stage from which we need 8 bytes - the
 mysteriously unused firmware seems appropriate.
 
-I then wrote `keyfetch.py`_ to fiddle with the endianess and after a
-bit of fiddling it returned::
+I wrote `keyfetch.py`_ to fiddle with the endianess and after a bit of
+trial and error it worked::
 
   GET 'http://www.canyoucrackit.co.uk/hqDTK7b8K2rvw/a3bfc2af/d2ab1f05/da13f110/key.txt'
   Pr0t3ct!on
@@ -311,9 +314,10 @@ bit of fiddling it returned::
 Fetched using ``HTTP/1.1`` and the ``GET`` program.  Which looks like
 it could be the password! But it doesn't work :-(
 
-I then looked at headers too and found nothing interesting.  I then
-tried using ``keygen.exe`` with a corrected license file - it doesn't
-work as I expected as the webserver doesn't support HTTP/1.0.
+The headers showed nothing interesting.  I then tried using
+``keygen.exe`` with a corrected license file - it didn't work as I
+expected as the webserver doesn't support HTTP/1.0 (or maybe I did
+something wrong).
 
 However trying it by hand using telnet and ``HTTP/1.0`` does do
 something different::
@@ -337,7 +341,7 @@ something different::
     Pr0t3ct!on#cyber_security@12*12.2011+Connection closed by foreign host.
     $ 
 
-I then reworked `keyfetch.py`_ to make the fetch using ``HTTP/1.0`` to double check.
+I reworked `keyfetch.py`_ to make the fetch using ``HTTP/1.0`` to double check.
 
 Trying ``Pr0t3ct!on#cyber_security@12*12.2011+`` as the key does
 indeed work and produces this page: http://www.canyoucrackit.co.uk/soyoudidit.asp:
@@ -359,23 +363,27 @@ I'm not going to apply for a job as I'm rather fully employed elsewhere, but it 
 Postmortem
 ----------
 
-It took me one very late night on Friday and intermittent hacking on
-Saturday and Sunday to complete the challenge - about 12 hours in
-total.  I spent 3 hours tracking down that mis-understanding in
-`vm.py`_ about 16 byte segments and 2 hours trying to work out what
-the missing 12 bytes were in the URL in stage 3.
+I didn't see this until the 1st December 2011 when a colleague at work
+(thanks Tom!)  mentioned it to me and I didn't have time to work on it
+until Friday the 2nd of December.  It took me one very late night on
+Friday and intermittent hacking on Saturday and Sunday to complete the
+challenge - about 12 hours in total.  I spent 3 hours tracking down
+that mis-understanding in `vm.py`_ about 16 byte segments and 2 hours
+trying to work out what the missing 12 bytes were in the URL in stage
+3.
 
 I think Stage 1 was very hard - perhaps deliberately so.  Stage 2 was
 much easier - there was a defined goal and any competent computer
 scientist would be able to knock up the VM code.  Stage 3 involved an
-awful lot of reading x86 assembler which was painful.  I suspect I
-could have done it a lot quicker if I'd had some better tools.  An
-interactive disassembling debugger would have been useful - I used to
-have such a thing when I did 68000 programming and it was a wonder.
+awful lot of reading C compiler created x86 assembler which was
+painful.  I suspect I could have done it a lot quicker if I'd had some
+better tools.  An interactive disassembling debugger would have been
+useful - I used to have such a thing when I did 68000 programming and
+it was a wonder.
 
 I note that I didn't actually have to crack the encrypted password in
 Stage 3.  I could have just changed one byte and have it ignore the
 check but I was expecting that the code would actually need to use it.
-Also no and so much for `John the Ripper`_!
+Alas no and so much for `John the Ripper`_!
 
 Finally thanks to GCHQ for making the challenge - it was a good one!
