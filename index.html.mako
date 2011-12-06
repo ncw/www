@@ -12,6 +12,7 @@
   <li><a href="armprime/">ARM based Mersenne prime tester for GIMPs</a></li>
   <li><a href="software/">Downloads of my released software</a></li>
   <li><a href="pub/">My dumping ground for useful scripts</a></li>
+  <li><a target="_blank" href="https://github.com/ncw">My Open Source software at GitHub</a></li>
 </ul>
 
 <h4>Personal</h4>
