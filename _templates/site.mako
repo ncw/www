@@ -104,6 +104,7 @@
   <a href="http://www.mersenne.org/prime.htm"><img src="${bf.util.site_path_helper(bf.config.site.path,'/icon/gimps.gif')}" alt="[Great Internet Prime Search]"width="88" height="31" /></a>
   <a href="${bf.util.site_path_helper(bf.config.site.path,'/holly.html')}"><img src="${bf.util.site_path_helper(bf.config.site.path,'/icon/csn.gif')}" alt="[Cocker Spaniel Now!]" width="88" height="31" /></a>
 </p>
+<p style="text-align: center; font-size: small;">Hosted on a <a target="_blank" href="http://www.memset.com/">Memset</a> <a href="http://www.memset.com/dedicated-servers/vps/">Miniserver VM</a>®</p>
 <hr />
 <div id="w761bb85b0e2abbf9329a9476b547e309"></div><script type="text/javascript" charset="UTF-8" src="http://www.librarything.com/widget_get.php?userid=ncw&amp;theID=w761bb85b0e2abbf9329a9476b547e309"></script><noscript><a href="http://www.librarything.com/profile/ncw">My Library</a> at <a href="http://www.librarything.com">LibraryThing</a></noscript>
 </div>
