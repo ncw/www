@@ -12,7 +12,16 @@
   </table>
 </div>
 % endif
-<small>Categories: 
+<div class="post_prose">
+  ${self.post_prose(post)}
+</div>
+
+<%def name="post_prose(post)">
+  ${post.content}
+</%def>
+
+<div class="categories">
+Categories: 
 <% 
    category_links = []
    for category in post.categories:
@@ -26,12 +35,6 @@ ${", ".join(category_links)}
 % if bf.config.blog.disqus.enabled:
  | <a href="${post.permalink}#disqus_thread">View Comments</a>
 % endif
-</small>
-<div class="post_prose">
-  ${self.post_prose(post)}
 </div>
 
-<%def name="post_prose(post)">
-  ${post.content}
-</%def>
 </div>

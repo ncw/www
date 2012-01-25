@@ -131,3 +131,11 @@ ul.menulist {
 }
 ul.menulist li {
 }
+
+div.categories {
+    position: absolute;
+    top:50px;
+    right:20px;
+    padding:10px;
+    font-size: small;
+}
