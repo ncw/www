@@ -6,7 +6,7 @@ draft: False
 permalink: /nick/articles/ioccc-2012-mersenne-prime-checker
 ---
 
-This was my entry for the 21\ :superscript:`st` `International Obfuscated C Code Contest`_, a contest whose aims are
+This was my entry for the 20\ :superscript:`th` `International Obfuscated C Code Contest`_, a contest whose aims are
 
 .. _International Obfuscated C Code Contest: http://www.ioccc.org/
 
