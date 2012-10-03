@@ -244,7 +244,7 @@ rather than a twisty turny mess of ARM assembler macros.
 However I never got round to finishing it, so I used the IOCCC as a
 spur to get me to finish it properly!
 
-I've opensourced the code and the build chain at `github`_.
+I've open-sourced the code and the build chain at `github`_.
 
 As you can imagine it isn't possible to develop the code in the form
 above from scratch!  I created an unobfuscated version `mersenne.c`_
@@ -293,7 +293,7 @@ Firstly all good obfuscated programs have lots of global variables to shorten th
 
     #!c
     u64 MOD_P =  -(u64)(u32)-1,         /* 0xFFFFFFFF00000001 - the magic number */
-        *digit_weight,                  /* Array of weghts for IBDWT */
+        *digit_weight,                  /* Array of weights for IBDWT */
         *digit_unweight,                /* Inverse of the above */
         *x,                             /* pointer to array of n 64 bit integers - the current number */
         MOD_W,                          /* The root of 2 for the fft so that 2**MOD_W == 1 mod p */
@@ -384,7 +384,7 @@ result is modulo 2 :superscript:`p` - 1.  The carries are propagated and
 2 is subtracted from the end.
 
 The FFT is a completely standard FFT with bit reversed output, the
-only unusal thing being that all the operations are mod p rather than
+only unusual thing being that all the operations are mod p rather than
 with complex numbers.  If you compare the code for the FFT with a
 standard implementation you will see it is very similar::
 
@@ -449,7 +449,7 @@ Addition can then be defined as subtracting a negative number::
     #!c
     u64 mod_add(u64 x, u64 y)
     {
-        x = MOD_P - x;        /* do addition by negating y then subracting */
+        x = MOD_P - x;        /* do addition by negating y then subtracting */
         u64 r = y - x;        /* y - (-x) */
         /* if borrow generated - hopefully the compiler will optimise this! */
         if (y < x)
@@ -498,7 +498,7 @@ Given ``mod_reduce``, multiplication is relatively straight forward::
             c = y,
             d = y >>32;
     
-        /* first synthesize the product using 32*32 -> 64 bit multiplies */
+        /* first synthesise the product using 32*32 -> 64 bit multiplies */
         x = b * (u64)c;
         y = a * (u64)d;
         u64 e = a * (u64)c,
