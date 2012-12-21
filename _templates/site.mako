@@ -1,5 +1,5 @@
 <%inherit file="base.mako" />
-<% from urllib.parse import urljoin %>
+<% from urlparse import urljoin %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -91,7 +91,7 @@
   <p>Categories</p>
   <ul class="menulist">
 % for category, num_posts in sorted(bf.config.blog.all_categories, key=lambda x:x[0].name):
-  <li><a href="${category.path}">${category.name.title()}</a> (<a href="${category.path}/feed">rss</a>) (${num_posts})</li>
+  <li><a href="${category.path}">${category.name.title()}</a> (<a href="${category.path}feed">rss</a>) (${num_posts})</li>
 % endfor
   </ul>
 </div> 
