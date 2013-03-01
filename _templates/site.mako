@@ -96,7 +96,10 @@
   </ul>
 </div> 
 
-<p class="copyright">&copy; <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> ${today.year}</p>
+<p class="copyright">&copy; <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> ${today.year}
+[<a href="https://plus.google.com/103015172458796488244?rel=author">G+</a>]
+[<a href="http://twitter.com/njcw">Twitter</a>]
+</p>
 <hr />
 <p class="buttons">
   <a href="http://validator.w3.org/check?uri=referer"><img src="${bf.util.site_path_helper(bf.config.site.path,'/icon/valid-xhtml10.png')}" alt="[Valid XHTML 1.0]" width="88" height="31" /></a>
