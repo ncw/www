@@ -4,6 +4,7 @@ return """
 ../			Home
 .			.
 ./			Xmas Archive
+xmas2014.html		Xmas 2014
 xmas2012.html		Xmas 2012
 xmas2011.html		Xmas 2011
 xmas2010.html		Xmas 2010
