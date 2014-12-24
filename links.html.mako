@@ -5,13 +5,12 @@
 <h2>My page at...</h2>
 <ul>
   <li><a href="http://www.facebook.com/nick.craigwood">Facebook</a></li>
+  <li><a href="http://twitter.com/njcw">Twitter</a></li>
+  <li><a href="https://plus.google.com/+NickCraigWood">Google+</a></li>
+  <li><a href="http://github.com/ncw">GitHub</a></li>
+  <li><a href="http://stackoverflow.com/users/164234/nick-craig-wood">Stack Overflow</a></li>
   <li><a href="http://www.flickr.com/photos/ncw/">Flickr</a></li>
   <li><a href="http://slashdot.org/~ncw">Slashdot</a></li>
-  <li><a href="http://stackoverflow.com/users/164234/nick-craig-wood">Stack Overflow</a></li>
-  <li><a href="http://www.google.com/reader/shared/nickcw">Google Reader (articles I've read and want to share)</a></li>
-  <li><a href="http://twitter.com/njcw">Twitter</a></li>
-  <li><a href="http://www.google.com/profiles/nickcw">Google (my profile)</a></li>
-  <li><a href="http://github.com/ncw">GitHub</a></li>
   <li><a href="https://launchpad.net/~nick-craig-wood">Launchpad</a></li>
   <li><a href="http://perlmonks.org/?node_id=19340">Perlmonks</a></li>
   <li><a href="http://www.amazon.co.uk/gp/pdp/profile/A37JWH9HBFO862">Amazon (my profile, reviews, wish lists, etc)</a>
@@ -23,7 +22,7 @@
   <li><a href="http://slashdot.org/">Slashdot</a></li>
   <li><a href="http://www.theregister.co.uk/">The Register - sarcastic tech news + BOFH!</a></li>
   <li><a href="http://news.bbc.co.uk/">BBC News</a></li>
-  <li><a href="http://perlmonks.org/">All about Perl</a></li>
+  <li><a href="https://news.ycombinator.com/">Hacker News</a></li>
 </ul>
 
 <h2>Linux</h2>
@@ -76,7 +75,7 @@
 <h2>Some relations</h2>
 <ul>
   <li><a href="http://www.craig-wood.com/">The rest of the Craig-Wood family</a></li>
-  <li><a href="http://www.g-gardiner.com/">My brother-in-law Grant</a></li>
+  <li><a href="http://www.craig-wood.com/amy">My daughter Amy's web site</a></li>
   <li><a href="http://www.emmahambly.net/">My sister-in-law Emma Hambly, artist-scientist extraordinaire!</a></li>
   <li><a href="http://emmahambly.blogspot.com/">...and Emma's blog where she does some of that art/science</a></li>
 </ul>

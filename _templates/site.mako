@@ -97,7 +97,7 @@
 </div> 
 
 <p class="copyright">&copy; <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> ${today.year}
-[<a href="https://plus.google.com/103015172458796488244?rel=author">G+</a>]
+[<a href="https://plus.google.com/+NickCraigWood?rel=author">G+</a>]
 [<a href="http://twitter.com/njcw">Twitter</a>]
 </p>
 <hr />

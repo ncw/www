@@ -7,12 +7,19 @@
 <h4>Software by me</h4>
 
 <ul>
+  <li>Current projects
+    <ul>
+      <li><a target="_blank" href="http://rclone.org"><strong>rclone</strong>: rsync for cloud storage</a></li>
+      <li><a target="_blank" href="https://github.com/ncw/gotemplate"><strong>gotemplate</strong>: package based templating system for Go</a></li>
+      <li><a target="_blank" href="https://github.com/ncw/swift"><strong>swift</strong>: Go language interface to Swift / Openstack Object Storage</a></li>
+    </ul>
+  </li>
   <li><a href="android/">Software for Android - Google's smartphone OS</a></li> 
   <li><a href="software.html">Software for RISCOS - Acorn's once great OS</a></li>
   <li><a href="armprime/">ARM based Mersenne prime tester for GIMPs</a></li>
   <li><a href="software/">Downloads of my released software</a></li>
   <li><a href="pub/">My dumping ground for useful scripts</a></li>
-  <li><a target="_blank" href="https://github.com/ncw">My Open Source software at GitHub</a></li>
+  <li><a target="_blank" href="https://github.com/ncw">More of my Open Source software at GitHub</a></li>
 </ul>
 
 <h4>Personal</h4>
