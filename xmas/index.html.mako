@@ -5,7 +5,8 @@
 <p>If you click on the picture you'll get very much bigger image which will print out the size of the wall if you really want!</p>
 
 <ul>
-<li><a href="xmas2014.html">2014</a> <font color="red">[New!]</font></li>
+<li><a href="xmas2015.html">2015</a> <font color="red">[New!]</font></li>
+<li><a href="xmas2014.html">2014</a></li>
 <li><a href="xmas2012.html">2012</a></li>
 <li><a href="xmas2011.html">2011</a></li>
 <li><a href="xmas2010.html">2010</a></li>
