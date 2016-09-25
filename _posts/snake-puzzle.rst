@@ -7,8 +7,14 @@ permalink: /nick/articles/snake-puzzle
 
 My family know I like puzzles so they gave me this one recently:
 
+.. sidebar:: Fork me on Github
+
+    The code for this along with a Jupyter notebook for it is `on github`_.
+
 .. figure:: /nick/pub/snake-puzzle/snake-puzzle-boxed.jpg
    :alt: Boxed Snake Puzzle
+
+.. _on github: https://github.com/ncw/snake-puzzle/
 
 When you take it out the box it looks like this:
 
