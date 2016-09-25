@@ -76,7 +76,7 @@ a piece is out of bounds. This is a simple trick but it saves a lot of
 code.
 
 I've also chosen to represent the 3d structure not as a 3d array but as
-a 1D array (or ``list`` in python speak) of length 5\ *5*\ 5 = 125.
+a 1D array (or ``list`` in python speak) of length 5 x 5 x 5 = 125.
 
 To move in the ``x`` direction you add 1, to move in the ``y`` direction
 you add 5 and to move in the ``z`` direction you move 25. This
