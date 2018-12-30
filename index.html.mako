@@ -10,6 +10,7 @@
   <li>Current projects
     <ul>
       <li><a target="_blank" href="http://rclone.org"><strong>rclone</strong>: rsync for cloud storage</a></li>
+      <li><a target="_blank" href="https://github.com/go-python/gpython"><strong>gpython</strong>: a python interpreter written in go "batteries not included"</a></li>
       <li><a target="_blank" href="https://github.com/ncw/gotemplate"><strong>gotemplate</strong>: package based templating system for Go</a></li>
       <li><a target="_blank" href="https://github.com/ncw/swift"><strong>swift</strong>: Go language interface to Swift / Openstack Object Storage</a></li>
     </ul>
