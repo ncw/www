@@ -1,0 +1,11 @@
+---
+title: Oxo2d 
+description: "Oxo2d an HTML noughts and crosses (tic-tac-toe) player"
+---
+
+<pre class="oxo2d">
+<u>X</u> . O
+<u>X</u> O X
+<u>X</u> . O
+<a href="../">I win</a>
+</pre>

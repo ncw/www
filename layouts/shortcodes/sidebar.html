@@ -1,0 +1,8 @@
+<div class="card float-right" style="max-width: 18rem;">
+  <div class="card-header" style="padding: 5px 10px;">
+    {{ .Get "title" }}
+  </div>
+  <div class="card-body">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

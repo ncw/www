@@ -1,0 +1,31 @@
+baseURL = "https://www.craig-wood.com/nick/"
+title = "Nick Craig-Wood's home page"
+description = "An unreliable dump of Nick's interests, past and present."
+canonifyurls = false
+disableKinds = [
+  "taxonomy",
+  "taxonomyTerm"
+]
+ignoreFiles = [
+  "~$",
+  "^\\."
+]
+enableGitInfo = true
+
+[params]
+  [params.twitter]
+  username = "njcw"
+
+[indexes]
+tag = "tags"
+group = "groups"
+menu = "menu"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+    typographer = false
+    [markup.goldmark.parser]
+    autoHeadingIDType = "blackfriday"
+    [markup.goldmark.renderer]
+    unsafe = true

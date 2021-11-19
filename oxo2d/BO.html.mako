@@ -1,6 +1,0 @@
-<%inherit file="/oxo2d/_nav.mako" />
-<pre class="oxo2d">
-X <a href="BM.html">.</a> X
-<a href="AO.html">.</a> <a href="B0.html">.</a> <a href="B9.html">.</a>
-<a href="BG.html">.</a> O <a href="BN.html">.</a>
-</pre>

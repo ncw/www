@@ -1,0 +1,20 @@
+---
+title: Xmas 2010
+description: Xmas 2010
+date: 2010-12-15
+---
+
+
+<a href="large.jpg"><img src="small.jpg" alt="[Xmas 2010]" class="center" /></a>
+
+<p>2010 has been a busy year for us featuring lots of animals!  In April the whole family (except Amy) went on the school ski tip to <a href="http://www.myswitzerland.com/en/destinations/holiday-destinations-in-switzerland/braunwald.html">Braunwald in Switzerland</a>.  Everyone skied, even Dougal had a little go.  While we were skiing Amy went to Iceland on a school geography trip and got to see a real eruption and ash cloud up close!  Also in April we welcomed Toffee into the family – a 13h3 dun, Irish pony.  He lives nearby and Amy visits him many times a week.   We went to Cornwall at Easter and then Loveday, the children and her mother visited her ancestral home in <a href="http://en.wikipedia.org/wiki/Woodbridge,_Suffolk">Woodbridge, Suffolk</a>.</p>
+
+<p>In June Daisy had puppies!  We mated her to a handsome black cocker spaniel called Marmite and she produced 5 lovely black puppies.  We found new owners for all the puppies though the children were desperate to keep one.  Nick had the unforgettable experience of being midwife to Daisy and the puppies.  You can see lots of puppies in the picture if you look carefully.  Your challenge is to count the dogs!</p>
+
+<p>The first broken bone this year was Ed's arm whilst mountain boarding.  His cast was removed (twice) while we were having our main holiday at <a href="http://www.treharrock.com/">Treharrock in Cornwall</a>.  We had somewhat mixed weather but lots of surfing as you can see.  The puppies came with us to Treharrock too which was fun – if rather hard work!  Shortly after our return Isabel broke her arm while playing tennis.  Luckily, despite Toffee's successes at removing Amy from the saddle, she has failed to break anything. She enjoyed a week away at <a href="http://www.pcuk.org/Activities/The-Pony-Club-Camp/">Pony Club camp</a> with Toffee, learning lots about riding and tack cleaning!</p>
+
+<p>At the end of the summer we had 5 glorious days on a narrow boat (Savanna, 61 ft long, 20 tonnes) on the <a href="http://en.wikipedia.org/wiki/Wey_and_Arun_Canal">Wey and Arun Navigation</a>.  We unloaded our unsuspecting children from the packed car at Guildford Boat House and sailed to Woking and back at 4mph!  The only thing to fall overboard was the dog and luckily she can swim.  In October we went to <a href="http://en.wikipedia.org/wiki/Bryher,_Isles_of_Scilly">Bryher</a>, one of the Scilly Isles, for a week.  We had mostly lovely weather and a very relaxing holiday cooking and eating local produce from the self service market stall, and taking in the stunning views.</p>
+
+<p>Dougal (3½) has grown into a very adventurous, but shy, young boy. He is often found near the ceiling after having scaled the bookcase/kitchen/wardrobe.  Isabel (9) spent 4 nights at Brownie camp and had a wonderful time.  She enjoys spending time with her friends and making things.  Ed (13) has changed the most of all the children in 2010.  His voice is breaking, and he is now taller than both his parents.  Loveday took him to the shoe shop with size 8½ shoes and came out with size 11! We hope his school adventure club returns him from South Africa before Christmas!  Amy (14) is now working hard on her GCSEs and has taken up dog agility with Daisy.  With bronze Duke of Edinburgh award as well she is a busy girl, but seems to be coping.</p>
+
+<p>Highlights of Nick and Loveday's year include Memset receiving the <a href="http://www.pcpro.co.uk/html/awards-2010/index.php?pageId=10">award for best web host</a> at the PC Pro awards (a rare night out) and Loveday completing the 26 mile <a href="http://www.walkthewalk.org/Challenges/TheMoonWalkLondon">London Moonwalk</a>.  Amy is now a competent baby-sitter so we do go out more than we did – hooray!  Life is very busy at the moment with children and work, but it feels like we are going onwards and upwards.</p>

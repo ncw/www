@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+  <a class="navbar-brand" href="{{ "/" | relURL }}"><img class="rclone-logo" src="{{ "/img/logo_on_dark__horizontal_color.svg" | relURL }}" alt="rclone logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/downloads/">Downloads</a>
+      </li>
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Docs
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ "/install/" | relURL }}"><i class="fa fa-book"></i> Installation</a>
+          <a class="dropdown-item" href="{{ "/docs/" | relURL }}"><i class="fa fa-book"></i> Usage</a>
+          <a class="dropdown-item" href="{{ "/filtering/" | relURL }}"><i class="fa fa-book"></i> Filtering</a>
+          <a class="dropdown-item" href="{{ "/gui/" | relURL }}"><i class="fa fa-book"></i> GUI</a>
+          <a class="dropdown-item" href="{{ "/rc/" | relURL }}"><i class="fa fa-book"></i> Remote Control</a>
+          <a class="dropdown-item" href="{{ "/changelog/" | relURL }}"><i class="fa fa-book"></i> Changelog</a>
+          <a class="dropdown-item" href="{{ "/bugs/" | relURL }}"><i class="fa fa-book"></i> Bugs</a>
+          <a class="dropdown-item" href="{{ "/faq/" | relURL }}"><i class="fa fa-book"></i> FAQ</a>
+          <a class="dropdown-item" href="{{ "/flags/" | relURL }}"><i class="fa fa-book"></i> Flags</a>
+          <a class="dropdown-item" href="{{ "/licence/" | relURL }}"><i class="fa fa-book"></i> Licence</a>
+          <a class="dropdown-item" href="{{ "/authors/" | relURL }}"><i class="fa fa-book"></i> Authors</a>
+          <a class="dropdown-item" href="{{ "/privacy/" | relURL }}"><i class="fa fa-book"></i> Privacy Policy</a>
+        </div>
+      </li>
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Commands
+        </a>
+        <div class="dropdown-menu pre-scrollable" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/commands/"><i class="fas fa-map"></i> Overview</a>
+          <div class="dropdown-divider"></div>          
+          <a class="dropdown-item" href="{{ "/commands/rclone_config/" | relURL }}"><i class="fa fa-book"></i> rclone config</a>
+          <a class="dropdown-item" href="{{ "/commands/rclone_copy/" | relURL }}"><i class="fa fa-book"></i> rclone copy</a>
+          <a class="dropdown-item" href="{{ "/commands/rclone_sync/" | relURL }}"><i class="fa fa-book"></i> rclone sync</a>
+          <a class="dropdown-item" href="{{ "/commands/rclone_move/" | relURL }}"><i class="fa fa-book"></i> rclone move</a>
+          <a class="dropdown-item" href="{{ "/commands/rclone_purge/" | relURL }}"><i class="fa fa-book"></i> rclone purge</a>
+        </div>
+      </li>
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Storage Systems
+        </a>
+        <div class="dropdown-menu pre-scrollable" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ "/overview/" | relURL }}"><i class="fas fa-map"></i> Overview</a>
+          <div class="dropdown-divider"></div>          
+          <a class="dropdown-item" href="{{ "/fichier/" | relURL }}"><i class="fa fa-archive"></i> 1Fichier</a>
+          <a class="dropdown-item" href="{{ "/alias/" | relURL }}"><i class="fa fa-link"></i> Alias</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{{ "/local/" | relURL }}"><i class="fas fa-hdd"></i> The local filesystem</a>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ "/contact/" | relURL }}"><i class="fa fa-envelope"></i> Contact</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ "/donate/" | relURL }}"><i class="fa fa-heart heart"></i> Donate</a>
+      </li>
+    </ul>
+  </div>
+</nav>

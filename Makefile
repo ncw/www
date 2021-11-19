@@ -1,27 +1,16 @@
-# Makefile for Nick's Web site!
+website:
+	rm -rf public
+	hugo
+	@if grep -R "raw HTML omitted" docs/public ; then echo "ERROR: found unescaped HTML - fix the markdown source" ; fi
 
-all:	serve
+upload_website:	website
+	-#rclone -v sync docs/public memstore:www-rclone-org
 
-validate: markup
-	echo "Validate broken"
-	-#find _site -name \*.html | xargs validate --emacs
+upload_test_website:	website
+	-#rclone -P sync docs/public test-rclone-org:
 
-markup:
-	blogofile build
+validate_website: website
+	find public -type f -name "*.html" | xargs tidy --mute-id yes -errors --gnu-emacs yes --drop-empty-elements no --warn-proprietary-attributes no --mute MISMATCHED_ATTRIBUTE_WARN
 
-serve:	markup
-	blogofile serve
-
-keywords:
-	find . -name \*.mako | xargs svn propset svn:keywords "Date Revision Id"
-
-uploadonly:
-	rsync -avz --checksum --cvs-exclude -e ssh _site/ ncw@box.craig-wood.com:public_html/
-
-upload:	markup validate uploadonly
-
-quickupload:	markup uploadonly
-
-clean:
-	rm -rf _site
-	find . -name \*~ -or -name \*.bak -or -name \*.pyc | xargs -d '\n' rm -f
+serve:	website
+	hugo server -v -w --disableFastRender

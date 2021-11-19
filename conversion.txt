@@ -1,0 +1,22 @@
+Need to get rid of \' from converted markdown
+
+Make maths optional if set in header? Or {{<math>}} used - DONE
+
+Fix sidebars - DONE
+
+Fix code formatting? #!python? - DONE
+
+Images?
+
+Links
+
+Search for ::: in converted rst for things which need fixing - DONE
+
+
+---
+title: "Hubic"
+description: "Rclone docs for Hubic"
+---
+
+<%inherit file="/_nav.mako" />
+<%def name="title()">Director</%def>

@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="card-header" style="padding: 5px 10px;">
+    Share and Enjoy
+  </div>
+  <div class="card-body">
+    <p class="menu">
+      <i class="fab fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/intent/tweet/?text={{ .Title }}&via={{ .Site.Params.twitter.username }}&url={{ .Permalink }}" target="_blank" rel="noopener" aria-label="Share on Twitter">Twitter</a><br />
+      <i class="fab fa-facebook" aria-hidden="true"></i> <a href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener" aria-label="Share on Facebook">Facebook</a><br />
+      <i class="fab fa-reddit" aria-hidden="true"></i> <a  href="https://reddit.com/submit/?url={{ .Permalink }}&amp;resubmit=true&amp;title={{ .Title }}" target="_blank" rel="noopener" aria-label="Share on Reddit">Reddit</a><br />
+    </p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header" style="padding: 5px 15px;">
+    Links
+  </div>
+  <div class="card-body">
+    <p class="menu">
+      <i class="fab fa-github" aria-hidden="true"></i> <a href="https://github.com/ncw/">GitHub</a><br />
+      <i class="fab fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/njcw">@njcw</a>
+    </p>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-header" style="padding: 5px 15px;">
+    Pages
+  </div>
+  <div class="card-body">
+    <p class="menu">
+      {{ range .Pages }}
+      <li><a href="{{.Permalink}}">{{.Title}}</a></li>
+      {{ else }}
+      {{ if .Parent }}
+      {{ range .Parent.Pages }}
+      <li><a href="{{.Permalink}}">{{.Title}}</a></li>
+      {{ end }}
+      {{ end }}
+      {{ end }}
+    </p>
+  </div>
+</div>
