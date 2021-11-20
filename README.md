@@ -1,12 +1,9 @@
 # Docs
 
 This directory tree is uses to build all the different docs for
-rclone.
+Nick's website.
 
 See the `content` directory for the docs in markdown format.
-
-Note that some of the docs are auto generated - these should have a DO
-NOT EDIT marker near the top.
 
 Use [hugo](https://github.com/spf13/hugo) to build the website.
 

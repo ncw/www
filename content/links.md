@@ -16,6 +16,7 @@ description: A few of my favourite links
 - [Launchpad](https://launchpad.net/~nick-craig-wood)
 - [Perlmonks](http://perlmonks.org/?node_id=19340)
 - [Amazon (my profile, reviews, wish lists, etc)](http://www.amazon.co.uk/gp/pdp/profile/A37JWH9HBFO862)
+- [QRZ.com (ham radio)](https://www.qrz.com/db/2E0WPM)
 
 ## News
 
