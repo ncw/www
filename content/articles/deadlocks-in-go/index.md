@@ -5,8 +5,6 @@ permalink: '/nick/articles/deadlocks-in-go'
 title: 'Deadlocks: the dark side of concurrency'
 ---
 
-# Deadlocks: the dark side of concurrency
-
 This is a transcript of a talk I gave at Gophercon UK on 2021-10-25.
 
 Go makes it so easy to write concurrent programs that sooner or later you will run into a deadlock. A deadlock is where your program (or part of it) just stops working for mysterious reasons.

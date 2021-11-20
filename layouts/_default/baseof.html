@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="{{ .Description }}">
     <meta name="author" content="Nick Craig-Wood">
-    <link rel="shortcut icon" type="image/png" href="{{ "/img/rclone-32x32.png" | relURL }}"/>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51081799-1"></script>
+    <link rel="shortcut icon" type="image/png" href="{{ "small/njcw.jpg" | relURL }}"/>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24691001-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'UA-51081799-1');
+      gtag('config', 'UA-24691001-1');
     </script>
     <title>{{ block "title" . }}{{ .Title }}{{ end }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
@@ -23,13 +23,14 @@
   </head>
   <body>
     {{ template "chrome/navbar.html" . }}
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-9">
+          <h1>{{ .Title }}</h1>
           {{ block "main" . }}
           {{ end }}
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
           {{ template "chrome/menu.html" . }}
         </div>
       </div>
@@ -40,7 +41,7 @@
             <div class="card card-body">
               <p style="font-size: 90%;">
                 &copy; <a href="https://www.craig-wood.com/nick/">Nick Craig-Wood</a> 1994-{{ now.Format "2006" }}<br>
-                {{ if .File}}{{ with $path := strings.TrimPrefix "/" .File.Path }}Source file <a href="https://github.com/ncw/www/blob/master/docs/content/{{ $path }}">{{ $path }}</a>{{ end }}
+                {{ if .File}}{{ with $path := strings.TrimPrefix "/" .File.Path }}Source file <a href="https://github.com/ncw/www/blob/master/content/{{ $path }}">{{ $path }}</a>{{ end }}
                 last updated <a href="https://github.com/ncw/www/commit/{{ with .GitInfo }}{{ .Hash }}{{ end }}">{{ .Lastmod.Format "2006-01-02" }}</a><br>{{end}}
                 Website hosted on a <a href="https://www.memset.com/dedicated-servers/vps/"><span style="font-weight: bold; font-family: arial black, arial, sans-serif; font-style: italic;">MEMSET CLOUD VPS</span></a>,
                 uploaded with <a href="https://rclone.org">rclone</a>

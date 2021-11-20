@@ -3,15 +3,15 @@ title: Nick Craig-Wood's Home Page
 description: Nick Craig-Wood's Home Page
 ---
 
-<a href="large/njcw.jpg"><img src="small/njcw.jpg" width="100" height="100" style="border: 0; float: right; margin: 4px;" alt="Nick Craig-Wood" title="Nick Craig-Wood"/></a>
-
 Here you will find a somewhat random dump of stuff that I want to make
-public. Quite a bit of software, some personal stuff, some fun stuff
-and maybe the odd rant ;-)
+public. Quite a bit of software, some articles, some personal stuff,
+some fun stuff and maybe the odd rant ;-)
 
-### Software by me
+## Articles
 
-#### Current projects
+{{< articles >}}
+
+## Software
 
 - [rclone: rsync for cloud storage](http://rclone.org)
 - [gpython: a python interpreter written in go "batteries not included"](https://github.com/go-python/gpython)
@@ -22,22 +22,18 @@ and maybe the odd rant ;-)
 - [My dumping ground for useful scripts](pub/)
 - [More of my Open Source software at GitHub](https://github.com/ncw)
 
-### Personal
+## Personal
 
 - [Nick Craig-Wood's personal page](personal/)
 - [The Christmas letter archive](xmas/)
 - [Cocker Spaniel Now!](holly/)
 
-### Fun
+## Fun
 
 - [Some daft juggling animations](animations/)
 - [An HTML noughts-and-crosses / tic-tac-toe player](oxo2d/)
 
-### Articles
-
-{{< articles >}}
-
-### Obsolete
+## Obsolete
 
 - [Software for RISCOS - Acorn's once great OS](riscos/)
 - [ISTEC 1008 ISDN PBX](istec/)

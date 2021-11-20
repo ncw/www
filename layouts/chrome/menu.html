@@ -1,3 +1,15 @@
+{{ if and (gt (len .TableOfContents) 80) (not (.Params.notoc)) }}
+<div class="card">
+  <div class="card-header" style="padding: 5px 10px;">
+    Contents
+  </div>
+  <div class="card-body">
+    {{ .TableOfContents }}
+    <p></p>
+  </div>
+</div>
+{{end}}
+
 <div class="card">
   <div class="card-header" style="padding: 5px 10px;">
     Share and Enjoy
@@ -19,26 +31,6 @@
     <p class="menu">
       <i class="fab fa-github" aria-hidden="true"></i> <a href="https://github.com/ncw/">GitHub</a><br />
       <i class="fab fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/njcw">@njcw</a>
-    </p>
-  </div>
-</div>
-
-
-<div class="card">
-  <div class="card-header" style="padding: 5px 15px;">
-    Pages
-  </div>
-  <div class="card-body">
-    <p class="menu">
-      {{ range .Pages }}
-      <li><a href="{{.Permalink}}">{{.Title}}</a></li>
-      {{ else }}
-      {{ if .Parent }}
-      {{ range .Parent.Pages }}
-      <li><a href="{{.Permalink}}">{{.Title}}</a></li>
-      {{ end }}
-      {{ end }}
-      {{ end }}
     </p>
   </div>
 </div>

@@ -1,11 +1,12 @@
 ---
 title: Oxo2d 
 description: "Oxo2d an HTML noughts and crosses (tic-tac-toe) player"
+nocontents: true
 ---
 
-An HTML noughts and crosses (tic-tac-toe) player
+A plain HTML noughts and crosses (tic-tac-toe) player.
 
-Using <em>No</em> CGI, <em>No</em> Java, <em>No</em> JavaScript, <em>No</em> Tables, <em>No</em> Frames!
+Using **no** Javascript, **no** Java, **no** CGI or any other dynamic technology!
 
 Do you want to go first?
 
