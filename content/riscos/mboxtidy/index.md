@@ -3,7 +3,7 @@ title: MBoxTidy
 description: "MBoxTidy for removing excess baggage from ANT Mailbox files"
 ---
 
-<img class="icon" src="icon/util.gif" alt="*" width="32" height="31" />MBoxTidy <a href="software/"><img src="icon/dl0.gif" alt="[0]" width="18" height="14" /></a>
+<img class="icon" src="icon/util.gif" alt="*" width="32" height="31" />MBoxTidy <a href="../pub/riscos/"><img src="icon/dl0.gif" alt="[0]" width="18" height="14" /></a>
 
 ## This is for removing excess baggage from ANT Mailbox files.
 

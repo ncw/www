@@ -3,7 +3,7 @@ title: "Director"
 description: "Director - a general purpose desktop tool"
 ---
 
-<img class="icon" src="icon/director.gif" alt="*" width="34" height="34" />Director <a href="http://director.sourceforge.net/"><img src="icon/dl0.gif" alt="[0]" width="18" height="14" /></a>
+<img class="icon" src="../../icon/director.gif" alt="*" width="34" height="34" />Director <a href="http://director.sourceforge.net/"><img src="../../icon/dl0.gif" alt="[0]" width="18" height="14" /></a>
 
 Director is a freeware desktop organiser for RISC OS 3.10 or higher.
 

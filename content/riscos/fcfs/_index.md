@@ -3,7 +3,7 @@ title: FCFS - FileCore Image Filing System
 description: FCFS - FileCore Image Filing System
 ---
 
-<img src="../icon/fcfs.gif" alt="[FCFS]" align="left" vspace="4" hspace="4" width="33" height="33" /> <strong>FCFS (1.10) - FileCore Image Filing System<br /> © <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> &amp; <a href="mailto:msergio@tin.it">Sergio Monesi</a> 1995-7<br clear="left" /></strong>
+<img src="../../icon/fcfs.gif" alt="[FCFS]" align="left" vspace="4" hspace="4" width="33" height="33" /> <strong>FCFS (1.10) - FileCore Image Filing System<br /> © <a href="mailto:nick@craig-wood.com">Nick Craig-Wood</a> &amp; <a href="mailto:msergio@tin.it">Sergio Monesi</a> 1995-7<br clear="left" /></strong>
 
 FCFS allows you to create, read and restore images of FileCore discs.
 
@@ -20,41 +20,34 @@ FCFS is SHAREWARE. If you use it for more than 30 days you must
 register; see <a href="legal.html">Conditions of use</a> for more
 info.
 
-<h3>Index</h3>
+## Index
 
 <table border="0" width="100%">
 <tr>
-    <td><a href="#introduction"><img src="../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Introduction</a><br /></td>
-    
-    <td><a href="images.html"><img src="../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> FCFS images</a><br /></td>
-    
-    <td><a href="making.html"><img src="../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Making images</a><br /></td>
-  </tr>
+<td><a href="#introduction"><img src="../../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Introduction</a><br /></td>
+<td><a href="images/"><img src="../../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> FCFS images</a><br /></td>
+<td><a href="making/"><img src="../../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Making images</a><br /></td>
+</tr>
   
-  <tr>
-    <td><a href="restoring.html"><img src="../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Restoring images</a><br /></td>
-    
-    <td><a href="multi.html"><img src="../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Multitasking operations</a><br /></td>
-    
-    <td><a href="using.html"><img src="../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Using images</a><br /></td>
-  </tr>
+<tr>
+<td><a href="restoring/"><img src="../../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Restoring images</a><br /></td>
+<td><a href="multi/"><img src="../../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Multitasking operations</a><br /></td>
+<td><a href="using/"><img src="../../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Using images</a><br /></td>
+</tr>
   
-  <tr>
-    <td><a href="legal.html"><img src="../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Legal notes</a><br /></td>
-    
-    <td><a href="legal.html#registering"><img src="../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Registering</a><br /></td>
-    
-    <td><a href="history.html"><img src="../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> History &amp; Credits</a><br /></td>
-  </tr>
+<tr>
+<td><a href="legal/"><img src="../../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Legal notes</a><br /></td>
+<td><a href="legal.html#registering"><img src="../../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Registering</a><br /></td>
+<td><a href="history/"><img src="../../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> History &amp; Credits</a><br /></td>
+</tr>
   
-  <tr>
-    <td><a href="#contact"><img src="../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Contacting the Authors</a><br /></td>
-    
-    <td><a href="#download"><img src="../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Download FCFS</a><br /></td>
-  </tr>
+<tr>
+<td><a href="#contact"><img src="../../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Contacting the Authors</a><br /></td>
+<td><a href="#download"><img src="../../icon/radiooff.gif" border="0" alt="*" align="top" width="18" height="18" /> Download FCFS</a><br /></td>
+</tr>
 </table>
 
-<h3><a name="introduction" id="introduction">Introduction</a></h3>
+## Introduction {#introduction}
 
 Why would anyone want to copy a FileCore disc into an image file? Well
 FCFS was conceived to do this for 2 main reasons.
@@ -82,16 +75,16 @@ disc onto an external SCSI disc. This chore which used to take nearly
 an hour, is all over in 8 minutes! The created image is then readable
 with the image filing system.
 
-<h3><a name="contact" id="contact">Contacting the Authors</a></h3>
+## Contacting the Authors {#contact}
 
 <a href="../index.html">Nick Craig-Wood</a> is at <a href="mailto:nick@craig-wood.com">nick@craig-wood.com</a><br />
 <a href="http://www.monesi.com/sergio/">Sergio Monesi</a> is at <a href="mailto:msergio@tin.it">msergio@tin.it</a>
 
 More information is available within the FCFS package.
 
-<h3><a name="download" id="download">Download FCFS</a></h3>
+## Download FCFS {#download}
 
-The latest release version can be found at Hensa or its mirrors <a href="ftp://micros.hensa.ac.uk/micros/arch/riscos/d/d148/"><img src="../icon/dl1.gif" alt="[1]" align="top" border="0" width="18" height="14" /></a><a href="ftp://ftp.demon.co.uk/pub/mirrors/hensa/micros/arch/riscos/d/d148/"><img src="../icon/dl2.gif" alt="[2]" align="top" border="0" width="18" height="14" /></a><a href="ftp://sunsite.doc.ic.ac.uk/computing/systems/archimedes/collections/hensa/riscos/d/d148/"><img src="../icon/dl3.gif" alt="[3]" align="top" border="0" width="18" height="14" /></a>.<br />
-The latest version can be always be found here <a href="../software/"><img src="../icon/dl0.gif" alt="[0]" align="top" border="0" width="18" height="14" /></a>.
+The latest release version can be found at Hensa or its mirrors <a href="ftp://micros.hensa.ac.uk/micros/arch/riscos/d/d148/"><img src="../../icon/dl1.gif" alt="[1]" align="top" border="0" width="18" height="14" /></a><a href="ftp://ftp.demon.co.uk/pub/mirrors/hensa/micros/arch/riscos/d/d148/"><img src="../../icon/dl2.gif" alt="[2]" align="top" border="0" width="18" height="14" /></a><a href="ftp://sunsite.doc.ic.ac.uk/computing/systems/archimedes/collections/hensa/riscos/d/d148/"><img src="../../icon/dl3.gif" alt="[3]" align="top" border="0" width="18" height="14" /></a>.<br />
+The latest version can be always be found here <a href="../../pub/riscos/"><img src="../../icon/dl0.gif" alt="[0]" align="top" border="0" width="18" height="14" /></a>.
 
 See also <a href="http://www.monesi.com/sergio/fcfs.html">Sergio's FCFS page</a>.

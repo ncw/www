@@ -27,7 +27,7 @@ description: "Oxo 3D - a 3D tic-tac-toe / noughts and crosses player for Android
 
 <p>You'll need to enable <i>Settings =&gt; Applications =&gt; Unknown Sources</i></p>
 
-<p><a href="../../software/Oxo3d-v0.94.apk">Version 0.94</a></p>
+<p><a href="../../pub/android/oxo3d/Oxo3d-v0.94.apk">Version 0.94</a></p>
 
 <h3>Upcoming</h3>
 <ul>

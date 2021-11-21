@@ -4,7 +4,7 @@ description: "FCFS: Making images"
 ---
 
 
-<img src="make.gif" alt="[Create image window]" align="right" vspace="8" hspace="8" width="295" height="260" /><br />
+<img src="../make.gif" alt="[Create image window]" align="right" vspace="8" hspace="8" width="295" height="260" /><br />
 Clicking with Select on the iconbar icon will open the 'Make Image' window. To create a new FCFS image from a disc you need to select the source disc (using the pop-up menu), choose the Image type, the filename and drag the icon to a filer window.
 
 <p>If you choose a compressed image type then you may drag the slider from fast to slow. Fast is speedy but gives worse compression than Slow. The default setting is probably about right for most people.<br clear="right" /></p>

@@ -4,7 +4,7 @@ description: "FCFS: Restoring images"
 ---
 
 
-<img src="restore.gif" alt="[Restore image window]" align="right" vspace="8" hspace="8" width="404" height="219" /><br />
+<img src="../restore.gif" alt="[Restore image window]" align="right" vspace="8" hspace="8" width="404" height="219" /><br />
 Once you have created an image, you can read the files from it just using the filer (ie drag the files from the image to the disc).
 
 <p>This is a rather slow process (especially on floppies), so if you want to restore all the files you can use the 'Restore&nbsp;Image' window (opened by clicking Adjust on the iconbar FCFS icon).</p>
