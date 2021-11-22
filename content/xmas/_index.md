@@ -8,3 +8,5 @@ Here you will find all the christmas letters we've sent out over the years and t
 If you click on the picture you'll get very much bigger image which will print out the size of the wall if you really want!
 
 The Craig-Wood family
+
+PS You can subscribe to the <a href="index.xml"><i class="fas fa-rss"> RSS feed</i></a> also.

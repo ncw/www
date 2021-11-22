@@ -30,10 +30,10 @@ some fun stuff and maybe the odd rant ;-)
 
 ## Fun
 
-- [Some daft juggling animations](animations/)
-- [An HTML noughts-and-crosses / tic-tac-toe player](oxo2d/)
-- [3d noughts-and-crosses in the browser](oxo3d/) ([wasm version](oxo3d/))
 - [Johnroids - kill John in your browser!](johnroids/)
+- [An HTML noughts-and-crosses / tic-tac-toe player](oxo2d/)
+- [3D noughts-and-crosses in the browser](oxo3d/) ([wasm version](oxo3d/))
+- [Some daft juggling animations](animations/)
 
 ## Obsolete
 

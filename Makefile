@@ -4,7 +4,7 @@ website:
 	@if grep -R "raw HTML omitted" docs/public ; then echo "ERROR: found unescaped HTML - fix the markdown source" ; fi
 
 upload_website:	website
-	-#rclone -v sync public memstore:www-rclone-org
+	rclone -P --exclude "/pub/**" sync public/ box:public_html_new/
 
 upload_test_website:	website
 	-#rclone -P sync public test-rclone-org:

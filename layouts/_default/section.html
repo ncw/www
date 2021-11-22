@@ -1,10 +1,13 @@
 {{ define "main" }}
 {{ .Content }}
-{{ if not (.Params.nocontents) }}
+{{ if or (not (.Params.nocontents)) (.Pages) }}
+<h2 id="contents">Contents</h2>
+<ul>
 {{ range .Pages }}
 <li>
-  <a href="{{.Permalink}}">{{.Title}}{{if not .Date.IsZero}} ({{.Date.Format "2006-01-02"}}){{end}}</a>
+  <a href="{{.Permalink | relURL}}">{{.Title}}{{if not .Date.IsZero}} ({{.Date.Format "2006-01-02"}}){{end}}</a>
 </li>
 {{ end }}
+</ul>
 {{ end }}
 {{ end }}

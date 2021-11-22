@@ -119,7 +119,7 @@ represent the current term in a `int`[^1] then we could use this speedy
 division to greatly speed up the calculation.
 
 The way we do that is to multiply everything by a large number, lets say
-10 ^100^. We then do all our calculations with integers, knowing that we
+10<sup>100</sup>. We then do all our calculations with integers, knowing that we
 should shift the decimal place 100 places to the left when done to get
 the answer. This needs a little bit of care, but is a well known
 technique known as fixed point arithmetic.
