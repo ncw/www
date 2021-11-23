@@ -1,9 +1,12 @@
-# Docs
+# Nick Craig-Wood's public website
 
-This directory tree is uses to build all the different docs for
-Nick's website.
+This directory tree is used to build all the different docs for
+[Nick Craig-Wood's website](https://www.craig-wood.com/nick/).
 
-See the `content` directory for the docs in markdown format.
+The content here is (c) Nick Craig-Wood - if you'd like to use it
+elsewhere then please ask first: nick@craig-wood.com
+
+See the `content` directory for the pages in markdown format.
 
 Use [hugo](https://github.com/spf13/hugo) to build the website.
 
@@ -11,10 +14,9 @@ Use [hugo](https://github.com/spf13/hugo) to build the website.
 
 If you want to change the layout then the main files to edit are
 
-- `layout/index.html` for the front page
-- `chrome/*.html` for the HTML fragments
-- `_default/single.md` for the default template
-- `page/single.md` for the page template
+- `layouts/_default/baseof.html` for the HTML template
+- `chrome/navbar.html` for the navbar
+- `chrome/menu.html` for the menu
 
 Running `make serve` in a terminal give a live preview of the website
 so it is easy to tweak stuff.
@@ -22,44 +24,26 @@ so it is easy to tweak stuff.
 ## What are all these files
 
 ```
-├── config.json                   - hugo config file
+├── config.toml                   - hugo config file
 ├── content                       - docs and backend docs
-│   ├── _index.md                 - the front page of rclone.org
-│   ├── commands                  - auto generated command docs - DO NOT EDIT
-├── i18n
-│   └── en.toml                   - hugo multilingual config
+│   ├── _index.md                 - the front page of the website
 ├── layouts                       - how the markdown gets converted into HTML
 │   ├── 404.html                  - 404 page
 │   ├── chrome                    - contains parts of the HTML page included elsewhere
-│   │   ├── footer.copyright.html - copyright footer
-│   │   ├── footer.html           - footer including scripts
-│   │   ├── header.html           - the whole html header
-│   │   ├── header.includes.html  - header includes eg css files
 │   │   ├── menu.html             - left hand side menu
-│   │   ├── meta.html             - meta tags for the header
 │   │   └── navbar.html           - top navigation bar
 │   ├── _default
-│   │   └── single.html           - the default HTML page render
+│   │   ├── baseof.html           - the HTML skeleton for all pages
+│   │   ├── section.html          - default layout for sections
+│   │   └── single.html           - default layout for sections
 │   ├── index.html                - the index page of the whole site
-│   ├── page
-│   │   └── single.html           - the render of all "page" type markdown
 │   ├── partials                  - bits of HTML to include into layout .html files
-│   │   └── version.html          - the current version number
 │   ├── rss.xml                   - template for the RSS output
 │   ├── section                   - rendering for sections
-│   │   └── commands.html         - rendering for /commands/index.html
 │   ├── shortcodes                - shortcodes to call from markdown files
-│   │   ├── cdownload.html        - download the "current" version
-│   │   ├── download.html         - download a version with the partials/version.html number
-│   │   ├── provider.html         - used to make provider list on the front page
-│   │   └── version.html          - used to insert the current version number
 │   └── sitemap.xml               - sitemap template
 ├── public                        - render of the website
 ├── README.md                     - this file
-├── resources                     - don't know!
-│   └── _gen
-│       ├── assets
-│       └── images
 └── static                        - static content for the website
     ├── css
     │   ├── bootstrap.css
