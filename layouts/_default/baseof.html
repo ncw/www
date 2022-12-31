@@ -16,9 +16,9 @@
     </script>
     <title>{{ block "title" . }}{{ .Title }}{{ end }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
-    <link href="{{ "/css/bootstrap.min.4.4.1.css" | relURL }}" rel="stylesheet">
-    <link href="{{ "/css/font-awesome.min.5.10.2.css" | relURL }}" rel="stylesheet">
-    <link href="{{ "/css/custom.css?r={{ .Date.Unix }}" | relURL }}" rel="stylesheet">
+    <link href="{{ "css/bootstrap.min.4.4.1.css" | relURL }}" rel="stylesheet">
+    <link href="{{ "css/font-awesome.min.5.10.2.css" | relURL }}" rel="stylesheet">
+    <link href="{{ "css/custom.css?r={{ .Date.Unix }}" | relURL }}" rel="stylesheet">
     {{ $RSSLink := "" }}{{ with .OutputFormats.Get "RSS" }}{{ $RSSLink = .RelPermalink }}{{ end }}{{ if $RSSLink }}<link href="{{ $RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />{{ end }}
   </head>
   <body>
@@ -54,10 +54,10 @@
       </footer>
       {{ end }}
     </div>
-    <script src="{{ "/js/jquery.min.3.5.1.js" | relURL }}"></script>
-    <script src="{{ "/js/popper.min.1.16.0.js" | relURL }}"></script>
-    <script src="{{ "/js/bootstrap.min.4.4.1.js" | relURL }}"></script>
-    <script src="{{ "/js/custom.js?r={{ .Date.Unix }}" | relURL }}"></script>
+    <script src="{{ "js/jquery.min.3.5.1.js" | relURL }}"></script>
+    <script src="{{ "js/popper.min.1.16.0.js" | relURL }}"></script>
+    <script src="{{ "js/bootstrap.min.4.4.1.js" | relURL }}"></script>
+    <script src="{{ "js/custom.js?r={{ .Date.Unix }}" | relURL }}"></script>
     {{- if .Params.mathjax }}
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
