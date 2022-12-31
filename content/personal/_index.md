@@ -19,7 +19,7 @@ Currently I'm doing about 17 different things. See below for list of current emp
 Hack on Go stuff, <a href="https://rclone.org/">rclone</a> or other
 cool stuff like <a href="https://github.com/go-python/gpython/">gpython</a>,
 play with the children, read books, walk the dog, mess about with
-<a href="https://www.qrz.com/db/2E0WPM">Ham radio</a>. When I have time
+<a href="https://www.qrz.com/db/M5NCW">Ham radio</a>. When I have time
 (which isn't often) I watch TV.
 
 ## Current employers
