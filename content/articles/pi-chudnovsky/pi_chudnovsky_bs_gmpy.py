@@ -9,7 +9,7 @@ Nick Craig-Wood <nick@craig-wood.com>
 """
 
 import math
-from gmpy2 import mpz
+from gmpy2 import mpz, isqrt
 from time import time
 
 def pi_chudnovsky_bs(digits):
@@ -60,7 +60,7 @@ def pi_chudnovsky_bs(digits):
     # Calclate P(0,N) and Q(0,N)
     P, Q, T = bs(0, N)
     one_squared = mpz(10)**(2*digits)
-    sqrtC = (10005*one_squared).sqrt()
+    sqrtC = isqrt(10005*one_squared)
     return (Q*426880*sqrtC) // T
 
 # The last 5 digits or pi for various numbers of digits
