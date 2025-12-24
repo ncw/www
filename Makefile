@@ -1,6 +1,6 @@
 website:
 	rm -rf public
-	hugo
+	hugo --buildFuture
 	@if grep -R "raw HTML omitted" docs/public ; then echo "ERROR: found unescaped HTML - fix the markdown source" ; fi
 
 upload_website:	website
@@ -13,4 +13,4 @@ validate_website: website
 	find public -type f -name "*.html" | xargs tidy --mute-id yes -errors --gnu-emacs yes --drop-empty-elements no --warn-proprietary-attributes no --mute MISMATCHED_ATTRIBUTE_WARN
 
 serve:	website
-	hugo server -v -w --disableFastRender
+	hugo server --buildFuture --logLevel info -w --disableFastRender

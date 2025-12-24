@@ -4,7 +4,6 @@ description = "An unreliable dump of Nick's interests, past and present."
 canonifyurls = false
 disableKinds = [
   "taxonomy",
-  "taxonomyTerm"
 ]
 ignoreFiles = [
   "~$",
