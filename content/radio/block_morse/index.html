@@ -1,0 +1,123 @@
++++
+title = "Unicode Block-Style Morse Encoder"
+date = "2025-08-12"
++++
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Unicode Block‑Style Morse Encoder</title>
+  <style>
+    fieldset { border: 1px solid #ddd; border-radius: 8px; padding: 1rem; }
+    label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+    #input { width: 100%; padding: 0.5rem; font-size: 1rem; }
+    /* #output { width: 100%; height: 260px; padding: 0.5rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; } */
+    #output { width: 100%; height: 260px; padding: 0.5rem; }
+    .buttons { margin-top: 0.5rem; display: flex; gap: 0.5rem; }
+    button { padding: 0.5rem 0.8rem; border-radius: 8px; border: 1px solid #bbb; background: #f8f8f8; cursor: pointer; }
+    button:active { transform: translateY(1px); }
+    .help { margin-top: 1rem; font-size: 0.95rem; color: #333; }
+    /* kbd{background:#eee;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:4px;padding:0 .25em;font-family:ui-monospace,monospace;} */
+  </style>
+</head>
+<body>
+  <fieldset>
+    <label for="input">Text</label>
+    <input id="input" type="text" placeholder="Type text, e.g. SOS" autocomplete="off" />
+    <div class="buttons">
+      <button id="convert">Convert ⏎</button>
+      <button id="clear" type="button">Clear</button>
+    </div>
+  </fieldset>
+
+  <div class="help">
+    <p><strong>How:</strong> Type text and press <kbd>Enter</kbd> or <em>Convert</em>. Each conversion appends to the output below. Unsupported characters are skipped.</p>
+    <p>Output uses special block characters (U+1FB03, U+1FB0B) and spaces (U+2001) so it stays properly spaced in both mono and proportional fonts.</p>
+  </div>
+
+  <label for="output" style="display:block;margin-top:1rem;font-weight:600;">Output</label>
+  <textarea id="output" readonly></textarea>
+
+<script>
+(() => {
+  "use strict";
+
+  // Unicode block glyphs
+  const DOT  = "🬃";      // U+1FB03 (2 dits)
+  const DASH = "🬋🬃";     // U+1FB0B + U+1FB03 (4 dits)
+  const EN   = "\u2001";  // U+2001 EM QUAD SPACE (2 dits)
+
+  // ITU Morse (A–Z, 0–9, basic punctuation)
+  const MORSE = {
+    'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',
+    'F': '..-.',  'G': '--.',   'H': '....',  'I': '..',    'J': '.---',
+    'K': '-.-',   'L': '.-..',  'M': '--',    'N': '-.',    'O': '---',
+    'P': '.--.',  'Q': '--.-',  'R': '.-.',   'S': '...',   'T': '-',
+    'U': '..-',   'V': '...-',  'W': '.--',   'X': '-..-',  'Y': '-.--',
+    'Z': '--..',
+    '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
+    '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.',
+    '.': '.-.-.-', ',': '--..--', '?': '..--..', "'": '.----.',
+    '!': '-.-.--', '/': '-..-.', '(': '-.--.', ')': '-.--.-',
+    '&': '.-...',  ':': '---...', ';': '-.-.-.', '=': '-...-',
+    '+': '.-.-.',  '-': '-....-', '_': '..--.-', '"': '.-..-.',
+    '$': '...-..-','@': '.--.-.'
+  };
+
+  const encodeSymbol = sym => (sym === '.') ? DOT : DASH;
+
+  const encodeLetter = ch => {
+    const pat = MORSE[ch.toUpperCase()];
+    if (!pat) return '';
+    const symbols = [...pat].map(encodeSymbol).join('');
+    return symbols + EN; // add 2‑dit spacing at the end of the letter
+  };
+
+  const textToBlockMorse = text => {
+    const parts = [];
+    const words = text.split(' ');
+    for (const word of words) {
+      for (const letter of word) {
+        const enc = encodeLetter(letter);
+        if (enc) parts.push(enc);
+      }
+      // word gap = 7 dits; we already have 3, so add 4 more (2 × EN)
+      parts.push(EN + EN);
+    }
+    return parts.join('');
+  };
+
+  // UI wiring
+  const $in  = document.getElementById('input');
+  const $out = document.getElementById('output');
+  const $convert = document.getElementById('convert');
+  const $clear   = document.getElementById('clear');
+
+  const appendOutput = str => {
+    if (!str) return;
+    $out.value += ($out.value ? "\n" : "") + str;
+    $out.scrollTop = $out.scrollHeight;
+  };
+
+  const handleConvert = () => {
+    const raw = $in.value.trim();
+    if (!raw) return;
+    const encoded = textToBlockMorse(raw);
+    appendOutput(encoded);
+    $in.value = '';
+    $in.focus();
+  };
+
+  $convert.addEventListener('click', handleConvert);
+  $clear.addEventListener('click', () => { $out.value = ''; $in.focus(); });
+
+  // Enter submits (Shift+Enter to insert a newline if needed)
+  $in.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleConvert();
+    }
+  });
+})();
+</script>
+</body>
+</html>
