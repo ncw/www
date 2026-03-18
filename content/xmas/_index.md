@@ -9,4 +9,4 @@ If you click on the picture you'll get very much bigger image which will print o
 
 The Craig-Wood family
 
-PS You can subscribe to the <a href="index.xml"><i class="fas fa-rss"> RSS feed</i></a> also.
+PS You can subscribe to the <a href="index.xml">{{< icon "rss" >}} RSS feed</a> also.

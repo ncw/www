@@ -360,3 +360,11 @@ h5 {
 .menu {
     font-size: 95%;
 }
+
+/* Inline SVG icons */
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+}

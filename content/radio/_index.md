@@ -9,4 +9,4 @@ Here are some things Radio Amateurs might find interesting.
 
 M5NCW
 
-You can subscribe to the <a href="index.xml"><i class="fas fa-rss"> RSS feed</i></a> also.
+You can subscribe to the <a href="index.xml">{{< icon "rss" >}} RSS feed</a> also.
