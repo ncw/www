@@ -17,23 +17,9 @@ FCFS images are files of type FCD or FileCore. This file type hasn't been alloca
 <p>For example, if you had a disc with (from Free space display)</p>
 
 <table border="1">
-  <tr>
-    <td>Free:</td>
-    
-    <td>125 Mb<br /></td>
-  </tr>
-  
-  <tr>
-    <td>Used:</td>
-    
-    <td>280 Mb<br /></td>
-  </tr>
-  
-  <tr>
-    <td>Size:</td>
-    
-    <td>406 Mb<br /></td>
-  </tr>
+<tr><td>Free:</td><td>125 Mb</td></tr>
+<tr><td>Used:</td><td>280 Mb</td></tr>
+<tr><td>Size:</td><td>406 Mb</td></tr>
 </table>
 
 <p>An un-compressed image would be 406 Mb in size, a compacted image would be 280 Mb in size and a compressed image would be smaller still, typically about 170 Mb but this varies with exactly what you have on the disc.</p>
