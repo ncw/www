@@ -77,8 +77,8 @@ with the image filing system.
 
 ## Contacting the Authors {#contact}
 
-<a href="../index.html">Nick Craig-Wood</a> is at <a href="mailto:nick@craig-wood.com">nick@craig-wood.com</a><br />
-<a href="http://www.monesi.com/sergio/">Sergio Monesi</a> is at <a href="mailto:msergio@tin.it">msergio@tin.it</a>
+<a href="../index.html">Nick Craig-Wood</a> is at <a href="mailto:nick@craig-wood.com">nick&#64;craig-wood.com</a><br />
+<a href="http://www.monesi.com/sergio/">Sergio Monesi</a> is at <a href="mailto:msergio@tin.it">msergio&#64;tin.it</a>
 
 More information is available within the FCFS package.
 

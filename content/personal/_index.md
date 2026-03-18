@@ -61,6 +61,6 @@ Here are some old photos which I haven't the heart to delete
 
 ## Contacting me
 
-You can e-mail me at <a href="mailto:nick@craig-wood.com">nick@craig-wood.com</a>
+You can e-mail me at <a href="mailto:nick@craig-wood.com">nick&#64;craig-wood.com</a>
 
 Note that my old email address was <i>ncw@axis.demon.co.uk</i> so if you are looking for someone with that address you've come to the right place!
