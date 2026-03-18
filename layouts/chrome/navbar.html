@@ -1,15 +1,18 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+<nav class="navbar">
+  <a class="navbar-brand-group" href="{{ "" | relURL }}">
+    <img class="ncw-logo" src="{{ "small/njcw.jpg" | relURL }}" alt="Nick Craig-Wood">
+    <span class="navbar-brand-name">Nick Craig-Wood</span>
+  </a>
+
   <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active dropdown">
-        <a class="nav-link dropdown-toggle" href="#">
-          Articles
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+  <div class="navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#">Articles</a>
+        <div class="dropdown-menu">
           {{ with .Site.GetPage "articles" }}
           {{ range .Pages }}
           <a class="dropdown-item" href="{{.Permalink | relURL }}">{{ partial "icon.html" "book" }} {{.Title}}</a>
@@ -17,48 +20,40 @@
           {{ end }}
         </div>
       </li>
-      <li class="nav-item active dropdown">
-        <a class="nav-link dropdown-toggle" href="#">
-          Software
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#">Software</a>
+        <div class="dropdown-menu">
           <a class="dropdown-item" href="http://rclone.org" target="_blank">{{ partial "icon.html" "external-link" }} rclone: rsync for cloud storage</a>
-          <a class="dropdown-item" href="https://github.com/go-python/gpython" target="_blank">{{ partial "icon.html" "external-link" }} gpython: a python interpreter written in go "batteries not included"</a>
-          <a class="dropdown-item" href="https://github.com/ncw" target="_blank">{{ partial "icon.html" "external-link" }} More of my Open Source software at GitHub</a>
+          <a class="dropdown-item" href="https://github.com/go-python/gpython" target="_blank">{{ partial "icon.html" "external-link" }} gpython: python in go</a>
+          <a class="dropdown-item" href="https://github.com/ncw" target="_blank">{{ partial "icon.html" "external-link" }} More on GitHub</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{ "android/" | relURL }}">{{ partial "icon.html" "download" }} Software for Android</a>
-          <a class="dropdown-item" href="{{ "riscos/" | relURL }}">{{ partial "icon.html" "download" }} Software for RISCOS</a>
-          <a class="dropdown-item" href="{{ "armprime/" | relURL }}">{{ partial "icon.html" "download" }} ARM based Mersenne prime tester for GIMPS</a>
+          <a class="dropdown-item" href="{{ "android/" | relURL }}">{{ partial "icon.html" "download" }} Android</a>
+          <a class="dropdown-item" href="{{ "riscos/" | relURL }}">{{ partial "icon.html" "download" }} RISCOS</a>
+          <a class="dropdown-item" href="{{ "armprime/" | relURL }}">{{ partial "icon.html" "download" }} ARM prime tester</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{ "pub/" | relURL }}">{{ partial "icon.html" "download" }} My dumping ground for useful scripts</a>
+          <a class="dropdown-item" href="{{ "pub/" | relURL }}">{{ partial "icon.html" "download" }} Scripts &amp; files</a>
         </div>
       </li>
-      <li class="nav-item active dropdown">
-        <a class="nav-link dropdown-toggle" href="#">
-          Personal
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ "personal/" | relURL }}">{{ partial "icon.html" "user" }} Nick Craig-Wood's personal page</a>
-          <a class="dropdown-item" href="{{ "xmas/" | relURL }}">{{ partial "icon.html" "user" }} The Christmas letter archive</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#">Personal</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{{ "personal/" | relURL }}">{{ partial "icon.html" "user" }} About me</a>
+          <a class="dropdown-item" href="{{ "xmas/" | relURL }}">{{ partial "icon.html" "user" }} Christmas letters</a>
           <a class="dropdown-item" href="{{ "holly/" | relURL }}">{{ partial "icon.html" "user" }} Cocker Spaniel Now!</a>
         </div>
       </li>
-      <li class="nav-item active dropdown">
-        <a class="nav-link dropdown-toggle" href="#">
-          Fun
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ "johnroids/" | relURL }}">{{ partial "icon.html" "grin" }} Johnroids - kill John in your browser!</a>
-          <a class="dropdown-item" href="{{ "oxo2d/" | relURL }}">{{ partial "icon.html" "grin" }} An HTML noughts-and-crosses / tic-tac-toe player</a>
-          <a class="dropdown-item" href="{{ "oxo3d/" | relURL }}">{{ partial "icon.html" "grin" }} 3D noughts-and-crosses in the browser</a>
-          <a class="dropdown-item" href="{{ "animations/" | relURL }}">{{ partial "icon.html" "grin" }} Some daft juggling animations</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#">Fun</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{{ "johnroids/" | relURL }}">{{ partial "icon.html" "grin" }} Johnroids</a>
+          <a class="dropdown-item" href="{{ "oxo2d/" | relURL }}">{{ partial "icon.html" "grin" }} Noughts &amp; Crosses</a>
+          <a class="dropdown-item" href="{{ "oxo3d/" | relURL }}">{{ partial "icon.html" "grin" }} 3D Noughts &amp; Crosses</a>
+          <a class="dropdown-item" href="{{ "animations/" | relURL }}">{{ partial "icon.html" "grin" }} Juggling animations</a>
         </div>
       </li>
-      <li class="nav-item active dropdown">
-        <a class="nav-link dropdown-toggle" href="#">
-          Radio
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#">Radio</a>
+        <div class="dropdown-menu">
           {{ with .Site.GetPage "radio" }}
           {{ range .Pages }}
           <a class="dropdown-item" href="{{.Permalink | relURL }}">{{ partial "icon.html" "radio" }} {{.Title}}</a>
@@ -66,11 +61,9 @@
           {{ end }}
         </div>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="{{ "contact/" | relURL }}">{{ partial "icon.html" "envelope" }} Contact</a>
       </li>
     </ul>
   </div>
-  <a class="navbar-brand" href="{{ "" | relURL }}">Nick Craig-Wood</a>
-  <a class="navbar-brand" href="{{ "" | relURL }}"><img class="ncw-logo" src="{{ "small/njcw.jpg" | relURL }}" alt="Nick Craig-Wood"></a>
 </nav>

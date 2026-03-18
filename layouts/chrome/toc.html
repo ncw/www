@@ -1,0 +1,10 @@
+{{ if and (gt (len .TableOfContents) 80) (not (.Params.notoc)) (not .IsHome) }}
+<div class="toc-inline card">
+  <div class="card-header" style="padding: 5px 10px;">
+    Contents
+  </div>
+  <div class="card-body">
+    {{ .TableOfContents }}
+  </div>
+</div>
+{{end}}

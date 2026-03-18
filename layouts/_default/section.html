@@ -2,10 +2,11 @@
 {{ .Content }}
 {{ if or (not (.Params.nocontents)) (.Pages) }}
 <h2 id="contents">Contents</h2>
-<ul>
+<ul class="section-list">
 {{ range .Pages }}
 <li>
-  <a href="{{.Permalink | relURL}}">{{.Title}}{{if not .Date.IsZero}} ({{.Date.Format "2006-01-02"}}){{end}}</a>
+  {{if not .Date.IsZero}}<span class="section-date">{{ .Date.Format "2006-01-02" }}</span>{{end}}
+  <span class="section-title"><a href="{{.Permalink | relURL}}">{{.Title}}</a></span>
 </li>
 {{ end }}
 </ul>
