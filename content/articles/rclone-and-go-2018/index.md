@@ -5,7 +5,7 @@ permalink: '/nick/articles/rclone-and-go-2018'
 title: 'Rclone and Go'
 ---
 
-{{<slide slide-01.png>}}
+{{<slide slide-01.png "Slide: Title - Rclone and Go">}}
 
 This is a transcript of a talk I gave at the Go London User Group on 2018-11-21. You can [watch it on YouTube](https://youtu.be/L1OLet9qviQ) (26 minutes) or see the slides and read the words here.
 
@@ -13,7 +13,7 @@ It's about [rclone](https://rclone.org) and how rclone uses the [Go programming 
 
 ## Introduction
 
-{{<slide slide-02.png>}}
+{{<slide slide-02.png "Slide: About me">}}
 
 Good evening.
 
@@ -29,7 +29,7 @@ I used to be a data hoarder, but the house filled up with servers and disks and 
 
 Thank heavens for cloud storage!
 
-{{<slide slide-03.png>}}
+{{<slide slide-03.png "Slide: Talk overview">}}
 
 My talk this evening is going to start with a quick summary of rclone and its history.
 
@@ -41,7 +41,7 @@ But before I get going I don’t want you to get the impression rclone is all my
 
 ## What is rclone?
 
-{{<slide slide-04.png>}}
+{{<slide slide-04.png "Slide: What is rclone">}}
 
 In summary rclone is a command line program to sync your data to and from cloud providers. 
 
@@ -53,7 +53,7 @@ It has some optional features like encryption, but by and large rclone maps obje
 
 There is lots more info on the website.
  
-{{<slide slide-05.png>}}
+{{<slide slide-05.png "Slide: Rclone and rsync">}}
 
 Many of you will be familiar with rsync. Which is (see slide)
 
@@ -65,7 +65,7 @@ That unfortunately isn’t possible when trying to copy objects 1:1 to cloud pro
 
 It would be possible to implement it but you’d lose that 1:1 mapping of objects.
 
-{{<slide slide-06.png>}}
+{{<slide slide-06.png "Slide: Supported providers">}}
 
 Rclone supports most major cloud providers. Well I think so, they keep making new ones!
 
@@ -77,7 +77,7 @@ I particularly like the HTTP backend – you point it file listing webpage (for 
 
 All rclone operations are supported by all providers.
 
-{{<slide slide-07.png>}}
+{{<slide slide-07.png "Slide: Platforms and licensing">}}
 
 Thanks to Go’s amazing cross compiling abilities, rclone runs on nearly every platform you can think of.
 
@@ -85,7 +85,7 @@ Rclone is licenced under a very liberal MIT licence which means that it gets bun
 
 Nearly all the platforms are cross compiled on a linux host as part of the Travis build.  All except Windows and macOS which I had to build natively to fix various problems.
 
-{{<slide slide-08.png>}}
+{{<slide slide-08.png "Slide: Rclone history">}}
 
 As I began to do less programming at work, I realised I needed to do some programming at home in order to retain my sanity.
 
@@ -95,7 +95,7 @@ I made a few test programs then I wrote my first major go library, an interface 
 
 I need a program to exercise that “swiftsync” which became “rclone”.
 
-{{<slide slide-09.png>}}
+{{<slide slide-09.png "Slide: Why Go">}}
 
 There were some things that attracted me immediately to Go.
 
@@ -107,7 +107,7 @@ I started using Go as a new challenge and it has really brought back the joy of 
 
 Lastly Go is a really easy language to pick up, especially if you’ve done any programming in a language similar to C such as Java.
 
-{{<slide slide-10.png>}}
+{{<slide slide-10.png "Slide: Rclone growth stats">}}
 
 From its humble beginnings rclone has grown into quite a large project.
 
@@ -127,7 +127,7 @@ Rclone gained its first external contribution in 2015.  That was when it impleme
 
 In 2016 it gained some traditional protocols, SFTP and FTP and by 2017 I’d finally figured out I needed a VFS layer.  Which brings us to the frenzy of 2018!
 
-{{<slide slide-12.png>}}
+{{<slide slide-12.png "Slide: Amazon Drive incident">}}
 
 In 2017 I was surprised to find rclone in the middle of a minor media storm.
 
@@ -145,7 +145,7 @@ Rclone is still banned from Amazon Cloud Drive unless you have your own keys.
 
 ## How does it work?
 
-{{<slide slide-13.png>}}
+{{<slide slide-13.png "Slide: How rclone works">}}
 
 I’ll now move on from the history to how it works.
 
@@ -156,7 +156,7 @@ You write the verbs after the command so “rclone config” or “rclone sync�
 For data transfer the main 3 verbs are sync, copy and move.
 
 <!-- {{<slide slide-14.png>}} -->
-{{<slide rclone-config.gif>}}
+{{<slide rclone-config.gif "Slide: Rclone config demo">}}
 
 The first command you run after installing rclone is “rclone config”.
 
@@ -169,7 +169,7 @@ It isn’t the prettiest in the world but it gets the job done!
 When it needs to do oauth it opens up your browser for you and redirects back to a local webserver to receive the results.
 
 <!-- {{<slide slide-15.png>}} -->
-{{<slide rclone-copy.gif>}}
+{{<slide rclone-copy.gif "Slide: Rclone copy demo">}}
 
 The next thing you are likely to want to do is copy some files.
 
@@ -178,7 +178,7 @@ Here is a quick demo of some files being copied using “rclone copy” and “r
 Always start with “rclone copy” - don’t use “rclone sync” as that can delete files in the destination.
 
 <!-- {{<slide slide-16.png>}} -->
-{{<slide rclone-sync.gif>}}
+{{<slide rclone-sync.gif "Slide: Rclone sync demo">}}
 
 This shows the use of rclone sync.
 
@@ -188,7 +188,7 @@ This means that it copies files to the destination and deletes any files in the 
 
 Always try with –dry-run first!
 
-{{<slide slide-17.png>}}
+{{<slide slide-17.png "Slide: Rclone copy diagram">}}
 
 Here is rclone copy in diagram format.
 
@@ -196,7 +196,7 @@ On the left are the source and destination before the command and on the right a
 
 You can see that it can copy a file, ignore an unchanged file, overwrite a stale file and that it doesn’t touch files which exist in the destination already but aren’t in the source.
 
-{{<slide slide-18.png>}}
+{{<slide slide-18.png "Slide: Rclone sync diagram">}}
 
 Whereas rclone sync’s job is to get the source and destination identical
 
@@ -204,7 +204,7 @@ You can see that it can copy a file, ignore an unchanged file, overwrite a stale
 
 Rclone sync, copy and move are all implemented by the same routine as most of the code is identical between them.
 
-{{<slide slide-19.png>}}
+{{<slide slide-19.png "Slide: Rclone mount">}}
 
 Rclone mount is one of my favourite features.  Mount any backend supported by rclone as a FUSE mount.
 
@@ -215,7 +215,7 @@ Rclone supports seeking on the files too so you can play video quite well from y
 However if you want to open a file for both read and write or seek while writing then rclone will need to download the file and work on a cached copy.  This is part of the VFS layer in rclone which adapts rclone objects to work more like an actual file system.
 
 <!-- {{<slide slide-20.png>}} -->
-{{<slide rclone-ncdu.gif>}}
+{{<slide rclone-ncdu.gif "Slide: Rclone ncdu demo">}}
 
 Here is another of my favourite features.
 
@@ -229,7 +229,7 @@ It uses the excellent termbox library to implement the text based user interface
 
 ## Dive into code
 
-{{<slide slide-21.png>}}
+{{<slide slide-21.png "Slide: Backend Fs interface">}}
 
 Now let’s dive into a bit of code.
 
@@ -243,7 +243,7 @@ You can see the kind of methods you might expect, List, NewObject, Put and Mkdir
 
 There are also some missing from that list which I’ll cover in a moment, like Copy.
 
-{{<slide slide-22.png>}}
+{{<slide slide-22.png "Slide: Object interface">}}
 
 This is the interface a cloud storage object must fulfil.
 
@@ -253,7 +253,7 @@ Open reads the object and Update sets its contents.
 
 You can also read the modification time and set the modification time – something that is very important for rclone syncing.
 
-{{<slide slide-23.png>}}
+{{<slide slide-23.png "Slide: Optional interfaces">}}
 
 All the backends support the interfaces in the previous two slides.  However some backends can do more, and rclone can use that.
 
@@ -261,7 +261,7 @@ For example the Purge interface deletes a directory and everything under it.  So
 
 For example, say you were doing a server side move of an object.  Some backends can do that immediately with the Move method (for example Google Drive).  Some support Copy but not Move (for example S3).  Rclone will Copy the object then Delete it.  And some don’t support either (eg B2) in which case rclone will download the object and upload it again.
 
-{{<slide slide-24.png>}}
+{{<slide slide-24.png "Slide: Type assertions">}}
 
 Here is how you might use those optional interfaces – with an type assertion.  That is straight forward go code.
 
@@ -271,7 +271,7 @@ The traditional solution to this is a sentinel error which we check.  Here we ca
 
 This works very well, provided you don’t want to know which methods are used in advance. Unfortunately rclone does need to know….
 
-{{<slide slide-25.png>}}
+{{<slide slide-25.png "Slide: Features struct">}}
 
 The solution to that is a good old fashioned struct full of function pointers.  This is filled in with a bit of reflection so doesn’t take any manual work to keep up to date.
 
@@ -283,7 +283,7 @@ Those of you who’ve used C++ will realise this is a re-implementation of the v
 
 ## Testing
 
-{{<slide slide-26.png>}}
+{{<slide slide-26.png "Slide: Testing overview">}}
 
 Lets go into how rclone is tested.
 
@@ -293,7 +293,7 @@ Anyone think writing mocks for 27 different cloud providers would be much fun fo
 
 So rclone does lots of integration tests.  These give real confidence that rclone works properly and keeps on working. After all cloud providers often change stuff.
 
-{{<slide slide-27.png>}}
+{{<slide slide-27.png "Slide: CI pipeline">}}
 
 Rclone has a full continuous integration pipeline.
 
@@ -303,7 +303,7 @@ The CI tests run all the non integration tests and builds binaries for all the p
 
 You’ll find those at beta.rclone.org
 
-{{<slide slide-28.png>}}
+{{<slide slide-28.png "Slide: Integration tests">}}
 
 The integration tests run on a separate server.
 
@@ -311,7 +311,7 @@ These run the tests, which are just normal go unit tests with some extra flags a
 
 Running these tests costs money and takes a long time so I don’t run them against every pull request, only against the master branch and only once per day.
 
-{{<slide slide-29.png>}}
+{{<slide slide-29.png "Slide: Test report">}}
 
 The integration tests produce a report for the developers to look at.
 
@@ -321,7 +321,7 @@ Often there are lots of failures, usually because of some cloud provider glitch,
 
 Making a pretty report (well that is pretty by my standards) wasn’t high on my priority list.  However I completely messed up one of the releases by misreading the old report, so I made a report which couldn’t be misunderstood.
 
-{{<slide slide-30.png>}}
+{{<slide slide-30.png "Slide: Test framework">}}
 
 The integration tests rclone uses are standard go tests.  It is easy to add flags to the go tests and rclone adds a “-remote” flag to tell it to run the tests against an actual backend.
 
@@ -329,7 +329,7 @@ Unlike unit tests, integration tests often fail.  The internet is a messy place 
 
 I should probably take the time to open source this framework as it could be useful elsewhere!
 
-{{<slide slide-31.png>}}
+{{<slide slide-31.png "Slide: Nested tests">}}
 
 In go1.6 the concept of nested tests was introduced.
 
@@ -339,7 +339,7 @@ When making a new backend, you can use the integration tests as a guide for what
 
 Pre go1.6 code generation was used to make the integration tests which was rather painful so thank you to the Go team for making nested tests.
 
-{{<slide slide-32.png>}}
+{{<slide slide-32.png "Slide: Test flags">}}
 
 This is something that not many people know, but can make your life much easier.
 
@@ -349,7 +349,7 @@ There are some great examples of this in the standard library, for instance usin
 
 Rclone uses flags to indicate that tests should run with a real backend, and to help debug those tests.
 
-{{<slide slide-33.png>}}
+{{<slide slide-33.png "Slide: Code statistics">}}
 
 Rclone is a reasonably large program now, approaching 100 thousand lines of Go code.
 
@@ -364,7 +364,7 @@ I don’t think we can drop the vendor directory just yet as rclone needs to sup
 ## Tools
 
 <!-- {{<slide slide-34.png>}} -->
-{{<slide goimports.gif>}}
+{{<slide goimports.gif "Slide: Goimports demo">}}
 
 I’ll just run through a few of my favourite libraries and tools that rclone uses.
 
@@ -374,7 +374,7 @@ My first choice is goimports.  Install it in your editor and never type an impor
 
 You can see me editing a small file in emacs here and the import statements being automatically added while the code is formatted for you. It works in vim too so I’m told ;-)
 
-{{<slide slide-35.png>}}
+{{<slide slide-35.png "Slide: Cobra library">}}
 
 Cobra is excellent for organising command line programs with lots of verbs.
 
@@ -384,7 +384,7 @@ Cobra comes with a flag library pflag which allows you to create POSIX flags.  F
 
 Cobra also creates your bash completion script for all those people like me who use bash, but hate writing bash scripts!
 
-{{<slide slide-36.png>}}
+{{<slide slide-36.png "Slide: Cobra documentation">}}
 
 Cobra helps with the documentation.  When you write a command cobra makes command help for it and then has a really easy way of turning that into markdown for the website.
 
@@ -392,7 +392,7 @@ A lot of the help on the rclone website was generated this way and it really hel
 
 I then use pandoc to turn the markdown into a man page and one big HTML document for the download.
 
-{{<slide slide-37.png>}}
+{{<slide slide-37.png "Slide: Error handling">}}
 
 If you’ve been keeping up with go news you’ll have read the errors proposal for go 2.
 
@@ -404,7 +404,7 @@ This means that rather than receiving a log message with “unexpected EOF” yo
 
 ## Conclusion
 
-{{<slide slide-38.png>}}
+{{<slide slide-38.png "Slide: Open source tips">}}
 
 I’m just going to talk briefly about what to do if your open source package takes off.
 
@@ -418,6 +418,6 @@ Oh yes, write lots of docs – maybe that should have gone first.
 
 Finally get octobox.io – rather than managing 100s of emails from Github manage them in a nice web interface where you can filter etc.
 
-{{<slide slide-39.png>}}
+{{<slide slide-39.png "Slide: Thank you">}}
 
 Thank you all for listening :-)

@@ -1,1 +1,1 @@
-<p><img src="{{ .Get 0 }}"  style="width: 80%; height: auto; border: 5px solid #555; border-radius: 15px;"></p>
+<p><img src="{{ .Get 0 }}" alt="{{ with .Get 1 }}{{ . }}{{ else }}Slide{{ end }}" style="width: 80%; height: auto; border: 5px solid #555; border-radius: 15px;"></p>

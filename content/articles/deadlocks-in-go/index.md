@@ -17,7 +17,7 @@ You will need an understanding of go routines, locking (sync.Mutex) and channels
 
 ## Introduction
 
-{{<slide slide-01.png>}}
+{{<slide slide-01.png "Slide: Title - Deadlocks in Go">}}
 
 Hello and welcome everyone.
 
@@ -27,7 +27,7 @@ This is an intermediate level talk, so I’m assuming you know what a go routine
 
 I’ve put a link to the [code samples](https://github.com/ncw/go-deadlocks-talk) up there – you don’t need them as I’ll be putting them on the screen, but you can have them for reference during the talk or later.
 
-{{<slide slide-02.png>}}
+{{<slide slide-02.png "Slide: Talk overview">}}
 
 In this talk we are going to talk about what a deadlock is, how to debug them and how to avoid them in future.
 
@@ -37,7 +37,7 @@ I learned about deadlocks the hard way by having to debug lots of them and I’m
 
 Hopefully everyone, no matter how experienced will pick up a few tips.
 
-{{<slide slide-03.png>}}
+{{<slide slide-03.png "Slide: About me">}}
 
 But first a little bit about me. At the moment I’m mostly doing Open Source coding on [rclone](https://rclone.org) with a bit of consultancy.
 
@@ -47,7 +47,7 @@ After writing a few small things in Go, I started started the rclone project in 
 
 That’s been quite a ride but I’ll save that story for a different talk!
 
-{{<slide slide-04.png>}}
+{{<slide slide-04.png "Slide: About rclone">}}
 
 Since all the real world examples in this talk come from rclone I’ll tell you a little bit about it.
 
@@ -63,7 +63,7 @@ Before I started on the rclone journey I knew nothing about deadlocks!
 
 ## What is a deadlock?
 
-{{<slide slide-05.png>}}
+{{<slide slide-05.png "Slide: What is a deadlock">}}
 
 So what is a deadlock?
 
@@ -75,7 +75,7 @@ Rather like a newly graduated developer: you need experience to get a job, but y
 
 In a deadlock the other process has something you want, and you have something the other process wants and you are both prepared to sit there and block forever until the other process gives you what you need.
 
-{{<slide slide-06.png>}}
+{{<slide slide-06.png "Slide: Deadlock diagram setup">}}
 
 Let’s go through a deadlock in diagram form.
 
@@ -83,15 +83,15 @@ Here we have two go routines (the blue circles labelled Process 1 and Process 2)
 
 Each lock could be a sync.Mutex or a Read Write Mutex or maybe even a write to a channel.
 
-{{<slide slide-07.png>}}
+{{<slide slide-07.png "Slide: Process 1 takes Lock 1">}}
 
 The first step is Process 1 takes Lock 1. All good so far.
 
-{{<slide slide-08.png>}}
+{{<slide slide-08.png "Slide: Process 2 takes Lock 2">}}
 
 Next step is process 2 takes lock 2. Again all good, nothing to see here.
 
-{{<slide slide-09.png>}}
+{{<slide slide-09.png "Slide: Process 1 blocked on Lock 2">}}
 
 Now process 1 attempts to takes lock 2. This causes Process 1 to block and wait for lock 2 to be released as lock 2 is already taken by process 2.
 
@@ -99,7 +99,7 @@ We haven’t reached deadlock yet as everything could be resolved as soon as Pro
 
 However it doesn’t do that...
 
-{{<slide slide-10.png>}}
+{{<slide slide-10.png "Slide: Deadlock achieved">}}
 
 Process 2 now tries to take Lock 1.
 
@@ -111,7 +111,7 @@ These two processes are now deadlocked.
 
 This means that some part of your program has stopped working and will **never** work again.
 
-{{<slide slide-11.png>}}
+{{<slide slide-11.png "Slide: Deadlock code example">}}
 
 Let’s see what that might look like in Go with a simple bit of code.
 
@@ -121,7 +121,7 @@ The only difference between process1 and process2 is that they take and release 
 
 This code looks like it should work, but it will deadlock pretty soon.
 
-{{<slide slide-12.png>}}
+{{<slide slide-12.png "Slide: Deadlock detector output">}}
 
 This is the output once you run the code.
 
@@ -135,13 +135,13 @@ Go routine 1 is waiting on the select with no cases that we put in to stop the p
 
 Goroutine 17 is in state semacquire – its deadlocked calling the sync Mutex implementation.
 
-{{<slide slide-13.png>}}
+{{<slide slide-13.png "Slide: Backtrace continued">}}
 
 Here is the next bit of the output.
 
 In goroutine 19 you can see a different bit of our code in also calling the sync Mutex implementation. Again it is deadlocked in the semacquire state.
 
-{{<slide slide-14.png>}}
+{{<slide slide-14.png "Slide: Annotated deadlock code">}}
 
 I’ve put arrows at the bits of code that the backtrace indicates the go routines are executing.
 
@@ -149,13 +149,13 @@ You can see process1 has taken lock1 and is blocked taking lock2, whereas proces
 
 This is a clear deadlock. Whenever you see a trace where a single go routine takes more than one lock, you should be thinking about deadlocks.
 
-{{<slide slide-15.png>}}
+{{<slide slide-15.png "Slide: Deadlock diagram confirmed">}}
 
 This is exactly what we expected from our initial diagram, process 1 is blocked taking lock 2 and process 2 is blocked taking lock 1.
 
 It is nice to see  theory and practice agreeing!.
 
-{{<slide slide-16.png>}}
+{{<slide slide-16.png "Slide: Go deadlock detection limits">}}
 
 You’ll have noticed that Go can detect deadlocks.
 
@@ -165,7 +165,7 @@ This is because **all** the Go routines in your entire program have to be asleep
 
 There is always something else going on, like log collection or statistics calculations or something like that which means the race detector does not fire.
 
-{{<slide slide-17.png>}}
+{{<slide slide-17.png "Slide: Silent deadlock example">}}
 
 This time if we add one extra go routine as indicated the deadlock detector does not kick in, and the program deadlocks silently.
 
@@ -177,7 +177,7 @@ Enough of your code may be working to give you the idea its it isn’t broken bu
 
 We’ll see in the next section of the talk what to do at this point.
 
-{{<slide slide-18.png>}}
+{{<slide slide-18.png "Slide: Channels and deadlocks">}}
 
 A quick diversion, as I expect this question has popped into your minds already.
 
@@ -187,7 +187,7 @@ Alas, no, you can cause a deadlock with channels just as easily as with Mutexes 
 
 In my my experience with rclone only about 10% of the deadlocks are with channels so they are less likely certainly.
 
-{{<slide slide-19.png>}}
+{{<slide slide-19.png "Slide: Why deadlocks happen">}}
 
 So why do we get deadlocks?
 
@@ -197,7 +197,7 @@ The first is concurrency. Without concurrency, that is things happening at the s
 
 This means that single threaded code can’t have deadlocks which is a point we’ll come back to later.
 
-{{<slide slide-20.png>}}
+{{<slide slide-20.png "Slide: Locking causes deadlocks">}}
 
 The next magic ingredient for deadlocks is locking.
 
@@ -207,7 +207,7 @@ And if I wanted to be really precise I’d say shared resource acquisition inste
 
 So where did these locks come from?
 
-{{<slide slide-21.png>}}
+{{<slide slide-21.png "Slide: Race detector and locking">}}
 
 My excuse is the race detector made me do it :-)
 
@@ -217,7 +217,7 @@ I’m joking here of course, the go race detector is wonderful.
 
 It tells us about data races which would have caused silent corruption in our programs.
 
-{{<slide slide-22.png>}}
+{{<slide slide-22.png "Slide: Race detector virtues">}}
 
 Let’s just sing the virtues of the race detector for a moment. It is a technological marvel and very close to magic.
 
@@ -233,7 +233,7 @@ In particular think about what locks might be already held and what locks you mi
 
 ## How to debug a deadlock
 
-{{<slide slide-23.png>}}
+{{<slide slide-23.png "Slide: File and Directory example">}}
 
 Here is an example I’m going to use quite a few times.
 
@@ -245,7 +245,7 @@ On the right we see the definition of the Directory struct. This has a name, a p
 
 There is no locking in the code above, yet, but a few runs with the race detector reveals that locking is needed.
 
-{{<slide slide-24.png>}}
+{{<slide slide-24.png "Slide: Adding mutex to File">}}
 
 To prevent those nasty data races we add a sync.Mutex called mu into the File structure. The name, lower case mu is traditional in Go code.
 
@@ -257,7 +257,7 @@ This is a standard pattern used in Go concurrent programming and hopefully you�
 
 Take the lock at the start of each method and defer its release to the end – what could possibly go wrong?
 
-{{<slide slide-25.png>}}
+{{<slide slide-25.png "Slide: Adding mutex to Directory">}}
 
 We do the same thing in the Directory structure, add a sync.Mutex called mu to the struct and then call mu.Lock() in each method and defer the mu.Unlock() until the method returns.
 
@@ -269,7 +269,7 @@ Most deadlocks are like this – they don’t stop your code the first time you 
 
 Usually just after you’ve put your code into production.
 
-{{<slide slide-26.png>}}
+{{<slide slide-26.png "Slide: Provoking the deadlock">}}
 
 Here is a bit of code to exercise the Directory and File abstractions and which will provoke the deadlock.
 
@@ -283,7 +283,7 @@ We also start a race detector defeating go routine which just sleeps for a minut
 
 And finally the empty select statement to sleep the main go routine forever. Remember if we exit the main go routine then our program will stop, and we don’t want that.
 
-{{<slide slide-27.png>}}
+{{<slide slide-27.png "Slide: Sending SIGQUIT">}}
 
 So we run the program and it is now sitting there doing a whole heap of nothing while deadlocked.
 
@@ -293,7 +293,7 @@ If you are running on a Unix based platform (for example Linux or macOS) then yo
 
 Windows platform users will have to work a little harder and install the HTTP debug handler from [net/http/pprof](https://pkg.go.dev/net/http/pprof) and I’ll show how to do that a bit later.
 
-{{<slide slide-28.png>}}
+{{<slide slide-28.png "Slide: SIGQUIT backtrace output">}}
 
 This is what happened when I sent the File and Directory example program the QUIT signal.
 
@@ -305,7 +305,7 @@ Following that is a reference to a line of source code, plus the code itself, on
 
 In fact this is a system go routine doing something in the runtime – we can ignore it because it doesn’t have any of our code in the backtrace.
 
-{{<slide slide-29.png>}}
+{{<slide slide-29.png "Slide: Goroutine backtrace analysis">}}
 
 Next we see go routine 1, select, no cases. This is the wait forever select code which we put in to stop the main function existing. We can ignore this too.
 
@@ -315,7 +315,7 @@ Below the semacquire you can see a couple of lines of code in the runtime – th
 
 We can see that Dir.Path was called by File.Path so by the time the go routine tries to acquire the Directory lock it has already acquired the File lock.
 
-{{<slide slide-30.png>}}
+{{<slide slide-30.png "Slide: Semacquire goroutine blocked">}}
 
 Next we see goroutine 6 – also blocked on semacquire.
 
@@ -327,13 +327,13 @@ If you have an editor you can click on those file names to jump to the code in q
 
 Under that we see go routine 7 sleep which is our deadlock defeating go routine which we can ignore.
 
-{{<slide slide-31.png>}}
+{{<slide slide-31.png "Slide: Register dump">}}
 
 And finally the register dump which you can ignore for this purpose.
 
 I’m sure the register dump is useful for low level debugging, maybe if you are writing assembler, but I’ve never needed it to debug deadlocks.
 
-{{<slide slide-32.png>}}
+{{<slide slide-32.png "Slide: Annotated deadlock backtrace">}}
 
 Here I’ve annotated the code from the backtrace showing where each go routine is blocked.
 
@@ -345,7 +345,7 @@ On the right File.Size is already holding the directory lock but is blocked tryi
 
 This means that these two functions are deadlocked and will block forever because the locks they are waiting for will never be released.
 
-{{<slide slide-33.png>}}
+{{<slide slide-33.png "Slide: Deadlock timeline">}}
 
 This deadlock occurs whenever the Size method on Dir is called concurrently with the Path method on File.
 
@@ -357,7 +357,7 @@ You might think that there is very little opportunity for this to happen given t
 
 One thing to bear in mind is that locking instructions are particularly slow – they use slow memory locked instructions or schedule go routines or processes - which often turns something you thought would never happen into something which always happens.
 
-{{<slide slide-34.png>}}
+{{<slide slide-34.png "Slide: HTTP debug handler">}}
 
 I’ll just quickly loop back to how to install the HTTP debug handler which you can use to collect backtraces when running Windows.
 
@@ -367,7 +367,7 @@ You can collect the output with curl or just look at in your browser.
 
 You can use this on any platform of course, and you might consider leaving it in your production code for when your production code has deadlocked and you want to find out why.
 
-{{<slide slide-35.png>}}
+{{<slide slide-35.png "Slide: HTTP debug handler output">}}
 
 The output from the HTTP debug handler is similar to the output from SIGQUIT with one stanza for each go routine and a trace showing position in file and the actual line of code being executed.
 
@@ -376,7 +376,7 @@ It doesn’t call out the state of each go routine in the same way as the SIGQUI
 One important difference is that this output collapses goroutines with identical stacks which can very useful if you’ve got 1000s of goroutines.
 
 <!-- {{<slide slide-36.png>}} -->
-{{<slide long-deadlock-log2.gif>}}
+{{<slide long-deadlock-log2.gif "Slide: Long deadlock backtrace">}}
 
 When you are tracking down a deadlock in a real world program with lots of concurrency, you’ll find that the backtraces get very long, very quickly.
 
@@ -389,7 +389,7 @@ It has nearly 2000 lines covering 260 go routines and is par for the course when
 If that sounds like looking for a needle in a haystack, it is, we need some help here!
 
 <!-- {{<slide slide-37.png>}} -->
-{{<slide panicparse_webstack.gif>}}
+{{<slide panicparse_webstack.gif "Slide: Panicparse web output">}}
 
 Luckily there is a great tool called [panic parse](https://github.com/maruel/panicparse) which helps enormously here.
 
@@ -401,7 +401,7 @@ It also has a nice web output which I haven’t tried yet, but I’ve put up the
 
 This tool has saved me so much time when debugging deadlocks – thank you Marc-Antoine Ruel!
 
-{{<slide slide-38.png>}}
+{{<slide slide-38.png "Slide: Panicparse text output">}}
 
 The text output of panic parse shows a stanza for each go routine. It collapses go routines with similar stacks together like the HTTP debug handler, but better.
 
@@ -413,7 +413,7 @@ I’m not going to lie, it’s still tricky working out exactly what the cause o
 
 ## How to avoid deadlocks
 
-{{<slide slide-39.png>}}
+{{<slide slide-39.png "Slide: How to avoid deadlocks">}}
 
 We’ve talked so far about what a deadlock is and how to find them and debug them, but a better strategy would be to avoid them completely.
 
@@ -421,7 +421,7 @@ I’m going to talk through a number of different techniques for avoiding deadlo
 
 We’re going to start with some easy things to fix then move on to some harder problems.
 
-{{<slide slide-40.png>}}
+{{<slide slide-40.png "Slide: Channel deadlock example">}}
 
 I said there was going to be an example of deadlocks with channels a bit later and here it is!
 
@@ -435,7 +435,7 @@ Those jobs are then returned in a slice for further processing.
 
 This is simplified from an rclone example where each Job listed a directory and returned jobs to list sub directories.
 
-{{<slide slide-41.png>}}
+{{<slide slide-41.png "Slide: ProcessJobs function">}}
 
 Here the ProcessJobs function takes a WaitGroup and a channel of jobs. When running it takes a job out of the channel, processes it and adds any created jobs back onto the channel.
 
@@ -446,11 +446,11 @@ Its worth explaining what the sync.WaitGroup does here. We are using it to keep 
 
 When the wait group goes to zero, we know all the jobs have finished and we wait for that moment with the Wait method.
 
-{{<slide slide-42.png>}}
+{{<slide slide-42.png "Slide: Channel deadlock runs">}}
 
 When we run it, it works fine for a while, running jobs, creating new ones, adding them to the channel, until...
 
-{{<slide slide-43.png>}}
+{{<slide slide-43.png "Slide: Channel deadlock output">}}
 
 … you guessed it, we get a deadlock.
 
@@ -462,7 +462,7 @@ The problem is that somehow all three of our go routines are blocked writing to 
 
 Because those 3 go routines are the only place that we read from the channel, it means that the channel will never get emptied and those 3 go routines will never get unblocked, creating a deadlock.
 
-{{<slide slide-44.png>}}
+{{<slide slide-44.png "Slide: Channel deadlock annotated">}}
 
 This is the code with the deadlock positions marked on it.
 
@@ -472,7 +472,7 @@ We can also see the sync.Waitgroup Wait method being called to wait for the Job 
 
 The Waitgroup Wait isn’t the cause of the deadlock, but it is collateral damage and this is very common when looking at deadlocks. Often the collateral damage overwhelms the cause of the deadlock and that makes it very hard to work out what is going on.
 
-{{<slide slide-45.png>}}
+{{<slide slide-45.png "Slide: Channel deadlock solution">}}
 
 So what is the solution?
 
@@ -484,7 +484,7 @@ This has the consequence that there might be an indefinite number of go routines
 
 Note we also moved the activeJobs.Done call into the new go routine – we can’t signal a job is finished until all its Job children are safely queued. If we do then the main function will end too early.
 
-{{<slide slide-46.png>}}
+{{<slide slide-46.png "Slide: Channel deadlock moral">}}
 
 The moral of this channel deadlock is simple. Don’t send and receive to the same channel in the same go routine – it is a recipe for deadlocks.
 
@@ -492,7 +492,7 @@ As I said earlier this example came straight from rclone. This dead lock took so
 
 Concurrency is hard!
 
-{{<slide slide-47.png>}}
+{{<slide slide-47.png "Slide: RWMutex deadlock example">}}
 
 Here is an example with read write locks.
 
@@ -504,7 +504,7 @@ This look harmless and it works most of the time until suddenly it doesn’t and
 
 This example is simplified from a real world example which was caused by a bit of careless refactoring.
 
-{{<slide slide-48.png>}}
+{{<slide slide-48.png "Slide: RWMutex lock step 1">}}
 
 The next step is the Read Write lock being taken in go routine 2.
 
@@ -512,7 +512,7 @@ If you read the docs you’ll see a Read Write lock prevents any new Read locks 
 
 There is also a note about recursive locking not being allowed if you read carefully which is exactly what this example is about.
 
-{{<slide slide-49.png>}}
+{{<slide slide-49.png "Slide: RWMutex lock step 2">}}
 
 The next step is the Read Write lock being taken in go routine 2.
 
@@ -520,7 +520,7 @@ If you read the docs you’ll see a Read Write lock prevents any new Read locks 
 
 There is also a note about recursive locking not being allowed if you read carefully which is exactly what this example is about.
 
-{{<slide slide-50.png>}}
+{{<slide slide-50.png "Slide: RWMutex recursive deadlock">}}
 
 The deadlock happens when go routine 1 attempts to take the read lock again. This is called recursive locking and none of the standard library locking routines support recursive locking.
 
@@ -530,7 +530,7 @@ This means that MoreRO function will never return and the RO function will never
 
 Thus, a deadlock!
 
-{{<slide slide-51.png>}}
+{{<slide slide-51.png "Slide: RWMutex deadlock moral">}}
 
 And the moral of this story is Don’t take a read lock twice in the same go routine.
 
@@ -538,13 +538,13 @@ It might sound completely obvious but it is really easy to do by accident.
 
 It does warn explicitly against doing this in the docs too, but of course I didn’t notice that until after I caused this deadlock!
 
-{{<slide slide-52.png>}}
+{{<slide slide-52.png "Slide: Deadlock commit message">}}
 
 I could show a commit message for every one of the examples in this talk, but since we haven’t got all day I’ll just put this one up so you can feel my pain.
 
 I always find debugging deadlocks hard even with all these nice tools, so when you have to debug one yourself, just remember that!
 
-{{<slide slide-53.png>}}
+{{<slide slide-53.png "Slide: Interlinked objects deadlock">}}
 
 Objects which contains locks that call each others methods are a deadlock waiting to happen.
 
@@ -554,7 +554,7 @@ Going back to our Directory and File example, the problem is caused by the fact 
 
 The general solution to this is called Total Lock Ordering but we’re going to look at some easier mitigations first.
 
-{{<slide slide-54.png>}}
+{{<slide slide-54.png "Slide: Shorten locking window">}}
 
 Here is one example fix for the deadlock. I call this technique shortening the locking Window.
 
@@ -566,7 +566,7 @@ Below that you can see we’ve modified it to make a temporary copy of name and 
 
 This is enough to fix the deadlock as shown before. It does introduce the idea that the Path function might return an out of date Path if the name or parent changes during the call of Path. Some thought is required here as to whether this is OK or not.
 
-{{<slide slide-55.png>}}
+{{<slide slide-55.png "Slide: Release locks early">}}
 
 In order to minimize the chance of deadlocks, release locks as soon as possible to shorten the locking window.
 
@@ -574,7 +574,7 @@ Specifically release them before calling any other functions or methods which mi
 
 I’ve even resorted to using the defer statement to defer calls to get them outside the locking of the current method.
 
-{{<slide slide-56.png>}}
+{{<slide slide-56.png "Slide: Read-only variables">}}
 
 Another easy mitigation is to notice which members of your object are read only. These should be assigned to once in the initialization of the object and never written again.
 
@@ -586,13 +586,13 @@ I’ve moved them above the mutex definition to give the idea that they aren’t
 
 In this rename free world, we don’t need any locking in the Path method and we fixed the deadlock by not having any locking in the File.Path method at all.
 
-{{<slide slide-57.png>}}
+{{<slide slide-57.png "Slide: No locking needed">}}
 
 If you can identify variables which are read only, you don’t need locking for them and they can be accessed outside the lock.
 
 No locking means no possibility of deadlocks.
 
-{{<slide slide-58.png>}}
+{{<slide slide-58.png "Slide: Other mitigations">}}
 
 Here is  a sketch of some other things you can do which I didn’t have room to make examples for.
 
@@ -604,7 +604,7 @@ Using a Read write mutex is a great help for reducing lock contention provided y
 
 And if you are using channels, buffered channels help avoid deadlocks because they don’t synchronize two go routines. Deadlocks can still occur when the channels get full though so it wont cure everything.
 
-{{<slide slide-59.png>}}
+{{<slide slide-59.png "Slide: Total lock ordering">}}
 
 Now its time to bring out the big guns.
 
@@ -618,7 +618,7 @@ In practice with object based locks and methods, this means making one object su
 
 For example this might mean that Directory can call File methods with the Directory lock held but File methods **mustn’t** call Directory methods with the File lock held.
 
-{{<slide slide-60.png>}}
+{{<slide slide-60.png "Slide: Lock ordering comments">}}
 
 In a perfect world we’d be able to specify what we want to a linter. I don’t think such a linter exists yet – if it does do tell! In the mean time comments like this one from rclone are what we have to live with.
 
@@ -628,7 +628,7 @@ This means that when you change code you need to be very careful to uphold those
 
 So make write of comments and do lots of code review when writing this sort of code.
 
-{{<slide slide-61.png>}}
+{{<slide slide-61.png "Slide: Single threaded engine">}}
 
 Debugging deadlocks can get very hard, very quickly and I used to think I was pretty good at this computer science stuff, but debugging deadlocks frequently makes me feel very stupid.
 
@@ -640,7 +640,7 @@ You’d communicate with the engine over channels in a request / response style.
 
 This makes things much simpler and is very much in the classic Go style but making everything single threaded will drop your performance which may be unacceptable.
 
-{{<slide slide-62.png>}}
+{{<slide slide-62.png "Slide: Deadlock detection tools">}}
 
 You’ll notice there’s been a lot of struggle with deadlocks in the previous slides and it would be nice if there were tools to help us find the deadlocks before they happen.
 
@@ -654,13 +654,13 @@ It comes up with error messages that look rather like those from the race detect
 
 Go deadlock only works for mutex deadlocks, not channel deadlocks. As I said before this is probably 90% of the deadlocks I see so it is an excellent start.
 
-{{<slide slide-63.png>}}
+{{<slide slide-63.png "Slide: Go-deadlock usage">}}
 
 Go deadlock is very easy to use. Here’s the example from its GitHub page.
 
 You just replace your sync imports with a go deadlock import and when you run your code it will give total lock ordering errors.
 
-{{<slide slide-64.png>}}
+{{<slide slide-64.png "Slide: Go-deadlock output">}}
 
 This is what our File and Directory example looks like when run with go deadlock.
 
@@ -668,7 +668,7 @@ As you can see it nicely points out the potential deadlock. The top half is the 
 
 I’ve used go-deadlock on more complicated examples and I have to say I’ve found the output quite difficult to interpret. This is because deadlocks are hard to understand rather than a shortcoming of the tool. So if you do plug go deadlock into your massive concurrent program, expect a bit of head scratching while you work out what the error messages mean!
 
-{{<slide slide-65.png>}}
+{{<slide slide-65.png "Slide: Go-deadlock script">}}
 
 When I want to use go deadlock with rclone I run this little script.
 
@@ -680,20 +680,20 @@ I’d like to have a neater way of enabling it for testing, but I haven’t figu
 
 ## Conclusion
 
-{{<slide slide-66.png>}}
+{{<slide slide-66.png "Slide: Conclusion">}}
 
 This has been quite an intense talk and we’ve gone over a lot of concurrency related things, but I hope you all now have some idea of what a deadlock is, how do debug deadlocks and how to avoid them in the future.
 
 Deadlocks are the curse of concurrent programming, however there good tools for finding and debugging them and there are some promising tools for helping to prevent them happening in any code base.
 
-{{<slide slide-67.png>}}
+{{<slide slide-67.png "Slide: Do not panic">}}
 
 So if, or rather when, you get to debug your first deadlock, just remember, Don’t Panic, or rather...
 
-{{<slide slide-68.png>}}
+{{<slide slide-68.png "Slide: Do panic for backtrace">}}
 
 ...Do panic and collect a backtrace :-)
 
-{{<slide slide-69.png>}}
+{{<slide slide-69.png "Slide: Thank you">}}
 
 Thank you all very much for listening.
