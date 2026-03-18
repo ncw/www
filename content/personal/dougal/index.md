@@ -7,7 +7,7 @@ date: 2007-04-27
 Pictures of Dougal when he was a baby in 2007.  Click on them for a
 bigger one.
 
-<center>
+<div style="text-align: center;">
 
   <a href="large/2007-04-27-110102-edit-operating-theatre.jpg">
     <img src="small/2007-04-27-110102-edit-operating-theatre.jpg" alt="Operating Theatre" title="Operating Theatre" border="0" />
@@ -42,4 +42,4 @@ bigger one.
   <a href="large/2007-04-29-112840-edit-loveday-dougal.jpg">
     <img src="small/2007-04-29-112840-edit-loveday-dougal.jpg" alt="Loveday and Dougal" title="Loveday and Dougal" border="0" />
   </a>
-</center>
+</div>
