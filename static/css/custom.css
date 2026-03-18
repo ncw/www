@@ -1,6 +1,243 @@
-body {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Grid */
+.container-fluid {
+    width: 100%;
+    padding: 0 15px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-md-3, .col-md-9, .col-md-10 {
+    width: 100%;
+    padding: 0 15px;
+}
+@media (min-width: 768px) {
+    .col-md-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-md-9 { flex: 0 0 75%; max-width: 75%; }
+    .col-md-10 { flex: 0 0 83.333%; max-width: 83.333%; }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+@media (max-width: 767.98px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+}
+.navbar-dark {
+    background-color: #343a40;
+}
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+.navbar-brand {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    padding: 0.3125rem 0;
+    line-height: inherit;
+    white-space: nowrap;
+}
+.navbar-brand:hover {
+    color: #fff;
+}
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.5);
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-item {
+    position: relative;
+}
+.nav-link {
+    display: block;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+.nav-link:hover {
+    color: rgba(255,255,255,0.75);
+}
+.nav-item.active > .nav-link {
+    color: #fff;
+}
+.navbar-collapse {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+@media (max-width: 767.98px) {
+    .navbar-toggler {
+        display: block;
+    }
+    .navbar-collapse {
+        display: none;
+        flex-basis: 100%;
+        width: 100%;
+    }
+    .navbar-collapse.show {
+        display: flex;
+    }
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+.mr-auto {
+    margin-right: auto;
+}
+
+/* Dropdowns */
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.175);
+}
+.dropdown-menu.show {
+    display: block;
+}
+@media (min-width: 768px) {
+    .nav-item.dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+}
+@media (max-width: 767.98px) {
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding-left: 1rem;
+        background-color: transparent;
+    }
+    .dropdown-menu .dropdown-item {
+        color: rgba(255,255,255,0.75);
+    }
+    .dropdown-menu .dropdown-item:hover {
+        color: #fff;
+        background-color: transparent;
+    }
+}
+.dropdown-item {
+    display: block;
+    padding: 0.25rem 1.5rem;
+    color: #212529;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #16181b;
+}
+.dropdown-divider {
+    height: 0;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Cards */
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: 0.25rem;
+    margin-top: 0.75rem;
+}
+.card-header {
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(0,0,0,0.03);
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+.card-body {
+    padding: 0.5rem;
+}
+.card.card-body {
+    padding: 0.5rem;
+}
+
+/* Utilities */
+.float-right {
+    float: right;
+}
+
+/* Scrollable menus */
+.pre-scrollable {
+    max-height: 30rem;
+    overflow-y: auto;
+}
+
+/* ---- Existing custom styles ---- */
 
 btn-group.a {
     color: #000000;
@@ -59,20 +296,6 @@ h6:hover .header-link {
 h1, h2, h3, h4, h5, h6 {
     margin-top: 12px;
     padding: 15px 0px;
-}
-
-/* Fix spacing of info boxes */
-.card {
-    margin-top: 0.75rem;
-}
-/* less padding around info box items */
-.card-body {
-    padding: 0.5rem;
-}
-
-/* make menus longer */
-.pre-scrollable {
-    max-height: 30rem;
 }
 
 /* custom logo in navbar */
