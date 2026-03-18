@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Rook piece (gold), transform applied: translate(24,4) scale(0.8) -->
+  <path d="M 40 72 L 88 72 L 92 80 L 36 80 Z" fill="#DDAA44" fill-opacity="0.2" stroke="#DDAA44" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 48 64 L 80 64 L 88 72 L 40 72 Z" fill="#DDAA44" fill-opacity="0.2" stroke="#DDAA44" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 52 36 L 52 64 L 76 64 L 76 36 Z" fill="#DDAA44" fill-opacity="0.2" stroke="#DDAA44" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 48 24 L 48 36 L 80 36 L 80 24 L 73.6 24 L 73.6 29.6 L 67.2 29.6 L 67.2 24 L 60.8 24 L 60.8 29.6 L 54.4 29.6 L 54.4 24 Z" fill="#DDAA44" fill-opacity="0.2" stroke="#DDAA44" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- 4 stars -->
+  <polygon points="28,108 31,114 38,114 33,118 35,125 28,121 21,125 23,118 18,114 25,114" fill="#DDAA44"/>
+  <polygon points="52,108 55,114 62,114 57,118 59,125 52,121 45,125 47,118 42,114 49,114" fill="#DDAA44"/>
+  <polygon points="76,108 79,114 86,114 81,118 83,125 76,121 69,125 71,118 66,114 73,114" fill="#DDAA44"/>
+  <polygon points="100,108 103,114 110,114 105,118 107,125 100,121 93,125 95,118 90,114 97,114" fill="#DDAA44"/>
+</svg>

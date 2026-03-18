@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Checkerboard background -->
+  <rect width="128" height="128" fill="#B58863"/>
+  <rect x="0" y="0" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="64" y="0" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="32" y="32" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="96" y="32" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="0" y="64" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="64" y="64" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="32" y="96" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="96" y="96" width="32" height="32" fill="#F0D9B5"/>
+  <!-- Knight from blackKnight.svg, translated to center -->
+  <path d="M 34 99 L 94 99 L 99 109 L 29 109 Z" fill="#111111" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M 44 89 L 84 89 L 94 99 L 34 99 Z" fill="#111111" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M 44 89 L 84 89 C 84 74 89 54 79 39 L 69 29 L 64 39 L 39 54 C 34 59 39 64 44 64 L 59 59 C 54 69 49 79 44 89 Z" fill="#111111" stroke="#ffffff" stroke-width="2.5"/>
+  <circle cx="66" cy="44" r="2.5" fill="#111111" stroke="#ffffff" stroke-width="2.5"/>
+  <!-- Mane lines as separate paths -->
+  <path d="M 80 49 L 72 54" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M 82 59 L 74 64" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M 83 69 L 76 74" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+</svg>

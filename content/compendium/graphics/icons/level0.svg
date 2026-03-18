@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Pawn piece (gold), transform applied: translate(24,4) scale(0.8) -->
+  <path d="M 40 72 L 88 72 L 92 80 L 36 80 Z" fill="#DDAA44" fill-opacity="0.2" stroke="#DDAA44" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 48 64 L 80 64 L 88 72 L 40 72 Z" fill="#DDAA44" fill-opacity="0.2" stroke="#DDAA44" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 56 40 C 56 40 52 64 48 64 L 80 64 C 76 64 72 40 72 40 Z" fill="#DDAA44" fill-opacity="0.2" stroke="#DDAA44" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="64" cy="28" r="12" fill="#DDAA44" fill-opacity="0.2" stroke="#DDAA44" stroke-width="2"/>
+  <!-- 1 star -->
+  <polygon points="64,108 67,114 74,114 69,118 71,125 64,121 57,125 59,118 54,114 61,114" fill="#DDAA44"/>
+</svg>

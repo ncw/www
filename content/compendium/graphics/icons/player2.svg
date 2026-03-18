@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Dark background -->
+  <rect width="128" height="128" rx="12" ry="12" fill="#2A2A3A"/>
+  <!-- Head -->
+  <circle cx="64" cy="40" r="18" fill="none" stroke="#DD7733" stroke-width="6"/>
+  <!-- Shoulders and torso -->
+  <path d="M 28 105 C 28 78 40 68 64 68 C 88 68 100 78 100 105" fill="none" stroke="#DD7733" stroke-width="6"/>
+</svg>

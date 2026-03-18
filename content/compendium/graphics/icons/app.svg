@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 260" width="256" height="260">
+
+  <!-- ========== QUADRANT BACKGROUNDS ========== -->
+
+  <!-- Top-left: Chess checkerboard -->
+  <path d="M 28,8 L 128,8 L 128,128 L 28,128 Z" fill="#B58863"/>
+  <rect x="28" y="8" width="25" height="30" fill="#F0D9B5"/>
+  <rect x="78" y="8" width="25" height="30" fill="#F0D9B5"/>
+  <rect x="53" y="38" width="25" height="30" fill="#F0D9B5"/>
+  <rect x="103" y="38" width="25" height="30" fill="#F0D9B5"/>
+  <rect x="28" y="68" width="25" height="30" fill="#F0D9B5"/>
+  <rect x="78" y="68" width="25" height="30" fill="#F0D9B5"/>
+  <rect x="53" y="98" width="25" height="30" fill="#F0D9B5"/>
+  <rect x="103" y="98" width="25" height="30" fill="#F0D9B5"/>
+
+  <!-- Top-right: Connect 4 blue -->
+  <path d="M 128,8 L 228,8 L 228,128 L 128,128 Z" fill="#1A5BBF"/>
+
+  <!-- Bottom-left: Mancala wood -->
+  <path d="M 28,128 L 128,128 L 128,250 C 71,235 28,200 28,155 Z" fill="#E0B680"/>
+
+  <!-- Bottom-right: Domineering checkerboard -->
+  <path d="M 128,128 L 228,128 L 228,155 C 228,200 185,235 128,250 Z" fill="#B58863"/>
+  <rect x="128" y="128" width="25" height="30" fill="#F0D9B5"/>
+  <rect x="178" y="128" width="25" height="30" fill="#F0D9B5"/>
+  <rect x="153" y="158" width="25" height="30" fill="#F0D9B5"/>
+  <rect x="203" y="158" width="21" height="30" fill="#F0D9B5"/>
+  <rect x="128" y="188" width="25" height="30" fill="#F0D9B5"/>
+  <rect x="178" y="188" width="25" height="30" fill="#F0D9B5"/>
+
+  <!-- ========== GAME ELEMENTS ========== -->
+
+  <!-- Chess knight (top-left) - pre-scaled from blackKnight.svg -->
+  <path d="M 57 87 L 96 87 L 99 94 L 54 94 Z" fill="#111111" stroke="#ffffff" stroke-width="1.6"/>
+  <path d="M 64 81 L 90 81 L 96 87 L 57 87 Z" fill="#111111" stroke="#ffffff" stroke-width="1.6"/>
+  <path d="M 64 81 L 90 81 C 90 71 93 58 86 48 L 80 42 L 77 48 L 60 58 C 57 61 60 65 64 65 L 73 61 C 70 68 67 74 64 81 Z" fill="#111111" stroke="#ffffff" stroke-width="1.6"/>
+  <circle cx="78" cy="52" r="1.6" fill="#111111" stroke="#ffffff" stroke-width="1.6"/>
+  <path d="M 87 55 L 82 58" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+  <path d="M 88 61 L 83 65" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+  <path d="M 89 68 L 84 71" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+
+  <!-- Connect 4 circles (top-right) - 5x5 grid -->
+  <!-- Row 1 -->
+  <circle cx="142" cy="24" r="7" fill="#0A2A6E"/>
+  <circle cx="160" cy="24" r="7" fill="#0A2A6E"/>
+  <circle cx="178" cy="24" r="7" fill="#0A2A6E"/>
+  <circle cx="196" cy="24" r="7" fill="#DDDD22"/>
+  <circle cx="214" cy="24" r="7" fill="#0A2A6E"/>
+  <!-- Row 2 -->
+  <circle cx="142" cy="44" r="7" fill="#0A2A6E"/>
+  <circle cx="160" cy="44" r="7" fill="#0A2A6E"/>
+  <circle cx="178" cy="44" r="7" fill="#DD2222"/>
+  <circle cx="196" cy="44" r="7" fill="#DD2222"/>
+  <circle cx="214" cy="44" r="7" fill="#0A2A6E"/>
+  <!-- Row 3 -->
+  <circle cx="142" cy="64" r="7" fill="#0A2A6E"/>
+  <circle cx="160" cy="64" r="7" fill="#DDDD22"/>
+  <circle cx="178" cy="64" r="7" fill="#DDDD22"/>
+  <circle cx="196" cy="64" r="7" fill="#DD2222"/>
+  <circle cx="214" cy="64" r="7" fill="#DDDD22"/>
+  <!-- Row 4 -->
+  <circle cx="142" cy="84" r="7" fill="#DD2222"/>
+  <circle cx="160" cy="84" r="7" fill="#DD2222"/>
+  <circle cx="178" cy="84" r="7" fill="#DDDD22"/>
+  <circle cx="196" cy="84" r="7" fill="#DDDD22"/>
+  <circle cx="214" cy="84" r="7" fill="#DD2222"/>
+  <!-- Row 5 -->
+  <circle cx="142" cy="104" r="7" fill="#DDDD22"/>
+  <circle cx="160" cy="104" r="7" fill="#DD2222"/>
+  <circle cx="178" cy="104" r="7" fill="#DD2222"/>
+  <circle cx="196" cy="104" r="7" fill="#DDDD22"/>
+  <circle cx="214" cy="104" r="7" fill="#DD2222"/>
+
+  <!-- Mancala pits and marbles (bottom-left) -->
+  <!-- Store -->
+  <rect x="36" y="135" width="12" height="38" rx="6" fill="#996A32" stroke="#7D5220" stroke-width="1"/>
+  <rect x="38" y="138" width="8" height="32" rx="4" fill="#C49459"/>
+  <!-- Top row pits -->
+  <rect x="58" y="136" width="14" height="14" rx="4" fill="#996A32" stroke="#7D5220" stroke-width="1"/>
+  <rect x="60" y="138" width="10" height="10" rx="3" fill="#C49459"/>
+  <rect x="80" y="136" width="14" height="14" rx="4" fill="#996A32" stroke="#7D5220" stroke-width="1"/>
+  <rect x="82" y="138" width="10" height="10" rx="3" fill="#C49459"/>
+  <rect x="102" y="136" width="14" height="14" rx="4" fill="#996A32" stroke="#7D5220" stroke-width="1"/>
+  <rect x="104" y="138" width="10" height="10" rx="3" fill="#C49459"/>
+  <!-- Bottom row pits -->
+  <rect x="58" y="158" width="14" height="14" rx="4" fill="#996A32" stroke="#7D5220" stroke-width="1"/>
+  <rect x="60" y="160" width="10" height="10" rx="3" fill="#C49459"/>
+  <rect x="80" y="158" width="14" height="14" rx="4" fill="#996A32" stroke="#7D5220" stroke-width="1"/>
+  <rect x="82" y="160" width="10" height="10" rx="3" fill="#C49459"/>
+  <rect x="102" y="158" width="14" height="14" rx="4" fill="#996A32" stroke="#7D5220" stroke-width="1"/>
+  <rect x="104" y="160" width="10" height="10" rx="3" fill="#C49459"/>
+  <!-- Marbles in pits -->
+  <circle cx="63" cy="141" r="2.5" fill="#FF0000"/>
+  <circle cx="68" cy="142" r="2.5" fill="#00FF00"/>
+  <circle cx="65" cy="146" r="2.5" fill="#3366FF"/>
+  <circle cx="85" cy="141" r="2.5" fill="#FFAA00"/>
+  <circle cx="90" cy="142" r="2.5" fill="#FF00FF"/>
+  <circle cx="107" cy="141" r="2.5" fill="#8A2BE2"/>
+  <circle cx="112" cy="142" r="2.5" fill="#FF6347"/>
+  <circle cx="63" cy="163" r="2.5" fill="#32CD32"/>
+  <circle cx="68" cy="164" r="2.5" fill="#FF69B4"/>
+  <circle cx="85" cy="163" r="2.5" fill="#00FFFF"/>
+  <circle cx="90" cy="164" r="2.5" fill="#FFD700"/>
+  <circle cx="107" cy="163" r="2.5" fill="#40E0D0"/>
+  <circle cx="112" cy="164" r="2.5" fill="#0000FF"/>
+  <!-- Store marbles -->
+  <circle cx="41" cy="148" r="2.5" fill="#FF0000"/>
+  <circle cx="43" cy="155" r="2.5" fill="#FFFF00"/>
+  <circle cx="40" cy="161" r="2.5" fill="#00FFFF"/>
+
+  <!-- Domineering dominoes (bottom-right) -->
+  <!-- Blue vertical domino -->
+  <rect x="135" y="132" width="20" height="48" rx="4" fill="#3366BB" stroke="#224488" stroke-width="1.5"/>
+  <line x1="135" y1="156" x2="155" y2="156" stroke="#224488" stroke-width="1"/>
+  <!-- Red horizontal domino -->
+  <rect x="162" y="138" width="48" height="20" rx="4" fill="#BB3333" stroke="#882222" stroke-width="1.5"/>
+  <line x1="186" y1="138" x2="186" y2="158" stroke="#882222" stroke-width="1"/>
+  <!-- Blue vertical domino -->
+  <rect x="168" y="168" width="20" height="48" rx="4" fill="#3366BB" stroke="#224488" stroke-width="1.5"/>
+  <line x1="168" y1="192" x2="188" y2="192" stroke="#224488" stroke-width="1"/>
+
+  <!-- ========== SHIELD OUTLINE + DIVIDERS ========== -->
+  <path d="M 28,8 L 228,8 L 228,155 C 228,200 185,235 128,250 C 71,235 28,200 28,155 Z" fill="none" stroke="#FFD700" stroke-width="8"/>
+  <line x1="128" y1="8" x2="128" y2="250" stroke="#FFD700" stroke-width="5"/>
+  <line x1="28" y1="128" x2="228" y2="128" stroke="#FFD700" stroke-width="5"/>
+</svg>

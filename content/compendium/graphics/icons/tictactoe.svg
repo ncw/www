@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Dark background -->
+  <rect width="128" height="128" rx="4" fill="#070405"/>
+  <!-- 3x3 grid of green squares -->
+  <rect x="6" y="6" width="34" height="34" rx="3" fill="#3D8A4D"/>
+  <rect x="46" y="6" width="34" height="34" rx="3" fill="#3D8A4D"/>
+  <rect x="86" y="6" width="34" height="34" rx="3" fill="#3D8A4D"/>
+  <rect x="6" y="46" width="34" height="34" rx="3" fill="#3D8A4D"/>
+  <rect x="46" y="46" width="34" height="34" rx="3" fill="#3D8A4D"/>
+  <rect x="86" y="46" width="34" height="34" rx="3" fill="#3D8A4D"/>
+  <rect x="6" y="86" width="34" height="34" rx="3" fill="#3D8A4D"/>
+  <rect x="46" y="86" width="34" height="34" rx="3" fill="#3D8A4D"/>
+  <rect x="86" y="86" width="34" height="34" rx="3" fill="#3D8A4D"/>
+  <!-- X marks (white) -->
+  <g stroke="#FFFFFF" stroke-width="4" stroke-linecap="round">
+    <!-- Top-left X -->
+    <line x1="14" y1="14" x2="32" y2="32"/>
+    <line x1="32" y1="14" x2="14" y2="32"/>
+    <!-- Center X -->
+    <line x1="54" y1="54" x2="72" y2="72"/>
+    <line x1="72" y1="54" x2="54" y2="72"/>
+    <!-- Bottom-right X -->
+    <line x1="94" y1="94" x2="112" y2="112"/>
+    <line x1="112" y1="94" x2="94" y2="112"/>
+  </g>
+  <!-- O marks (cyan) -->
+  <g fill="none" stroke="#00DDDD" stroke-width="4">
+    <!-- Top-right O -->
+    <circle cx="103" cy="23" r="10"/>
+    <!-- Center-left O -->
+    <circle cx="23" cy="63" r="10"/>
+    <!-- Bottom-center O -->
+    <circle cx="63" cy="103" r="10"/>
+  </g>
+</svg>

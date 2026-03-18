@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Left person (blue) - player1 at translate(0,32) scale(0.5) -->
+  <circle cx="32" cy="52" r="9" fill="none" stroke="#4488DD" stroke-width="3"/>
+  <path d="M 14 84.5 C 14 71 20 66 32 66 C 44 66 50 71 50 84.5" fill="none" stroke="#4488DD" stroke-width="3"/>
+  <!-- Right person (orange) - player2 at translate(64,32) scale(0.5) -->
+  <circle cx="96" cy="52" r="9" fill="none" stroke="#DD7733" stroke-width="3"/>
+  <path d="M 78 84.5 C 78 71 84 66 96 66 C 108 66 114 71 114 84.5" fill="none" stroke="#DD7733" stroke-width="3"/>
+</svg>

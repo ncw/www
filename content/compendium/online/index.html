@@ -1,0 +1,171 @@
+---
+title: Uncle Nick's game compendium
+layout: bare
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				text-align: center;
+				background-color: white;
+			}
+			.center {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.centered-text {
+				text-align: center;
+			}
+			.centered-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+			}
+			.application-icon {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 130px;
+				max-height: 130px;
+				width: auto;
+				height: auto;
+			}
+			.application-name {
+				color: #141415;
+				font-size: 18px;
+			}
+			.application-version {
+				color: #616161;
+				font-size: 12px;
+			}
+			.action {
+				color: #2196f3;
+			}
+			.action-error {
+				color: red;
+			}
+			.spinner {
+				width: 48px;
+				height: 48px;
+				border: 4px solid #e0e0e0;
+				border-top-color: #2196f3;
+				border-radius: 50%;
+				animation: spin 0.8s linear infinite;
+			}
+			@keyframes spin {
+				to { transform: rotate(360deg); }
+			}
+			@media (prefers-color-scheme: dark) {
+				body {
+					background-color: #141415;
+				}
+				.application-name {
+					color: white;
+				}
+				.application-version {
+					color: #2196f3;
+				}
+				.spinner {
+					border-color: #333;
+					border-top-color: #2196f3;
+				}
+			}
+		</style>
+		<meta charset="utf-8">
+		<link rel="icon" type="image/png" href="icon.png">
+
+		<script>
+			function async_load(file, cb) {
+				var d = document, t = 'script',
+      			o = d.createElement(t),
+      			s = d.getElementsByTagName(t)[0];
+  				o.src = file;
+  				o.addEventListener('load', function (e) { cb(e); }, false);
+  				s.parentNode.insertBefore(o, s);
+			}
+
+			function webgl_support () {
+				try {
+					var canvas = document.createElement('canvas');
+					return !!window.WebGLRenderingContext &&
+						(canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
+				} catch(e) {
+					return false;
+				}
+			}
+
+			function download_application() {
+				var action = document.getElementById("action");
+				var main = document.getElementById("main");
+
+				if (webgl_support()) {
+					if (WebAssembly) {
+						action.innerHTML = "Downloading wasm_exec.js"
+						async_load("wasm_exec.js", function(){
+							// WebAssembly.instantiateStreaming is not currently available in Safari
+							if (WebAssembly && !WebAssembly.instantiateStreaming) { // polyfill
+								WebAssembly.instantiateStreaming = async (resp, importObject) => {
+									const source = await (await resp).arrayBuffer();
+									return await WebAssembly.instantiate(source, importObject);
+								};
+							}
+
+							action.innerHTML = "Downloading web assembly file.";
+
+							const go = new Go();
+
+							// Hide the loading screen when Fyne creates its canvas
+							var observer = new MutationObserver(function(mutations) {
+								if (document.querySelector("canvas")) {
+									main.style.display = "none";
+									observer.disconnect();
+								}
+							});
+							observer.observe(document.body, {childList: true, subtree: true});
+							fetch("compendium.wasm.gz").then(function(resp) {
+								var ds = new DecompressionStream("gzip");
+								var decompressed = resp.body.pipeThrough(ds);
+								return new Response(decompressed).arrayBuffer();
+							}).then(function(bytes) {
+								action.innerHTML = "Compiling web assembly.";
+								return WebAssembly.instantiate(bytes, go.importObject);
+							}).then(function(result) {
+								action.innerHTML = "Starting application.";
+								go.run(result.instance);
+							});
+						})
+					} else {
+						action.innerHTML = "WebAssembly is not supported in your browser";
+						action.className = "action-error"
+					}
+				} else {
+					action.innerHTML = "WebGL is not supported in your browser";
+					action.className = "action-error"
+				}
+			}
+		</script>
+	</head>
+	<body scroll="no" style="overflow: hidden" onload="download_application()">
+		<div id="main">
+			<div class="centered-container">
+			<table class="center">
+				<tr><td><img class="application-icon" src="icon.png" alt="Application icon"/></td></tr>
+				<tr><td><div class="centered-text"><div class="application-name">compendium</div></div></td></tr>
+				<tr><td><div class="centered-text"><div class="application-version">v0.0.1</div></div></td></tr>
+				<tr><td><div class="spinner" style="margin: auto;"></div></td></tr>
+				<tr>
+					<td>
+						<div class="centered-text"><div class="action" id="action">
+							<noscript>Javascript need to be enable for this application to work.</noscript>
+						</div></div>
+					</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+	    <input id="dummyEntry" style="position: absolute; left: 0; top: -100pt; z-index: -10; font-size: 32pt;" />
+	</body>
+</html>

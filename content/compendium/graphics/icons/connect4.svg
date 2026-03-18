@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Blue board frame -->
+  <rect width="128" height="128" rx="6" fill="#1A5BBF"/>
+  <!-- Grid of holes/counters - 7 columns x 6 rows -->
+  <!-- Row 1 (top) - mostly empty -->
+  <circle cx="10" cy="8" r="6.5" fill="#0A2A6E"/>
+  <circle cx="29" cy="8" r="6.5" fill="#0A2A6E"/>
+  <circle cx="48" cy="8" r="6.5" fill="#0A2A6E"/>
+  <circle cx="67" cy="8" r="6.5" fill="#DDDD22"/>
+  <circle cx="86" cy="8" r="6.5" fill="#0A2A6E"/>
+  <circle cx="105" cy="8" r="6.5" fill="#0A2A6E"/>
+  <circle cx="119" cy="8" r="6.5" fill="#0A2A6E"/>
+  <!-- Row 2 -->
+  <circle cx="10" cy="28" r="6.5" fill="#0A2A6E"/>
+  <circle cx="29" cy="28" r="6.5" fill="#0A2A6E"/>
+  <circle cx="48" cy="28" r="6.5" fill="#0A2A6E"/>
+  <circle cx="67" cy="28" r="6.5" fill="#DD2222"/>
+  <circle cx="86" cy="28" r="6.5" fill="#DDDD22"/>
+  <circle cx="105" cy="28" r="6.5" fill="#0A2A6E"/>
+  <circle cx="119" cy="28" r="6.5" fill="#0A2A6E"/>
+  <!-- Row 3 -->
+  <circle cx="10" cy="48" r="6.5" fill="#0A2A6E"/>
+  <circle cx="29" cy="48" r="6.5" fill="#0A2A6E"/>
+  <circle cx="48" cy="48" r="6.5" fill="#DD2222"/>
+  <circle cx="67" cy="48" r="6.5" fill="#DDDD22"/>
+  <circle cx="86" cy="48" r="6.5" fill="#DD2222"/>
+  <circle cx="105" cy="48" r="6.5" fill="#0A2A6E"/>
+  <circle cx="119" cy="48" r="6.5" fill="#0A2A6E"/>
+  <!-- Row 4 -->
+  <circle cx="10" cy="68" r="6.5" fill="#0A2A6E"/>
+  <circle cx="29" cy="68" r="6.5" fill="#DDDD22"/>
+  <circle cx="48" cy="68" r="6.5" fill="#DDDD22"/>
+  <circle cx="67" cy="68" r="6.5" fill="#DD2222"/>
+  <circle cx="86" cy="68" r="6.5" fill="#DDDD22"/>
+  <circle cx="105" cy="68" r="6.5" fill="#DD2222"/>
+  <circle cx="119" cy="68" r="6.5" fill="#0A2A6E"/>
+  <!-- Row 5 -->
+  <circle cx="10" cy="88" r="6.5" fill="#0A2A6E"/>
+  <circle cx="29" cy="88" r="6.5" fill="#DD2222"/>
+  <circle cx="48" cy="88" r="6.5" fill="#DD2222"/>
+  <circle cx="67" cy="88" r="6.5" fill="#DDDD22"/>
+  <circle cx="86" cy="88" r="6.5" fill="#DD2222"/>
+  <circle cx="105" cy="88" r="6.5" fill="#DDDD22"/>
+  <circle cx="119" cy="88" r="6.5" fill="#DD2222"/>
+  <!-- Row 6 (bottom) -->
+  <circle cx="10" cy="108" r="6.5" fill="#DDDD22"/>
+  <circle cx="29" cy="108" r="6.5" fill="#DD2222"/>
+  <circle cx="48" cy="108" r="6.5" fill="#DDDD22"/>
+  <circle cx="67" cy="108" r="6.5" fill="#DD2222"/>
+  <circle cx="86" cy="108" r="6.5" fill="#DDDD22"/>
+  <circle cx="105" cy="108" r="6.5" fill="#DD2222"/>
+  <circle cx="119" cy="108" r="6.5" fill="#DDDD22"/>
+  <!-- Subtle bottom edge -->
+  <rect x="0" y="120" width="128" height="8" rx="0" fill="#14479A"/>
+</svg>

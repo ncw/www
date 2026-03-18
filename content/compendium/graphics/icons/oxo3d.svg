@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Dark background -->
+  <rect width="128" height="128" fill="#070405"/>
+  <!-- 4x4 grid, 4 layers - squares 22px, gaps 8px -->
+  <!-- Layer 4 (top) -->
+  <g transform="translate(0, 0)">
+    <rect x="8" y="8" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="38" y="8" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="68" y="8" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="98" y="8" width="22" height="22" rx="2" fill="#3D8A4D"/>
+  </g>
+  <!-- Layer 3 -->
+  <g transform="translate(0, 0)">
+    <rect x="8" y="38" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="38" y="38" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="68" y="38" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="98" y="38" width="22" height="22" rx="2" fill="#3D8A4D"/>
+  </g>
+  <!-- Layer 2 -->
+  <g transform="translate(0, 0)">
+    <rect x="8" y="68" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="38" y="68" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="68" y="68" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="98" y="68" width="22" height="22" rx="2" fill="#3D8A4D"/>
+  </g>
+  <!-- Layer 1 (bottom) -->
+  <g transform="translate(0, 0)">
+    <rect x="8" y="98" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="38" y="98" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="68" y="98" width="22" height="22" rx="2" fill="#3D8A4D"/>
+    <rect x="98" y="98" width="22" height="22" rx="2" fill="#3D8A4D"/>
+  </g>
+  <!-- X marks (cyan) - diagonal win through the layers -->
+  <g stroke="#00DDDD" stroke-width="2.5" stroke-linecap="round">
+    <!-- Layer 4, col 1 -->
+    <line x1="13" y1="13" x2="25" y2="25"/>
+    <line x1="25" y1="13" x2="13" y2="25"/>
+    <!-- Layer 3, col 2 -->
+    <line x1="43" y1="43" x2="55" y2="55"/>
+    <line x1="55" y1="43" x2="43" y2="55"/>
+    <!-- Layer 2, col 3 -->
+    <line x1="73" y1="73" x2="85" y2="85"/>
+    <line x1="85" y1="73" x2="73" y2="85"/>
+    <!-- Layer 1, col 4 -->
+    <line x1="103" y1="103" x2="115" y2="115"/>
+    <line x1="115" y1="103" x2="103" y2="115"/>
+  </g>
+  <!-- O marks (white) -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="2.5">
+    <!-- Layer 3, col 1 -->
+    <circle cx="19" cy="49" r="6"/>
+    <!-- Layer 2, col 1 -->
+    <circle cx="19" cy="79" r="6"/>
+    <!-- Layer 1, col 2 -->
+    <circle cx="49" cy="109" r="6"/>
+    <!-- Layer 4, col 3 -->
+    <circle cx="79" cy="19" r="6"/>
+  </g>
+</svg>

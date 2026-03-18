@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Dark background -->
+  <rect width="128" height="128" rx="12" ry="12" fill="#2A2A3A"/>
+  <!-- Monitor screen -->
+  <rect x="20" y="18" width="88" height="64" rx="6" ry="6" fill="none" stroke="#88BB44" stroke-width="5"/>
+  <!-- Screen content - play triangle -->
+  <path d="M 54 36 L 54 66 L 78 51 Z" fill="#88BB44"/>
+  <!-- Stand -->
+  <rect x="52" y="82" width="24" height="12" fill="none" stroke="#88BB44" stroke-width="5"/>
+  <!-- Base -->
+  <line x1="38" y1="97" x2="90" y2="97" stroke="#88BB44" stroke-width="5"/>
+</svg>

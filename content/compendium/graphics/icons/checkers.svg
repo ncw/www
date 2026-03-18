@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Checkerboard background -->
+  <rect width="128" height="128" fill="#B58863"/>
+  <rect x="0" y="0" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="64" y="0" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="32" y="32" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="96" y="32" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="0" y="64" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="64" y="64" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="32" y="96" width="32" height="32" fill="#F0D9B5"/>
+  <rect x="96" y="96" width="32" height="32" fill="#F0D9B5"/>
+  <!-- Red checker piece (top-left dark square) -->
+  <circle cx="48" cy="16" r="12" fill="#CC2222" stroke="#881111" stroke-width="1.5"/>
+  <circle cx="48" cy="16" r="7" fill="none" stroke="#EE4444" stroke-width="1"/>
+  <!-- Red checker piece -->
+  <circle cx="112" cy="16" r="12" fill="#CC2222" stroke="#881111" stroke-width="1.5"/>
+  <circle cx="112" cy="16" r="7" fill="none" stroke="#EE4444" stroke-width="1"/>
+  <!-- Red checker -->
+  <circle cx="80" cy="48" r="12" fill="#CC2222" stroke="#881111" stroke-width="1.5"/>
+  <circle cx="80" cy="48" r="7" fill="none" stroke="#EE4444" stroke-width="1"/>
+  <!-- White checker piece (bottom rows) -->
+  <circle cx="48" cy="80" r="12" fill="#EEDDBB" stroke="#AA9977" stroke-width="1.5"/>
+  <circle cx="48" cy="80" r="7" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <!-- White checker -->
+  <circle cx="16" cy="112" r="12" fill="#EEDDBB" stroke="#AA9977" stroke-width="1.5"/>
+  <circle cx="16" cy="112" r="7" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  <!-- White checker -->
+  <circle cx="80" cy="112" r="12" fill="#EEDDBB" stroke="#AA9977" stroke-width="1.5"/>
+  <circle cx="80" cy="112" r="7" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+</svg>
