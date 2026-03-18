@@ -295,6 +295,16 @@ h5 { font-size: 0.9rem; }
 .toc-inline nav#TableOfContents li {
     margin: 0.2rem 0;
 }
+.toc-inline nav#TableOfContents li > ul {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.toc-inline nav#TableOfContents li:hover > ul {
+    max-height: 20rem;
+    opacity: 1;
+}
 .toc-inline nav#TableOfContents a {
     color: #787c99;
     font-size: 0.9rem;
