@@ -1,13 +1,13 @@
 website:
 	rm -rf public
-	hugo --buildFuture
+	hugo
 	@if grep -R "raw HTML omitted" docs/public ; then echo "ERROR: found unescaped HTML - fix the markdown source" ; fi
 
 upload_website:	website
-	rclone -P --exclude "/pub/**" --exclude "venv/**" sync public/ box:public_html/
+	rclone -P --no-update-dir-modtime --exclude "/pub/**" --exclude "venv/**" sync public/ box:public_html/
 
 upload_test_website:	website
-	rclone -P --exclude "/pub/**" --exclude "venv/**" sync public/ box:public_html_new/
+	rclone -P --no-update-dir-modtime --exclude "/pub/**" --exclude "venv/**" sync public/ box:public_html_new/
 
 validate_website: website
 	@find public -type f -name "*.html" -print0 | \
@@ -17,4 +17,4 @@ validate_website: website
 	@echo "HTML validation passed"
 
 serve:	website
-	hugo server --buildFuture --logLevel info -w --disableFastRender
+	hugo server --logLevel info -w --disableFastRender
