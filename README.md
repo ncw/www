@@ -1,7 +1,9 @@
 # Nick Craig-Wood's public website
 
-This directory tree is used to build all the different docs for
-[Nick Craig-Wood's website](https://www.craig-wood.com/nick/).
+This directory tree is used to build [Nick Craig-Wood's
+website](https://www.craig-wood.com/nick/).
+
+The website is [mirrored on GitHub pages](https://ncw.github.io/www/).
 
 The content here is (c) Nick Craig-Wood - if you'd like to use it
 elsewhere then please ask first: nick@craig-wood.com
