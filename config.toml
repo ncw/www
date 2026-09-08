@@ -13,6 +13,8 @@ ignoreFiles = [
 enableGitInfo = true
 
 [params]
+  # Canonical links always point here, even when the site is built for a mirror
+  canonicalBaseURL = "https://www.craig-wood.com/nick/"
   [params.twitter]
   username = "njcw"
 
